@@ -363,7 +363,8 @@
             transition: all 0.3s ease;
             border: 2px solid transparent;
             min-width: 0;
-            padding: 0.5rem;
+            max-width: 100%;
+            padding: 0.3rem;
         }
 
         .calendar-day.header {
@@ -748,20 +749,22 @@
             }
 
             .calendar-grid {
-                gap: 0.3rem;
+                gap: 0.25rem;
                 margin-bottom: 1rem;
             }
 
             .calendar-day {
-                font-size: 0.75rem;
-                border-radius: 8px;
-                padding: 0.3rem;
-                min-height: 35px;
+                font-size: 0.7rem;
+                border-radius: 6px;
+                padding: 0.2rem;
+                min-height: 28px;
+                max-height: 32px;
             }
 
             .calendar-day.header {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
                 font-weight: 700;
+                min-height: 24px;
             }
 
             .time-slots {
