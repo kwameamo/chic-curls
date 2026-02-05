@@ -204,11 +204,330 @@
             margin-bottom: 2rem;
             animation: fadeIn 1s ease-out 0.8s both;
             border: 3px solid white;
+            cursor: pointer;
         }
 
         .contact-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(255, 107, 157, 0.5);
+        }
+
+        /* Booking Modal Styles */
+        .booking-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .booking-modal.active {
+            display: flex;
+        }
+
+        .booking-content {
+            background: white;
+            border-radius: 30px;
+            padding: 2.5rem 2rem;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .booking-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .booking-header h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--pink-dark);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 107, 157, 0.1);
+            color: var(--pink-dark);
+        }
+
+        .booking-step {
+            display: none;
+        }
+
+        .booking-step.active {
+            display: block;
+        }
+
+        .step-title {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--burgundy);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .service-select {
+            display: grid;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-option {
+            padding: 1rem 1.2rem;
+            background: white;
+            border: 2px solid rgba(255, 107, 157, 0.3);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .service-option:hover {
+            border-color: var(--pink-main);
+            background: rgba(255, 182, 200, 0.1);
+        }
+
+        .service-option.selected {
+            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            color: white;
+            border-color: var(--pink-dark);
+        }
+
+        .service-option .service-name {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .service-option .service-price {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .calendar-day.header {
+            font-weight: 700;
+            color: var(--burgundy);
+            cursor: default;
+            font-size: 0.75rem;
+        }
+
+        .calendar-day.disabled {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .calendar-day.available {
+            background: white;
+            border-color: rgba(255, 107, 157, 0.3);
+        }
+
+        .calendar-day.available:hover {
+            background: rgba(255, 182, 200, 0.2);
+            border-color: var(--pink-main);
+        }
+
+        .calendar-day.selected {
+            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            color: white;
+            border-color: var(--pink-dark);
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .time-slot {
+            padding: 0.8rem;
+            background: white;
+            border: 2px solid rgba(255, 107, 157, 0.3);
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .time-slot:hover {
+            border-color: var(--pink-main);
+            background: rgba(255, 182, 200, 0.1);
+        }
+
+        .time-slot.selected {
+            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            color: white;
+            border-color: var(--pink-dark);
+        }
+
+        .time-slot.booked {
+            background: #f5f5f5;
+            color: #999;
+            cursor: not-allowed;
+            border-color: #ddd;
+        }
+
+        .booking-form {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--burgundy);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.9rem;
+            border: 2px solid rgba(255, 107, 157, 0.3);
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--pink-main);
+            background: rgba(255, 182, 200, 0.05);
+        }
+
+        .booking-summary {
+            background: linear-gradient(135deg, rgba(255, 182, 200, 0.3), rgba(255, 107, 157, 0.2));
+            padding: 1.2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .summary-item:last-child {
+            margin-bottom: 0;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--burgundy);
+            padding-top: 0.5rem;
+            border-top: 2px solid rgba(255, 107, 157, 0.3);
+        }
+
+        .booking-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-secondary,
+        .btn-primary {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--pink-dark);
+            border: 2px solid var(--pink-main);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 182, 200, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            color: white;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
         .location {
@@ -398,34 +717,37 @@
         </div>
 
         <div class="social-links">
-            <a href="https://www.snapchat.com/add/chicc_curls" class="social-link" target="_blank" rel="noopener">
+            <a href="https://www.snapchat.com/add/Ms.gyameraaaa" class="social-link" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-snapchat" viewBox="0 0 16 16">
                     <path d="M15.943 11.526c-.111-.303-.323-.465-.564-.599a1 1 0 0 0-.123-.064l-.219-.111c-.752-.399-1.339-.902-1.746-1.498a3.4 3.4 0 0 1-.3-.531c-.034-.1-.032-.156-.008-.207a.3.3 0 0 1 .097-.1c.129-.086.262-.173.352-.231.162-.104.289-.187.371-.245.309-.216.525-.446.66-.702a1.4 1.4 0 0 0 .069-1.16c-.205-.538-.713-.872-1.329-.872a1.8 1.8 0 0 0-.487.065c.006-.368-.002-.757-.035-1.139-.116-1.344-.587-2.048-1.077-2.61a4.3 4.3 0 0 0-1.095-.881C9.764.216 8.92 0 7.999 0s-1.76.216-2.505.641c-.412.232-.782.53-1.097.883-.49.562-.96 1.267-1.077 2.61-.033.382-.04.772-.036 1.138a1.8 1.8 0 0 0-.487-.065c-.615 0-1.124.335-1.328.873a1.4 1.4 0 0 0 .067 1.161c.136.256.352.486.66.701.082.058.21.14.371.246l.339.221a.4.4 0 0 1 .109.11c.026.053.027.11-.012.217a3.4 3.4 0 0 1-.295.52c-.398.583-.968 1.077-1.696 1.472-.385.204-.786.34-.955.8-.128.348-.044.743.28 1.075q.18.189.409.31a4.4 4.4 0 0 0 1 .4.7.7 0 0 1 .202.09c.118.104.102.26.259.488q.12.178.296.3c.33.229.701.243 1.095.258.355.014.758.03 1.217.18.19.064.389.186.618.328.55.338 1.305.802 2.566.802 1.262 0 2.02-.466 2.576-.806.227-.14.424-.26.609-.321.46-.152.863-.168 1.218-.181.393-.015.764-.03 1.095-.258a1.14 1.14 0 0 0 .336-.368c.114-.192.11-.327.217-.42a.6.6 0 0 1 .19-.087 4.5 4.5 0 0 0 1.014-.404c.16-.087.306-.2.429-.336l.004-.005c.304-.325.38-.709.256-1.047m-1.121.602c-.684.378-1.139.337-1.493.565-.3.193-.122.61-.34.76-.269.186-1.061-.012-2.085.326-.845.279-1.384 1.082-2.903 1.082s-2.045-.801-2.904-1.084c-1.022-.338-1.816-.14-2.084-.325-.218-.15-.041-.568-.341-.761-.354-.228-.809-.187-1.492-.563-.436-.24-.189-.39-.044-.46 2.478-1.199 2.873-3.05 2.89-3.188.022-.166.045-.297-.138-.466-.177-.164-.962-.65-1.18-.802-.36-.252-.52-.503-.402-.812.082-.214.281-.295.49-.295a1 1 0 0 1 .197.022c.396.086.78.285 1.002.338q.04.01.082.011c.118 0 .16-.06.152-.195-.026-.433-.087-1.277-.019-2.066.094-1.084.444-1.622.859-2.097.2-.229 1.137-1.22 2.93-1.22 1.792 0 2.732.987 2.931 1.215.416.475.766 1.013.859 2.098.068.788.009 1.632-.019 2.065-.01.142.034.195.152.195a.4.4 0 0 0 .082-.01c.222-.054.607-.253 1.002-.338a1 1 0 0 1 .197-.023c.21 0 .409.082.49.295.117.309-.04.56-.401.812-.218.152-1.003.638-1.18.802-.184.169-.16.3-.139.466.018.14.413 1.991 2.89 3.189.147.073.394.222-.041.464"/>
                 </svg>
-                <span>Snapchat: Chicc Curls</span>
+                <span>Snapchat: Ms.gyameraaaa</span>
             </a>
-            <a href="https://www.instagram.com/chicc_curls" class="social-link" target="_blank" rel="noopener">
+            <a href="https://www.instagram.com/Ms.gyameraaa" class="social-link" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
-                <span>Instagram: Chicc_curls</span>
+                <span>Instagram: Ms.gyameraaa</span>
             </a>
-            <a href="https://wa.me/." class="social-link" target="_blank" rel="noopener">
+            <a href="https://wa.me/233559454660" class="social-link" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                 </svg>
-                <span>Coming Soon</span>
+                <span>WhatsApp: +233 55 945 4660</span>
             </a>
         </div>
 
-        <a href="tel:+233559454660" class="contact-button">
+        <button class="contact-button" onclick="openBooking()">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
             </svg>
-            Call to Book Now
-        </a>
+            Tap to Book Appointment
+        </button>
 
         <div class="location">
             <div class="location-icon">📍</div>
@@ -570,5 +892,271 @@
             <p style="margin-top: 0.5rem; font-size: 0.8rem;">Engineered by <span style="color: var(--pink-dark); font-weight: 600;">CurioLabs</span></p>
         </div>
     </div>
+
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-content">
+            <div class="booking-header">
+                <h3>Book Appointment</h3>
+                <button class="close-btn" onclick="closeBooking()">×</button>
+            </div>
+
+            <!-- Step 1: Select Service -->
+            <div class="booking-step active" id="step1">
+                <div class="step-title">Select Your Service</div>
+                <div class="service-select" id="serviceSelect"></div>
+                <button class="btn-primary" onclick="goToStep(2)" style="width: 100%">Next</button>
+            </div>
+
+            <!-- Step 2: Select Date -->
+            <div class="booking-step" id="step2">
+                <div class="step-title">Choose a Date</div>
+                <div class="calendar-grid" id="calendar"></div>
+                <div class="booking-buttons">
+                    <button class="btn-secondary" onclick="goToStep(1)">Back</button>
+                    <button class="btn-primary" onclick="goToStep(3)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Select Time -->
+            <div class="booking-step" id="step3">
+                <div class="step-title">Select Time Slot</div>
+                <div class="time-slots" id="timeSlots"></div>
+                <div class="booking-buttons">
+                    <button class="btn-secondary" onclick="goToStep(2)">Back</button>
+                    <button class="btn-primary" onclick="goToStep(4)">Next</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Contact Details -->
+            <div class="booking-step" id="step4">
+                <div class="step-title">Your Details</div>
+                <div class="booking-form">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" id="customerName" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" id="customerPhone" placeholder="+233 XX XXX XXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Notes (Optional)</label>
+                        <textarea id="customerNotes" rows="3" placeholder="Any special requests or notes..."></textarea>
+                    </div>
+                </div>
+                <div class="booking-buttons">
+                    <button class="btn-secondary" onclick="goToStep(3)">Back</button>
+                    <button class="btn-primary" onclick="goToStep(5)">Review</button>
+                </div>
+            </div>
+
+            <!-- Step 5: Confirmation -->
+            <div class="booking-step" id="step5">
+                <div class="step-title">Confirm Your Booking</div>
+                <div class="booking-summary" id="bookingSummary"></div>
+                <div class="booking-buttons">
+                    <button class="btn-secondary" onclick="goToStep(4)">Back</button>
+                    <button class="btn-primary" onclick="confirmBooking()">Confirm Booking</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Booking system data
+        const bookingData = {
+            selectedService: null,
+            selectedDate: null,
+            selectedTime: null,
+            customerName: '',
+            customerPhone: '',
+            customerNotes: ''
+        };
+
+        // Services data (from your price list)
+        const services = [
+            { name: 'Classic Cat Eye', price: 150, category: 'Classic' },
+            { name: 'Hybrid Cat Eye', price: 180, category: 'Hybrid' },
+            { name: 'Hybrid Wispy', price: 200, category: 'Hybrid' },
+            { name: 'Volume Cat Eye', price: 220, category: 'Volume' },
+            { name: 'Volume Wispy', price: 250, category: 'Volume' },
+            { name: 'Wet Set', price: 230, category: 'Signature' },
+            { name: 'Bratz Doll Set', price: 270, category: 'Signature' },
+            { name: 'Manga/Anime Set', price: 330, category: 'Signature' },
+            { name: 'Viper Luxe (Medusa)', price: 330, category: 'Signature' },
+            { name: 'Chic Curl Signature', price: 340, category: 'Signature' }
+        ];
+
+        // Available time slots based on working hours
+        const timeSlots = {
+            weekday: ['3:30 PM', '4:30 PM', '5:30 PM', '6:30 PM', '7:30 PM'],
+            weekend: ['8:00 AM', '9:30 AM', '11:00 AM', '12:30 PM', '2:00 PM', '3:30 PM', '5:00 PM', '6:30 PM']
+        };
+
+        // Simulated booked slots (you would get this from a backend/database)
+        const bookedSlots = {
+            '2026-02-10': ['3:30 PM', '5:30 PM'],
+            '2026-02-14': ['8:00 AM', '12:30 PM', '5:00 PM']
+        };
+
+        function openBooking() {
+            document.getElementById('bookingModal').classList.add('active');
+            initializeServices();
+            generateCalendar();
+        }
+
+        function closeBooking() {
+            document.getElementById('bookingModal').classList.remove('active');
+            resetBooking();
+        }
+
+        function resetBooking() {
+            bookingData.selectedService = null;
+            bookingData.selectedDate = null;
+            bookingData.selectedTime = null;
+            bookingData.customerName = '';
+            bookingData.customerPhone = '';
+            bookingData.customerNotes = '';
+            goToStep(1);
+        }
+
+        function goToStep(stepNum) {
+            document.querySelectorAll('.booking-step').forEach(step => step.classList.remove('active'));
+            document.getElementById(`step${stepNum}`).classList.add('active');
+
+            if (stepNum === 3) generateTimeSlots();
+            if (stepNum === 5) showSummary();
+        }
+
+        function initializeServices() {
+            const container = document.getElementById('serviceSelect');
+            container.innerHTML = services.map((service, index) => `
+                <div class="service-option" onclick="selectService(${index})">
+                    <span class="service-name">${service.name}</span>
+                    <span class="service-price">GHS ${service.price}</span>
+                </div>
+            `).join('');
+        }
+
+        function selectService(index) {
+            bookingData.selectedService = services[index];
+            document.querySelectorAll('.service-option').forEach((el, i) => {
+                el.classList.toggle('selected', i === index);
+            });
+        }
+
+        function generateCalendar() {
+            const calendar = document.getElementById('calendar');
+            const today = new Date();
+            const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            
+            let html = daysOfWeek.map(day => `<div class="calendar-day header">${day}</div>`).join('');
+            
+            // Generate next 14 days
+            for (let i = 0; i < 14; i++) {
+                const date = new Date(today);
+                date.setDate(today.getDate() + i);
+                const dateStr = date.toISOString().split('T')[0];
+                const dayNum = date.getDate();
+                
+                html += `<div class="calendar-day available" onclick="selectDate('${dateStr}')" data-date="${dateStr}">${dayNum}</div>`;
+            }
+            
+            calendar.innerHTML = html;
+        }
+
+        function selectDate(dateStr) {
+            bookingData.selectedDate = dateStr;
+            document.querySelectorAll('.calendar-day.available').forEach(el => {
+                el.classList.toggle('selected', el.dataset.date === dateStr);
+            });
+        }
+
+        function generateTimeSlots() {
+            const container = document.getElementById('timeSlots');
+            if (!bookingData.selectedDate) return;
+            
+            const date = new Date(bookingData.selectedDate);
+            const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+            const slots = isWeekend ? timeSlots.weekend : timeSlots.weekday;
+            const booked = bookedSlots[bookingData.selectedDate] || [];
+            
+            container.innerHTML = slots.map(time => {
+                const isBooked = booked.includes(time);
+                return `<div class="time-slot ${isBooked ? 'booked' : ''}" onclick="${!isBooked ? `selectTime('${time}')` : ''}">${time}</div>`;
+            }).join('');
+        }
+
+        function selectTime(time) {
+            bookingData.selectedTime = time;
+            document.querySelectorAll('.time-slot:not(.booked)').forEach(el => {
+                el.classList.toggle('selected', el.textContent === time);
+            });
+        }
+
+        function showSummary() {
+            bookingData.customerName = document.getElementById('customerName').value;
+            bookingData.customerPhone = document.getElementById('customerPhone').value;
+            bookingData.customerNotes = document.getElementById('customerNotes').value;
+            
+            const date = new Date(bookingData.selectedDate);
+            const formattedDate = date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            
+            document.getElementById('bookingSummary').innerHTML = `
+                <div class="summary-item">
+                    <span>Service:</span>
+                    <strong>${bookingData.selectedService?.name || 'Not selected'}</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Date:</span>
+                    <strong>${formattedDate}</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Time:</span>
+                    <strong>${bookingData.selectedTime || 'Not selected'}</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Name:</span>
+                    <strong>${bookingData.customerName}</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Phone:</span>
+                    <strong>${bookingData.customerPhone}</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Total:</span>
+                    <strong>GHS ${bookingData.selectedService?.price || 0}</strong>
+                </div>
+            `;
+        }
+
+        function confirmBooking() {
+            const message = `*New Booking Request*%0A%0A` +
+                `*Name:* ${bookingData.customerName}%0A` +
+                `*Phone:* ${bookingData.customerPhone}%0A` +
+                `*Service:* ${bookingData.selectedService.name}%0A` +
+                `*Price:* GHS ${bookingData.selectedService.price}%0A` +
+                `*Date:* ${new Date(bookingData.selectedDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}%0A` +
+                `*Time:* ${bookingData.selectedTime}%0A` +
+                `${bookingData.customerNotes ? `*Notes:* ${bookingData.customerNotes}` : ''}`;
+            
+            // Send booking request via WhatsApp
+            window.open(`https://wa.me/233200044821?text=${message}`, '_blank');
+            
+            // Close modal and reset
+            setTimeout(() => {
+                closeBooking();
+                alert('Booking request sent! We\'ll confirm your appointment via WhatsApp shortly.');
+            }, 1000);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('bookingModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeBooking();
+            }
+        });
+    </script>
 </body>
 </html>
