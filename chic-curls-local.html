@@ -1107,12 +1107,6 @@
             weekend: ['8:00 AM', '9:30 AM', '11:00 AM', '12:30 PM', '2:00 PM', '3:30 PM', '5:00 PM', '6:30 PM']
         };
 
-        // Simulated booked slots (you would get this from a backend/database)
-        const bookedSlots = {
-            '2026-02-10': ['3:30 PM', '5:30 PM'],
-            '2026-02-14': ['8:00 AM', '12:30 PM', '5:00 PM']
-        };
-
         function openBooking() {
             document.getElementById('bookingModal').classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -1164,9 +1158,18 @@
         function generateCalendar() {
             const calendar = document.getElementById('calendar');
             const today = new Date();
+            today.setHours(0, 0, 0, 0); // Reset time to start of day for comparison
             const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
             
             let html = daysOfWeek.map(day => `<div class="calendar-day header">${day}</div>`).join('');
+            
+            // Get the day of week for today (0 = Sunday, 6 = Saturday)
+            const todayDayOfWeek = today.getDay();
+            
+            // Add empty cells to align the first date with correct day
+            for (let i = 0; i < todayDayOfWeek; i++) {
+                html += `<div class="calendar-day"></div>`;
+            }
             
             // Generate next 14 days
             for (let i = 0; i < 14; i++) {
@@ -1192,14 +1195,50 @@
             const container = document.getElementById('timeSlots');
             if (!bookingData.selectedDate) return;
             
-            const date = new Date(bookingData.selectedDate);
-            const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+            const selectedDate = new Date(bookingData.selectedDate + 'T00:00:00');
+            const dayOfWeek = selectedDate.getDay(); // 0=Sunday, 6=Saturday
+            
+            // Weekend is Saturday (6) or Sunday (0)
+            const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
             const slots = isWeekend ? timeSlots.weekend : timeSlots.weekday;
-            const booked = bookedSlots[bookingData.selectedDate] || [];
+            
+            // Check if selected date is today
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const isToday = selectedDate.getTime() === today.getTime();
             
             container.innerHTML = slots.map(time => {
-                const isBooked = booked.includes(time);
-                return `<div class="time-slot ${isBooked ? 'booked' : ''}" onclick="${!isBooked ? `selectTime('${time}')` : ''}">${time}</div>`;
+                let isPast = false;
+                
+                // If it's today, check if the time has passed
+                if (isToday) {
+                    const now = new Date();
+                    const currentHour = now.getHours();
+                    const currentMinute = now.getMinutes();
+                    
+                    // Parse the time slot (e.g., "3:30 PM")
+                    const timeParts = time.match(/(\d+):(\d+)\s*(AM|PM)/);
+                    if (timeParts) {
+                        let hour = parseInt(timeParts[1]);
+                        const minute = parseInt(timeParts[2]);
+                        const period = timeParts[3];
+                        
+                        // Convert to 24-hour format
+                        if (period === 'PM' && hour !== 12) hour += 12;
+                        if (period === 'AM' && hour === 12) hour = 0;
+                        
+                        // Check if this time has passed
+                        if (hour < currentHour || (hour === currentHour && minute <= currentMinute)) {
+                            isPast = true;
+                        }
+                    }
+                }
+                
+                if (isPast) {
+                    return `<div class="time-slot booked">Past</div>`;
+                } else {
+                    return `<div class="time-slot" onclick="selectTime('${time}')">${time}</div>`;
+                }
             }).join('');
         }
 
@@ -1247,14 +1286,18 @@
         }
 
         function confirmBooking() {
-            const message = `*New Booking Request*%0A%0A` +
+            const date = new Date(bookingData.selectedDate + 'T00:00:00');
+            const formattedDate = date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            
+            const message = `*BOOKING REQUEST - PENDING CONFIRMATION*%0A%0A` +
                 `*Name:* ${bookingData.customerName}%0A` +
-                `*Phone:* ${bookingData.customerPhone}%0A` +
+                `*Phone:* ${bookingData.customerPhone}%0A%0A` +
                 `*Service:* ${bookingData.selectedService.name}%0A` +
-                `*Price:* GHS ${bookingData.selectedService.price}%0A` +
-                `*Date:* ${new Date(bookingData.selectedDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}%0A` +
-                `*Time:* ${bookingData.selectedTime}%0A` +
-                `${bookingData.customerNotes ? `*Notes:* ${bookingData.customerNotes}` : ''}`;
+                `*Price:* GHS ${bookingData.selectedService.price}%0A%0A` +
+                `*Date:* ${formattedDate}%0A` +
+                `*Time:* ${bookingData.selectedTime}%0A%0A` +
+                `${bookingData.customerNotes ? `*Notes:* ${bookingData.customerNotes}%0A%0A` : ''}` +
+                `Please confirm this booking.`;
             
             // Send booking request via WhatsApp
             window.open(`https://wa.me/233501707556?text=${message}`, '_blank');
@@ -1263,7 +1306,7 @@
             setTimeout(() => {
                 closeBooking();
                 document.body.style.overflow = '';
-                alert('Booking request sent! We\'ll confirm your appointment via WhatsApp shortly.');
+                alert('Your booking request has been sent!\n\nPlease note: This booking is PENDING until we confirm via WhatsApp. We\'ll get back to you shortly to confirm your appointment.');
             }, 1000);
         }
 
