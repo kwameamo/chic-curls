@@ -648,6 +648,95 @@
             box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
         }
 
+        /* Error/Warning Modal */
+        .error-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .error-modal.active {
+            display: flex;
+        }
+
+        .error-content {
+            background: white;
+            border-radius: 25px;
+            padding: 2rem;
+            max-width: 350px;
+            width: 100%;
+            text-align: center;
+            animation: errorShake 0.5s ease-out;
+            box-shadow: 0 20px 60px rgba(255, 107, 157, 0.3);
+        }
+
+        @keyframes errorShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .error-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #FF6B9D, #E94B7A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .error-icon svg {
+            width: 35px;
+            height: 35px;
+            stroke: white;
+            stroke-width: 3;
+        }
+
+        .error-title {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--burgundy);
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .error-button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .error-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+        }
+
         .location {
             text-align: center;
             margin-bottom: 2rem;
@@ -1016,7 +1105,7 @@
                 </div>
                 <div class="hours-item">
                     <span class="day">Sunday</span>
-                    <span class="time">8:00 AM - 8:00 PM</span>
+                    <span class="time" style="color: var(--text-muted); font-weight: 600;">CLOSED</span>
                 </div>
             </div>
         </div>
@@ -1133,7 +1222,7 @@
             <div class="booking-step active" id="step1">
                 <div class="step-title">Select Your Service</div>
                 <div class="service-select" id="serviceSelect"></div>
-                <button class="btn-primary" onclick="goToStep(2)" style="width: 100%">Next</button>
+                <button class="btn-primary" onclick="validateAndGoToStep(2)" style="width: 100%">Next</button>
             </div>
 
             <!-- Step 2: Select Date -->
@@ -1142,7 +1231,7 @@
                 <div class="calendar-grid" id="calendar"></div>
                 <div class="booking-buttons">
                     <button class="btn-secondary" onclick="goToStep(1)">Back</button>
-                    <button class="btn-primary" onclick="goToStep(3)">Next</button>
+                    <button class="btn-primary" onclick="validateAndGoToStep(3)">Next</button>
                 </div>
             </div>
 
@@ -1152,7 +1241,7 @@
                 <div class="time-slots" id="timeSlots"></div>
                 <div class="booking-buttons">
                     <button class="btn-secondary" onclick="goToStep(2)">Back</button>
-                    <button class="btn-primary" onclick="goToStep(4)">Next</button>
+                    <button class="btn-primary" onclick="validateAndGoToStep(4)">Next</button>
                 </div>
             </div>
 
@@ -1175,7 +1264,7 @@
                 </div>
                 <div class="booking-buttons">
                     <button class="btn-secondary" onclick="goToStep(3)">Back</button>
-                    <button class="btn-primary" onclick="goToStep(5)">Review</button>
+                    <button class="btn-primary" onclick="validateAndGoToStep(5)">Review</button>
                 </div>
             </div>
 
@@ -1205,6 +1294,22 @@
                 <strong>Please Note:</strong> This booking is <strong>PENDING</strong> until we confirm via WhatsApp. We'll get back to you shortly to confirm your appointment.
             </div>
             <button class="success-button" onclick="closeSuccessModal()">Got It!</button>
+        </div>
+    </div>
+
+    <!-- Error/Warning Modal -->
+    <div class="error-modal" id="errorModal">
+        <div class="error-content">
+            <div class="error-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+            </div>
+            <h3 class="error-title">Oops!</h3>
+            <p class="error-message" id="errorMessage"></p>
+            <button class="error-button" onclick="closeErrorModal()">OK</button>
         </div>
     </div>
 
@@ -1270,6 +1375,53 @@
             if (stepNum === 5) showSummary();
         }
 
+        function validateAndGoToStep(stepNum) {
+            let isValid = false;
+            let errorMessage = '';
+
+            // Validate based on current step
+            if (stepNum === 2) {
+                // Going to step 2, validate service selection
+                if (!bookingData.selectedService) {
+                    errorMessage = 'Please select a service before continuing.';
+                } else {
+                    isValid = true;
+                }
+            } else if (stepNum === 3) {
+                // Going to step 3, validate date selection
+                if (!bookingData.selectedDate) {
+                    errorMessage = 'Please select a date before continuing.';
+                } else {
+                    isValid = true;
+                }
+            } else if (stepNum === 4) {
+                // Going to step 4, validate time selection
+                if (!bookingData.selectedTime) {
+                    errorMessage = 'Please select a time slot before continuing.';
+                } else {
+                    isValid = true;
+                }
+            } else if (stepNum === 5) {
+                // Going to step 5, validate customer details
+                const name = document.getElementById('customerName').value.trim();
+                const phone = document.getElementById('customerPhone').value.trim();
+                
+                if (!name) {
+                    errorMessage = 'Please enter your name.';
+                } else if (!phone) {
+                    errorMessage = 'Please enter your phone number.';
+                } else {
+                    isValid = true;
+                }
+            }
+
+            if (isValid) {
+                goToStep(stepNum);
+            } else {
+                showError(errorMessage);
+            }
+        }
+
         function initializeServices() {
             const container = document.getElementById('serviceSelect');
             container.innerHTML = services.map((service, index) => `
@@ -1309,8 +1461,14 @@
                 date.setDate(today.getDate() + i);
                 const dateStr = date.toISOString().split('T')[0];
                 const dayNum = date.getDate();
+                const dayOfWeek = date.getDay();
                 
-                html += `<div class="calendar-day available" onclick="selectDate('${dateStr}')" data-date="${dateStr}">${dayNum}</div>`;
+                // Check if it's Sunday (day 0)
+                if (dayOfWeek === 0) {
+                    html += `<div class="calendar-day disabled" data-date="${dateStr}">${dayNum}</div>`;
+                } else {
+                    html += `<div class="calendar-day available" onclick="selectDate('${dateStr}')" data-date="${dateStr}">${dayNum}</div>`;
+                }
             }
             
             calendar.innerHTML = html;
@@ -1330,9 +1488,9 @@
             const selectedDate = new Date(bookingData.selectedDate + 'T00:00:00');
             const dayOfWeek = selectedDate.getDay(); // 0=Sunday, 6=Saturday
             
-            // Weekend is Saturday (6) or Sunday (0)
-            const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
-            const slots = isWeekend ? timeSlots.weekend : timeSlots.weekday;
+            // Saturday only has weekend hours (Sunday is closed)
+            const isSaturday = dayOfWeek === 6;
+            const slots = isSaturday ? timeSlots.weekend : timeSlots.weekday;
             
             // Check if selected date is today
             const today = new Date();
@@ -1418,12 +1576,26 @@
         }
 
         function confirmBooking() {
+            // Final validation check
+            if (!bookingData.selectedService || !bookingData.selectedDate || !bookingData.selectedTime) {
+                showError('Please complete all booking steps: service, date, and time must be selected.');
+                return;
+            }
+
+            const name = document.getElementById('customerName').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+
+            if (!name || !phone) {
+                showError('Please fill in your name and phone number.');
+                return;
+            }
+
             const date = new Date(bookingData.selectedDate + 'T00:00:00');
             const formattedDate = date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
             
             const message = `*BOOKING REQUEST - PENDING CONFIRMATION*%0A%0A` +
-                `*Name:* ${bookingData.customerName}%0A` +
-                `*Phone:* ${bookingData.customerPhone}%0A%0A` +
+                `*Name:* ${name}%0A` +
+                `*Phone:* ${phone}%0A%0A` +
                 `*Service:* ${bookingData.selectedService.name}%0A` +
                 `*Price:* GHS ${bookingData.selectedService.price}%0A%0A` +
                 `*Date:* ${formattedDate}%0A` +
@@ -1445,6 +1617,17 @@
         function closeSuccessModal() {
             document.getElementById('successModal').classList.remove('active');
             document.body.style.overflow = ''; // Restore scroll
+        }
+
+        function showError(message) {
+            document.getElementById('errorMessage').textContent = message;
+            document.getElementById('errorModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeErrorModal() {
+            document.getElementById('errorModal').classList.remove('active');
+            document.body.style.overflow = 'hidden'; // Keep locked since booking modal is still open
         }
 
         // Close modal when clicking outside
