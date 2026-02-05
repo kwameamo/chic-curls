@@ -362,6 +362,8 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            min-width: 0;
+            padding: 0.5rem;
         }
 
         .calendar-day.header {
@@ -710,7 +712,7 @@
             }
 
             .booking-content {
-                padding: 2rem 1.5rem;
+                padding: 1.5rem 1rem;
                 max-height: 85vh;
                 border-radius: 25px;
             }
@@ -727,7 +729,7 @@
 
             .step-title {
                 font-size: 1.1rem;
-                margin-bottom: 1.2rem;
+                margin-bottom: 1rem;
             }
 
             .service-option {
@@ -746,16 +748,20 @@
             }
 
             .calendar-grid {
-                gap: 0.4rem;
+                gap: 0.3rem;
+                margin-bottom: 1rem;
             }
 
             .calendar-day {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
                 border-radius: 8px;
+                padding: 0.3rem;
+                min-height: 35px;
             }
 
             .calendar-day.header {
-                font-size: 0.7rem;
+                font-size: 0.65rem;
+                font-weight: 700;
             }
 
             .time-slots {
