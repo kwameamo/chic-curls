@@ -1,4 +1,4 @@
-const CACHE = 'gyamera-v1';
+const CACHE = 'gyamera-v2';
 const PRECACHE = [
   './index.html',
   './gyameraaesthetics-logo.jpg',
@@ -29,13 +29,17 @@ self.addEventListener('fetch', event => {
 
   const url = new URL(request.url);
 
-  // Always go to network for the booking API and Google Fonts loading
+  // Never intercept Apps Script API calls — let the browser handle them
+  // natively so CORS + redirect handling works correctly for reading responses.
   if (
     url.hostname.includes('script.google.com') ||
-    url.hostname.includes('script.googleusercontent.com') ||
-    url.hostname.includes('fonts.googleapis.com')
+    url.hostname.includes('script.googleusercontent.com')
   ) {
-    event.respondWith(fetch(request).catch(() => new Response('', { status: 503 })));
+    return;
+  }
+
+  // Don't intercept Google Fonts stylesheet (network only, no cache needed)
+  if (url.hostname.includes('fonts.googleapis.com')) {
     return;
   }
 
