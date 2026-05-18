@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/png" href="gyameraaesthetics-favicon.png">
+    <link rel="apple-touch-icon" href="gyameraaesthetics-favicon.png">
+    <meta name="theme-color" content="#b6a593">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Gyamera">
     <meta name="description" content="Gyamera Aesthetics — Luxury lash extensions in Sakumono / Spintex, Accra. Classic, hybrid, volume & signature sets from GHS 150.">
     <meta property="og:title" content="Gyamera Aesthetics">
     <meta property="og:description" content="Luxury lash extensions in Sakumono / Spintex, Accra. Book your appointment today.">
@@ -2203,6 +2210,10 @@
 
         updateOpenStatus();
         setInterval(updateOpenStatus, 60000);
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js').catch(() => {});
+        }
     </script>
 </body>
 </html>
