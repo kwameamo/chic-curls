@@ -4,7 +4,8 @@
       "WebFetch(domain:docs.google.com)",
       "WebFetch(domain:doc-10-14-sheets.googleusercontent.com)",
       "WebFetch(domain:script.google.com)",
-      "WebFetch(domain:script.googleusercontent.com)"
+      "WebFetch(domain:script.googleusercontent.com)",
+      "WebFetch(domain:kwame.vision)"
     ]
   }
 }
