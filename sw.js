@@ -1,11 +1,10 @@
-const CACHE = 'gyamera-v2';
+const CACHE = 'gyamera-v3';
 const PRECACHE = [
-  './index.html',
+  './',
   './gyameraaesthetics-logo.jpg',
   './gyameraaesthetics-favicon.png'
 ];
 
-// Install — pre-cache core assets
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE).then(cache => cache.addAll(PRECACHE))
@@ -13,14 +12,12 @@ self.addEventListener('install', event => {
   self.skipWaiting();
 });
 
-// Activate — delete old caches
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-    )
+    ).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
 self.addEventListener('fetch', event => {
@@ -29,21 +26,17 @@ self.addEventListener('fetch', event => {
 
   const url = new URL(request.url);
 
-  // Never intercept Apps Script API calls — let the browser handle them
-  // natively so CORS + redirect handling works correctly for reading responses.
+  // Pass through: API calls, Google Fonts stylesheet
   if (
     url.hostname.includes('script.google.com') ||
-    url.hostname.includes('script.googleusercontent.com')
-  ) {
-    return;
-  }
+    url.hostname.includes('script.googleusercontent.com') ||
+    url.hostname.includes('fonts.googleapis.com')
+  ) return;
 
-  // Don't intercept Google Fonts stylesheet (network only, no cache needed)
-  if (url.hostname.includes('fonts.googleapis.com')) {
-    return;
-  }
+  // Never cache video files — too large, would exhaust cache quota
+  if (url.pathname.match(/\.(mp4|webm|mov)$/i)) return;
 
-  // Cache-first for Google Fonts files (the actual font binaries)
+  // Cache-first for Google Fonts binaries
   if (url.hostname.includes('fonts.gstatic.com')) {
     event.respondWith(
       caches.match(request).then(cached => cached || fetch(request).then(response => {
@@ -55,7 +48,23 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Cache-first for everything else (local assets, index.html)
+  // Stale-while-revalidate for the HTML document so updates propagate on next visit
+  if (request.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname === '/') {
+    event.respondWith(
+      caches.open(CACHE).then(cache =>
+        cache.match(request).then(cached => {
+          const networkFetch = fetch(request).then(response => {
+            if (response.ok) cache.put(request, response.clone());
+            return response;
+          }).catch(() => cached);
+          return cached || networkFetch;
+        })
+      )
+    );
+    return;
+  }
+
+  // Cache-first for all other local assets (images, icons, etc.)
   event.respondWith(
     caches.match(request).then(cached => {
       if (cached) return cached;
