@@ -1145,6 +1145,66 @@
             padding-bottom: 1rem;
         }
 
+        /* Client Policy */
+        .policy-section { margin-bottom: 2rem; }
+
+        .policy-section h2 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.6rem;
+            color: var(--pink-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .policy-intro {
+            text-align: center;
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin-bottom: 1.3rem;
+            font-style: italic;
+        }
+
+        .policy-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .policy-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            padding: 1rem 1.1rem;
+            background: white;
+            border-radius: 14px;
+            border: 1.5px solid rgba(182, 165, 147, 0.25);
+            box-shadow: 0 3px 12px rgba(182, 165, 147, 0.1);
+        }
+
+        .policy-icon {
+            font-size: 1.15rem;
+            flex-shrink: 0;
+            margin-top: 0.05rem;
+        }
+
+        .policy-text {
+            font-size: 0.88rem;
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        .policy-item.policy-highlight {
+            background: linear-gradient(135deg, rgba(249, 232, 191, 0.35), rgba(182, 165, 147, 0.18));
+            border-color: var(--pink-main);
+        }
+
+        .policy-item.policy-highlight .policy-text {
+            font-weight: 500;
+        }
+
         /* Aftercare */
         .aftercare-section { margin-bottom: 2rem; }
 
@@ -1319,7 +1379,8 @@
             .gallery-section h2,
             .reviews-section h2,
             .faq-section h2,
-            .aftercare-section h2 {
+            .aftercare-section h2,
+            .policy-section h2 {
                 font-size: 1.5rem;
             }
         }
@@ -1610,6 +1671,44 @@
                         <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
                     </button>
                     <div class="faq-answer">Classic is one extension per natural lash — natural and defined. Hybrid blends classic and volume for a textured, lush look. Volume uses a fan of ultra-fine lashes per natural lash for maximum fullness and drama.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Client Policy -->
+        <div class="policy-section">
+            <h2>Client Policy</h2>
+            <p class="policy-intro">Please read before booking your appointment.</p>
+            <div class="policy-list">
+                <div class="policy-item policy-highlight">
+                    <span class="policy-icon">💳</span>
+                    <span class="policy-text">A <strong>non-refundable deposit of GH¢50</strong> is required to secure your appointment.</span>
+                </div>
+                <div class="policy-item">
+                    <span class="policy-icon">⏰</span>
+                    <span class="policy-text">Please arrive on time for your appointment. We appreciate your punctuality as it helps us serve every client well.</span>
+                </div>
+                <div class="policy-item">
+                    <span class="policy-icon">✨</span>
+                    <span class="policy-text">We do not work over another technician's work. Please come with <strong>clean, product-free lashes</strong>.</span>
+                </div>
+                <div class="policy-item">
+                    <span class="policy-icon">🏡</span>
+                    <span class="policy-text">Gyamera Aesthetics is a <strong>home-based studio</strong> — please be respectful of the space.</span>
+                </div>
+                <div class="policy-item">
+                    <span class="policy-icon">🚫</span>
+                    <span class="policy-text">No extra guests are allowed unless approved in advance.</span>
+                </div>
+                <div class="policy-item">
+                    <span class="policy-icon">📅</span>
+                    <span class="policy-text">If you need to cancel or reschedule, please notify us as early as possible so we can accommodate other clients.</span>
+                </div>
+                <div class="policy-item policy-highlight">
+                    <span class="policy-icon">🤍</span>
+                    <span class="policy-text">You are always welcome to request a <strong>silent appointment</strong> if you're feeling anxious, tired, or mentally drained and prefer to skip conversation. No judgement — ever. Feel free to request a music genre, playlist, podcast, or video to play in the background. Your comfort and peace matter here.</span>
                 </div>
             </div>
         </div>
