@@ -930,6 +930,40 @@
             display: none;
         }
 
+        .policy-nudge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(249, 232, 191, 0.4);
+            border: 1.5px dashed var(--pink-main);
+            border-radius: 14px;
+            color: var(--burgundy);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: -0.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            animation: fadeIn 1s ease-out 0.9s both;
+        }
+
+        .policy-nudge:hover {
+            background: rgba(249, 232, 191, 0.7);
+            border-style: solid;
+            transform: translateY(-2px);
+        }
+
+        .policy-nudge svg {
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+        }
+
         .footer {
             text-align: center;
             margin-top: 2.5rem;
@@ -1436,6 +1470,13 @@
             Tap to Book Appointment
         </button>
 
+        <button type="button" class="policy-nudge" onclick="document.getElementById('clientPolicy').scrollIntoView({behavior:'smooth', block:'start'})">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            Please read our Client Policy before booking
+        </button>
+
         <div class="location">
             <div class="location-icon">📍</div>
             <div class="location-text">
@@ -1678,7 +1719,7 @@
         <div class="divider"></div>
 
         <!-- Client Policy -->
-        <div class="policy-section">
+        <div class="policy-section" id="clientPolicy">
             <h2>Client Policy</h2>
             <p class="policy-intro">Please read before booking your appointment.</p>
             <div class="policy-list">
