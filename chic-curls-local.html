@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chic Curls</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/png" href="gyameraaesthetics-favicon.png">
+    <link rel="apple-touch-icon" href="gyameraaesthetics-favicon.png">
+    <meta name="theme-color" content="#b6a593">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Gyamera">
+    <meta name="description" content="Gyamera Aesthetics — Luxury lash extensions in Sakumono / Spintex, Accra. Classic, hybrid, volume & signature sets from ₵150.">
+    <meta property="og:title" content="Gyamera Aesthetics">
+    <meta property="og:description" content="Luxury lash extensions in Sakumono / Spintex, Accra. Book your appointment today.">
+    <meta property="og:image" content="gyameraaesthetics-logo.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Gyamera Aesthetics">
+    <meta name="twitter:description" content="Luxury lash extensions in Sakumono / Spintex, Accra.">
+    <title>Gyamera Aesthetics</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --pink-light: #FFB6C8;
-            --pink-main: #FF6B9D;
-            --pink-dark: #E94B7A;
-            --burgundy: #8B1538;
-            --cream: #FFF5F7;
+            --pink-light: #f9e8bf;
+            --pink-main: #b6a593;
+            --pink-dark: #9a8070;
+            --burgundy: #7a6858;
+            --cream: #ded6c3;
             --charcoal: #2C2C2C;
             --text-muted: #6B6B6B;
         }
@@ -26,7 +41,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #FFE5EC 0%, #FFB6C8 50%, #FF6B9D 100%);
+            background: #b6a593;
             color: var(--charcoal);
             min-height: 100vh;
             display: flex;
@@ -37,34 +52,18 @@
             overflow-x: hidden;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(255, 107, 157, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(255, 182, 200, 0.3) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
         .container {
             max-width: 600px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
+            background: #ffffff;
             border-radius: 35px;
             padding: 3rem 2.5rem;
-            box-shadow: 
-                0 25px 70px rgba(255, 107, 157, 0.25),
-                0 0 2px rgba(139, 21, 56, 0.1);
+            box-shadow:
+                0 25px 70px rgba(80, 60, 45, 0.35),
+                0 0 2px rgba(80, 60, 45, 0.15);
             position: relative;
             z-index: 1;
             animation: fadeInUp 0.8s ease-out;
-            border: 3px solid rgba(255, 107, 157, 0.2);
         }
 
         @keyframes fadeInUp {
@@ -98,7 +97,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
+            box-shadow: 0 15px 40px rgba(182, 165, 147, 0.4);
             position: relative;
             border: 4px solid var(--pink-main);
             overflow: hidden;
@@ -117,7 +116,7 @@
 
         h1 {
             font-family: 'Quicksand', sans-serif;
-            font-size: 3rem;
+            font-size: 2.2rem;
             font-weight: 700;
             letter-spacing: 1px;
             margin-bottom: 0.5rem;
@@ -159,14 +158,14 @@
             border-radius: 20px;
             text-decoration: none;
             color: var(--charcoal);
-            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.15);
+            box-shadow: 0 6px 20px rgba(182, 165, 147, 0.15);
             transition: all 0.3s ease;
             border: 2px solid transparent;
         }
 
         .social-link:hover {
             transform: translateX(10px);
-            box-shadow: 0 8px 30px rgba(255, 107, 157, 0.3);
+            box-shadow: 0 8px 30px rgba(182, 165, 147, 0.3);
             background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
             color: white;
             border-color: white;
@@ -199,7 +198,7 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
             font-size: 1rem;
-            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+            box-shadow: 0 10px 30px rgba(182, 165, 147, 0.4);
             transition: all 0.3s ease;
             margin-bottom: 2rem;
             animation: fadeIn 1s ease-out 0.8s both;
@@ -209,7 +208,7 @@
 
         .contact-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.5);
+            box-shadow: 0 15px 40px rgba(182, 165, 147, 0.5);
         }
 
         /* Booking Modal Styles */
@@ -225,6 +224,7 @@
             align-items: center;
             justify-content: center;
             padding: 1rem;
+            -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
         }
 
@@ -285,7 +285,7 @@
         }
 
         .close-btn:hover {
-            background: rgba(255, 107, 157, 0.1);
+            background: rgba(182, 165, 147, 0.1);
             color: var(--pink-dark);
         }
 
@@ -315,7 +315,7 @@
         .service-option {
             padding: 1rem 1.2rem;
             background: white;
-            border: 2px solid rgba(255, 107, 157, 0.3);
+            border: 2px solid rgba(182, 165, 147, 0.3);
             border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -326,7 +326,7 @@
 
         .service-option:hover {
             border-color: var(--pink-main);
-            background: rgba(255, 182, 200, 0.1);
+            background: rgba(249, 232, 191, 0.1);
         }
 
         .service-option.selected {
@@ -381,11 +381,11 @@
 
         .calendar-day.available {
             background: white;
-            border-color: rgba(255, 107, 157, 0.3);
+            border-color: rgba(182, 165, 147, 0.3);
         }
 
         .calendar-day.available:hover {
-            background: rgba(255, 182, 200, 0.2);
+            background: rgba(249, 232, 191, 0.2);
             border-color: var(--pink-main);
         }
 
@@ -405,7 +405,7 @@
         .time-slot {
             padding: 0.8rem;
             background: white;
-            border: 2px solid rgba(255, 107, 157, 0.3);
+            border: 2px solid rgba(182, 165, 147, 0.3);
             border-radius: 12px;
             text-align: center;
             cursor: pointer;
@@ -415,7 +415,7 @@
 
         .time-slot:hover {
             border-color: var(--pink-main);
-            background: rgba(255, 182, 200, 0.1);
+            background: rgba(249, 232, 191, 0.1);
         }
 
         .time-slot.selected {
@@ -430,6 +430,28 @@
             cursor: not-allowed;
             border-color: #ddd;
         }
+
+        .slots-loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            grid-column: 1 / -1;
+        }
+
+        .slots-spinner {
+            width: 28px;
+            height: 28px;
+            border: 3px solid rgba(182, 165, 147, 0.3);
+            border-top-color: var(--pink-main);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         .booking-form {
             display: grid;
@@ -452,7 +474,7 @@
         .form-group input,
         .form-group textarea {
             padding: 0.9rem;
-            border: 2px solid rgba(255, 107, 157, 0.3);
+            border: 2px solid rgba(182, 165, 147, 0.3);
             border-radius: 12px;
             font-family: 'Poppins', sans-serif;
             font-size: 0.95rem;
@@ -463,11 +485,29 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--pink-main);
-            background: rgba(255, 182, 200, 0.05);
+            background: rgba(249, 232, 191, 0.05);
+        }
+
+        .form-group.has-error input,
+        .form-group.has-error textarea {
+            border-color: #c0392b;
+            background: rgba(192, 57, 43, 0.04);
+        }
+
+        .form-group.has-error input:focus,
+        .form-group.has-error textarea:focus {
+            border-color: #c0392b;
+        }
+
+        .field-error-msg {
+            color: #c0392b;
+            font-size: 0.78rem;
+            font-weight: 500;
+            margin-top: 0.3rem;
         }
 
         .booking-summary {
-            background: linear-gradient(135deg, rgba(255, 182, 200, 0.3), rgba(255, 107, 157, 0.2));
+            background: linear-gradient(135deg, rgba(249, 232, 191, 0.3), rgba(182, 165, 147, 0.2));
             padding: 1.2rem;
             border-radius: 15px;
             margin-bottom: 1.5rem;
@@ -486,7 +526,7 @@
             font-size: 1.1rem;
             color: var(--burgundy);
             padding-top: 0.5rem;
-            border-top: 2px solid rgba(255, 107, 157, 0.3);
+            border-top: 2px solid rgba(182, 165, 147, 0.3);
         }
 
         .booking-buttons {
@@ -514,7 +554,7 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 182, 200, 0.2);
+            background: rgba(249, 232, 191, 0.2);
         }
 
         .btn-primary {
@@ -525,7 +565,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+            box-shadow: 0 8px 20px rgba(182, 165, 147, 0.4);
         }
 
         .btn-primary:disabled {
@@ -546,6 +586,7 @@
             align-items: center;
             justify-content: center;
             padding: 1rem;
+            -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
         }
 
@@ -561,7 +602,7 @@
             width: 100%;
             text-align: center;
             animation: successSlideUp 0.5s ease-out;
-            box-shadow: 0 20px 60px rgba(255, 107, 157, 0.3);
+            box-shadow: 0 20px 60px rgba(182, 165, 147, 0.3);
         }
 
         @keyframes successSlideUp {
@@ -617,7 +658,7 @@
         .success-note {
             font-size: 0.85rem;
             color: var(--text-muted);
-            background: rgba(255, 182, 200, 0.2);
+            background: rgba(249, 232, 191, 0.2);
             padding: 1rem;
             border-radius: 12px;
             margin: 1.5rem 0;
@@ -645,7 +686,7 @@
 
         .success-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+            box-shadow: 0 8px 20px rgba(182, 165, 147, 0.4);
         }
 
         /* Error/Warning Modal */
@@ -661,6 +702,7 @@
             align-items: center;
             justify-content: center;
             padding: 1rem;
+            -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
         }
 
@@ -676,7 +718,7 @@
             width: 100%;
             text-align: center;
             animation: errorShake 0.5s ease-out;
-            box-shadow: 0 20px 60px rgba(255, 107, 157, 0.3);
+            box-shadow: 0 20px 60px rgba(182, 165, 147, 0.3);
         }
 
         @keyframes errorShake {
@@ -688,7 +730,7 @@
         .error-icon {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, #FF6B9D, #E94B7A);
+            background: linear-gradient(135deg, #b6a593, #9a8070);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -734,17 +776,17 @@
 
         .error-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+            box-shadow: 0 8px 20px rgba(182, 165, 147, 0.4);
         }
 
         .location {
             text-align: center;
             margin-bottom: 2rem;
             padding: 1.3rem;
-            background: linear-gradient(135deg, rgba(255, 182, 200, 0.3), rgba(255, 107, 157, 0.2));
+            background: linear-gradient(135deg, rgba(249, 232, 191, 0.3), rgba(182, 165, 147, 0.2));
             border-radius: 20px;
             animation: fadeIn 1s ease-out 0.9s both;
-            border: 2px solid rgba(255, 107, 157, 0.3);
+            border: 2px solid rgba(182, 165, 147, 0.3);
         }
 
         .location-icon {
@@ -779,15 +821,15 @@
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.15);
-            border: 2px solid rgba(255, 107, 157, 0.2);
+            box-shadow: 0 6px 20px rgba(182, 165, 147, 0.15);
+            border: 2px solid rgba(182, 165, 147, 0.2);
         }
 
         .hours-item {
             display: flex;
             justify-content: space-between;
             padding: 1rem 1.5rem;
-            border-bottom: 2px solid rgba(255, 107, 157, 0.1);
+            border-bottom: 2px solid rgba(182, 165, 147, 0.1);
         }
 
         .hours-item:last-child {
@@ -795,7 +837,7 @@
         }
 
         .hours-item:hover {
-            background: linear-gradient(90deg, rgba(255, 182, 200, 0.2), rgba(255, 107, 157, 0.1));
+            background: linear-gradient(90deg, rgba(249, 232, 191, 0.2), rgba(182, 165, 147, 0.1));
         }
 
         .day {
@@ -837,7 +879,7 @@
             color: var(--burgundy);
             margin-bottom: 1rem;
             padding: 0.8rem 1.2rem;
-            background: linear-gradient(135deg, rgba(255, 182, 200, 0.4), rgba(255, 107, 157, 0.3));
+            background: linear-gradient(135deg, rgba(249, 232, 191, 0.4), rgba(182, 165, 147, 0.3));
             border-radius: 15px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -849,7 +891,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 1.2rem;
-            border-bottom: 1px solid rgba(255, 107, 157, 0.15);
+            border-bottom: 1px solid rgba(182, 165, 147, 0.15);
             transition: all 0.3s ease;
         }
 
@@ -858,7 +900,7 @@
         }
 
         .price-item:hover {
-            background: rgba(255, 182, 200, 0.2);
+            background: rgba(249, 232, 191, 0.2);
             padding-left: 1.5rem;
             border-radius: 12px;
         }
@@ -882,6 +924,10 @@
             color: var(--pink-main);
         }
 
+        .social-link-hidden {
+            display: none;
+        }
+
         .footer {
             text-align: center;
             margin-top: 2.5rem;
@@ -890,13 +936,240 @@
             animation: fadeIn 1s ease-out 1.3s both;
         }
 
+        .footer-sub { margin-top: 0.5rem; font-size: 0.8rem; }
+        .footer-brand { color: var(--pink-dark); font-weight: 600; }
+        .btn-full { width: 100%; }
+
+        /* Open / Closed badge */
+        .open-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-top: 0.6rem;
+        }
+
+        .open-status-badge::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .open-status-badge.open {
+            background: rgba(39, 174, 96, 0.12);
+            color: #27ae60;
+            border: 1.5px solid rgba(39, 174, 96, 0.3);
+        }
+
+        .open-status-badge.open::before {
+            background: #27ae60;
+            animation: statusPulse 2s infinite;
+        }
+
+        .open-status-badge.closed {
+            background: rgba(192, 57, 43, 0.08);
+            color: #c0392b;
+            border: 1.5px solid rgba(192, 57, 43, 0.2);
+        }
+
+        .open-status-badge.closed::before {
+            background: #c0392b;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Shared section heading for new sections */
+        .gallery-section h2,
+        .reviews-section h2,
+        .faq-section h2,
+        .aftercare-section h2 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--pink-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Gallery */
+        .gallery-section { margin-bottom: 2rem; }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 4/5;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            background: rgba(222, 214, 195, 0.35);
+            border: 2px dashed rgba(182, 165, 147, 0.55);
+            border-radius: 12px;
+            color: var(--pink-main);
+        }
+
+        .gallery-placeholder svg {
+            width: 22px;
+            height: 22px;
+            opacity: 0.55;
+        }
+
+        .gallery-placeholder span {
+            font-size: 0.62rem;
+            font-weight: 600;
+            opacity: 0.55;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Reviews */
+        .reviews-section { margin-bottom: 2rem; }
+        .reviews-grid { display: flex; flex-direction: column; gap: 1rem; }
+
+        .review-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            border: 2px solid rgba(182, 165, 147, 0.2);
+            box-shadow: 0 4px 15px rgba(182, 165, 147, 0.12);
+        }
+
+        .review-stars {
+            color: #f0a500;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-text {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            line-height: 1.65;
+            font-style: italic;
+            margin-bottom: 0.6rem;
+        }
+
+        .reviewer-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--burgundy);
+        }
+
+        /* FAQ */
+        .faq-section { margin-bottom: 2rem; }
+        .faq-list { display: flex; flex-direction: column; }
+        .faq-item { border-bottom: 1px solid rgba(182, 165, 147, 0.25); }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 1rem 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--burgundy);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding-bottom 0.35s ease;
+            font-size: 0.88rem;
+            color: var(--charcoal);
+            line-height: 1.7;
+            padding-bottom: 0;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding-bottom: 1rem;
+        }
+
+        /* Aftercare */
+        .aftercare-section { margin-bottom: 2rem; }
+
+        .aftercare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+        }
+
+        .aftercare-tip {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            padding: 0.9rem;
+            background: rgba(222, 214, 195, 0.25);
+            border-radius: 12px;
+            border: 1px solid rgba(182, 165, 147, 0.2);
+        }
+
+        .tip-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+        .tip-text { font-size: 0.82rem; color: var(--charcoal); line-height: 1.5; }
+
+        .tip-text strong {
+            display: block;
+            color: var(--burgundy);
+            font-size: 0.84rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .time-closed { color: var(--text-muted); font-weight: 600; }
+
         @media (max-width: 480px) {
             .container {
                 padding: 2.5rem 1.5rem;
             }
 
             h1 {
-                font-size: 2.3rem;
+                font-size: 1.8rem;
             }
 
             .tagline {
@@ -1020,6 +1293,21 @@
                 padding: 0.9rem;
                 font-size: 0.85rem;
             }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .aftercare-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-section h2,
+            .reviews-section h2,
+            .faq-section h2,
+            .aftercare-section h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -1027,26 +1315,33 @@
     <div class="container">
         <div class="header">
             <div class="logo-circle">
-                <img src="logo.jpg" alt="Chic Curls Logo">
+                <img src="gyameraaesthetics-logo.jpg" alt="Gyamera Aesthetics Logo">
             </div>
-            <h1>Chic Curls</h1>
+            <h1>Gyamera Aesthetics</h1>
             <p class="tagline">Luxury Lash Extensions</p>
+            <p id="openStatusBadge" class="open-status-badge closed">Closed</p>
         </div>
 
         <div class="social-links">
-            <a href="https://www.snapchat.com/add/chicc_curls" class="social-link" target="_blank" rel="noopener">
+            <a href="https://www.snapchat.com/add/chicc_curls" class="social-link social-link-hidden" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-snapchat" viewBox="0 0 16 16">
                     <path d="M15.943 11.526c-.111-.303-.323-.465-.564-.599a1 1 0 0 0-.123-.064l-.219-.111c-.752-.399-1.339-.902-1.746-1.498a3.4 3.4 0 0 1-.3-.531c-.034-.1-.032-.156-.008-.207a.3.3 0 0 1 .097-.1c.129-.086.262-.173.352-.231.162-.104.289-.187.371-.245.309-.216.525-.446.66-.702a1.4 1.4 0 0 0 .069-1.16c-.205-.538-.713-.872-1.329-.872a1.8 1.8 0 0 0-.487.065c.006-.368-.002-.757-.035-1.139-.116-1.344-.587-2.048-1.077-2.61a4.3 4.3 0 0 0-1.095-.881C9.764.216 8.92 0 7.999 0s-1.76.216-2.505.641c-.412.232-.782.53-1.097.883-.49.562-.96 1.267-1.077 2.61-.033.382-.04.772-.036 1.138a1.8 1.8 0 0 0-.487-.065c-.615 0-1.124.335-1.328.873a1.4 1.4 0 0 0 .067 1.161c.136.256.352.486.66.701.082.058.21.14.371.246l.339.221a.4.4 0 0 1 .109.11c.026.053.027.11-.012.217a3.4 3.4 0 0 1-.295.52c-.398.583-.968 1.077-1.696 1.472-.385.204-.786.34-.955.8-.128.348-.044.743.28 1.075q.18.189.409.31a4.4 4.4 0 0 0 1 .4.7.7 0 0 1 .202.09c.118.104.102.26.259.488q.12.178.296.3c.33.229.701.243 1.095.258.355.014.758.03 1.217.18.19.064.389.186.618.328.55.338 1.305.802 2.566.802 1.262 0 2.02-.466 2.576-.806.227-.14.424-.26.609-.321.46-.152.863-.168 1.218-.181.393-.015.764-.03 1.095-.258a1.14 1.14 0 0 0 .336-.368c.114-.192.11-.327.217-.42a.6.6 0 0 1 .19-.087 4.5 4.5 0 0 0 1.014-.404c.16-.087.306-.2.429-.336l.004-.005c.304-.325.38-.709.256-1.047m-1.121.602c-.684.378-1.139.337-1.493.565-.3.193-.122.61-.34.76-.269.186-1.061-.012-2.085.326-.845.279-1.384 1.082-2.903 1.082s-2.045-.801-2.904-1.084c-1.022-.338-1.816-.14-2.084-.325-.218-.15-.041-.568-.341-.761-.354-.228-.809-.187-1.492-.563-.436-.24-.189-.39-.044-.46 2.478-1.199 2.873-3.05 2.89-3.188.022-.166.045-.297-.138-.466-.177-.164-.962-.65-1.18-.802-.36-.252-.52-.503-.402-.812.082-.214.281-.295.49-.295a1 1 0 0 1 .197.022c.396.086.78.285 1.002.338q.04.01.082.011c.118 0 .16-.06.152-.195-.026-.433-.087-1.277-.019-2.066.094-1.084.444-1.622.859-2.097.2-.229 1.137-1.22 2.93-1.22 1.792 0 2.732.987 2.931 1.215.416.475.766 1.013.859 2.098.068.788.009 1.632-.019 2.065-.01.142.034.195.152.195a.4.4 0 0 0 .082-.01c.222-.054.607-.253 1.002-.338a1 1 0 0 1 .197-.023c.21 0 .409.082.49.295.117.309-.04.56-.401.812-.218.152-1.003.638-1.18.802-.184.169-.16.3-.139.466.018.14.413 1.991 2.89 3.189.147.073.394.222-.041.464"/>
                 </svg>
                 <span>Snapchat: Chicc Curls</span>
             </a>
-            <a href="https://www.instagram.com/chicc_curls" class="social-link" target="_blank" rel="noopener">
+            <a href="https://www.instagram.com/gyameraesthetics" class="social-link" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
-                <span>Instagram: Chicc_curls</span>
+                <span>Instagram: gyameraesthetics</span>
+            </a>
+            <a href="https://www.tiktok.com/@ms.gyameraaa" class="social-link" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.12a8.16 8.16 0 0 0 4.77 1.52V7.18a4.85 4.85 0 0 1-1-.49z"/>
+                </svg>
+                <span>TikTok: ms.gyameraaa</span>
             </a>
             <a href="https://wa.me/." class="social-link" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -1056,7 +1351,7 @@
             </a>
         </div>
 
-        <button class="contact-button" onclick="openBooking()">
+        <button type="button" class="contact-button" onclick="openBooking()">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                 <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -1069,8 +1364,7 @@
         <div class="location">
             <div class="location-icon">📍</div>
             <div class="location-text">
-                Sakumono Estate,<br>
-                Behind Fridays Restaurant
+                Sakumono / Spintex
             </div>
         </div>
 
@@ -1081,23 +1375,23 @@
             <div class="hours-grid">
                 <div class="hours-item">
                     <span class="day">Monday</span>
-                    <span class="time">3:30 PM - 8:00 PM</span>
+                    <span class="time">8:00 AM - 8:00 PM</span>
                 </div>
                 <div class="hours-item">
                     <span class="day">Tuesday</span>
-                    <span class="time">3:30 PM - 8:00 PM</span>
+                    <span class="time">8:00 AM - 8:00 PM</span>
                 </div>
                 <div class="hours-item">
                     <span class="day">Wednesday</span>
-                    <span class="time">3:30 PM - 8:00 PM</span>
+                    <span class="time">8:00 AM - 8:00 PM</span>
                 </div>
                 <div class="hours-item">
                     <span class="day">Thursday</span>
-                    <span class="time">3:30 PM - 8:00 PM</span>
+                    <span class="time">8:00 AM - 8:00 PM</span>
                 </div>
                 <div class="hours-item">
                     <span class="day">Friday</span>
-                    <span class="time">3:30 PM - 8:00 PM</span>
+                    <span class="time">8:00 AM - 8:00 PM</span>
                 </div>
                 <div class="hours-item">
                     <span class="day">Saturday</span>
@@ -1105,7 +1399,7 @@
                 </div>
                 <div class="hours-item">
                     <span class="day">Sunday</span>
-                    <span class="time" style="color: var(--text-muted); font-weight: 600;">CLOSED</span>
+                    <span class="time">11:30 AM - 7:00 PM</span>
                 </div>
             </div>
         </div>
@@ -1119,7 +1413,7 @@
                 <div class="category-title">Classic Set</div>
                 <div class="price-item">
                     <span class="service-name">Cat Eye</span>
-                    <span class="service-price"><span class="currency">GHS</span> 150</span>
+                    <span class="service-price"><span class="currency">₵</span>150</span>
                 </div>
             </div>
 
@@ -1127,11 +1421,11 @@
                 <div class="category-title">Hybrid Set</div>
                 <div class="price-item">
                     <span class="service-name">Cat Eye</span>
-                    <span class="service-price"><span class="currency">GHS</span> 180</span>
+                    <span class="service-price"><span class="currency">₵</span>180</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Wispy</span>
-                    <span class="service-price"><span class="currency">GHS</span> 200</span>
+                    <span class="service-price"><span class="currency">₵</span>200</span>
                 </div>
             </div>
 
@@ -1139,11 +1433,11 @@
                 <div class="category-title">Volume Sets</div>
                 <div class="price-item">
                     <span class="service-name">Cat Eye</span>
-                    <span class="service-price"><span class="currency">GHS</span> 220</span>
+                    <span class="service-price"><span class="currency">₵</span>220</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Wispy</span>
-                    <span class="service-price"><span class="currency">GHS</span> 250</span>
+                    <span class="service-price"><span class="currency">₵</span>250</span>
                 </div>
             </div>
 
@@ -1151,23 +1445,15 @@
                 <div class="category-title">Signature Sets</div>
                 <div class="price-item">
                     <span class="service-name">Wet Set</span>
-                    <span class="service-price"><span class="currency">GHS</span> 230</span>
+                    <span class="service-price"><span class="currency">₵</span>230</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Bratz Doll Set</span>
-                    <span class="service-price"><span class="currency">GHS</span> 270</span>
+                    <span class="service-price"><span class="currency">₵</span>270</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Manga/Anime Set</span>
-                    <span class="service-price"><span class="currency">GHS</span> 330</span>
-                </div>
-                <div class="price-item">
-                    <span class="service-name">Viper Luxe Set (Medusa)</span>
-                    <span class="service-price"><span class="currency">GHS</span> 330</span>
-                </div>
-                <div class="price-item">
-                    <span class="service-name">Chic Curl Signature</span>
-                    <span class="service-price"><span class="currency">GHS</span> 340</span>
+                    <span class="service-price"><span class="currency">₵</span>330</span>
                 </div>
             </div>
 
@@ -1175,15 +1461,23 @@
                 <div class="category-title">Extras</div>
                 <div class="price-item">
                     <span class="service-name">Colored Lash</span>
-                    <span class="service-price"><span class="currency">GHS</span> 40</span>
+                    <span class="service-price"><span class="currency">₵</span>40</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Button Lash</span>
-                    <span class="service-price"><span class="currency">GHS</span> 50</span>
+                    <span class="service-price"><span class="currency">₵</span>70</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Removal</span>
-                    <span class="service-price"><span class="currency">GHS</span> 50</span>
+                    <span class="service-price"><span class="currency">₵</span>50</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Lamination</span>
+                    <span class="service-price"><span class="currency">₵</span>100</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Tinting</span>
+                    <span class="service-price"><span class="currency">₵</span>70</span>
                 </div>
             </div>
 
@@ -1191,22 +1485,171 @@
                 <div class="category-title">Refills (within 2 weeks)</div>
                 <div class="price-item">
                     <span class="service-name">Classic / Hybrid</span>
-                    <span class="service-price"><span class="currency">GHS</span> 70</span>
+                    <span class="service-price"><span class="currency">₵</span>70</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Volume / Wet / Bratz Sets</span>
-                    <span class="service-price"><span class="currency">GHS</span> 120</span>
+                    <span class="service-price"><span class="currency">₵</span>120</span>
                 </div>
-                <div class="price-item">
-                    <span class="service-name">Medusa / Anime / Chic Curl Signature</span>
-                    <span class="service-price"><span class="currency">GHS</span> 150</span>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Before & After Gallery — replace each .gallery-placeholder with <img src="your-photo.jpg" alt="description"> -->
+        <div class="gallery-section">
+            <h2>Before &amp; After</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3"/><path d="M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/></svg>
+                        <span>Photo 1</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3"/><path d="M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/></svg>
+                        <span>Photo 2</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3"/><path d="M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/></svg>
+                        <span>Photo 3</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3"/><path d="M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/></svg>
+                        <span>Photo 4</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3"/><path d="M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/></svg>
+                        <span>Photo 5</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3"/><path d="M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/></svg>
+                        <span>Photo 6</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Aftercare Tips -->
+        <div class="aftercare-section">
+            <h2>Aftercare Tips</h2>
+            <div class="aftercare-grid">
+                <div class="aftercare-tip">
+                    <span class="tip-icon">💧</span>
+                    <div class="tip-text"><strong>Avoid water for 24–48hrs</strong>Keep lashes dry after your appointment so the adhesive fully cures.</div>
+                </div>
+                <div class="aftercare-tip">
+                    <span class="tip-icon">🚿</span>
+                    <div class="tip-text"><strong>No steam or saunas</strong>High heat and steam loosen the bond and shorten lash retention.</div>
+                </div>
+                <div class="aftercare-tip">
+                    <span class="tip-icon">🚫</span>
+                    <div class="tip-text"><strong>Don't rub your eyes</strong>Rubbing or pulling causes damage and premature shedding.</div>
+                </div>
+                <div class="aftercare-tip">
+                    <span class="tip-icon">🪮</span>
+                    <div class="tip-text"><strong>Brush daily</strong>Use a clean spoolie each morning to keep lashes fluffy and aligned.</div>
+                </div>
+                <div class="aftercare-tip">
+                    <span class="tip-icon">🧴</span>
+                    <div class="tip-text"><strong>Avoid oil-based products</strong>Oils break down the adhesive — check cleansers and makeup removers.</div>
+                </div>
+                <div class="aftercare-tip">
+                    <span class="tip-icon">😴</span>
+                    <div class="tip-text"><strong>Sleep on your back</strong>Side sleeping flattens and bends lashes. A silk pillowcase helps too.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
+                        How long does a full set take?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">A full set takes 1.5 – 2.5 hours depending on the style. Signature sets like the Manga/Anime Set may take longer due to the precision involved. Plan ahead and arrive relaxed.</div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
+                        How long do lash extensions last?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">With proper aftercare, extensions last 3 – 5 weeks. Natural lashes shed in cycles so your extensions shed with them. We recommend a refill every 2 weeks to keep them looking full.</div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
+                        Do lash extensions hurt?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">Not at all — most clients fall asleep! Your eyes stay closed throughout. There may be a very mild sensitivity to adhesive fumes for some people, but no pain is involved.</div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
+                        How should I prepare for my appointment?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">Come with clean, makeup-free eyes — no mascara, eyeliner, or eye cream. Avoid curling your lashes beforehand. If you wear contacts, bring your glasses as you'll need to remove them.</div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
+                        Can I wear mascara with extensions?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">It's best to skip mascara — your extensions already give you that bold look. If you must, use only water-based mascara on the tips. Waterproof mascara breaks down the adhesive bond.</div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
+                        What's the difference between Classic, Hybrid and Volume?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">Classic is one extension per natural lash — natural and defined. Hybrid blends classic and volume for a textured, lush look. Volume uses a fan of ultra-fine lashes per natural lash for maximum fullness and drama.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Client Reviews — replace placeholder names and text with real client reviews -->
+        <div class="reviews-section">
+            <h2>Client Reviews</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Absolutely love my lashes! The set lasted over 3 weeks and I got so many compliments. Will definitely be back!"</p>
+                    <span class="reviewer-name">— Abena M.</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Best lash tech in Spintex! Very clean, professional and the results are stunning. 100% recommend."</p>
+                    <span class="reviewer-name">— Sandra A.</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"My Bratz Doll set came out exactly as I imagined. She really takes her time to get it perfect!"</p>
+                    <span class="reviewer-name">— Gifty O.</span>
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            <p>© 2026 Chic Curls • All Rights Reserved</p>
-            <p style="margin-top: 0.5rem; font-size: 0.8rem;">Engineered by <span style="color: var(--pink-dark); font-weight: 600;">CurioLabs</span></p>
+            <p>© 2026 Gyamera Aesthetics • All Rights Reserved</p>
+            <p class="footer-sub">Engineered by <span class="footer-brand">CurioLabs</span></p>
         </div>
     </div>
 
@@ -1215,14 +1658,14 @@
         <div class="booking-content">
             <div class="booking-header">
                 <h3>Book Appointment</h3>
-                <button class="close-btn" onclick="closeBooking()">×</button>
+                <button type="button" class="close-btn" onclick="closeBooking()">×</button>
             </div>
 
             <!-- Step 1: Select Service -->
             <div class="booking-step active" id="step1">
                 <div class="step-title">Select Your Service</div>
                 <div class="service-select" id="serviceSelect"></div>
-                <button class="btn-primary" onclick="validateAndGoToStep(2)" style="width: 100%">Next</button>
+                <button type="button" class="btn-primary btn-full" onclick="validateAndGoToStep(2)">Next</button>
             </div>
 
             <!-- Step 2: Select Date -->
@@ -1230,8 +1673,8 @@
                 <div class="step-title">Choose a Date</div>
                 <div class="calendar-grid" id="calendar"></div>
                 <div class="booking-buttons">
-                    <button class="btn-secondary" onclick="goToStep(1)">Back</button>
-                    <button class="btn-primary" onclick="validateAndGoToStep(3)">Next</button>
+                    <button type="button" class="btn-secondary" onclick="goToStep(1)">Back</button>
+                    <button type="button" class="btn-primary" onclick="validateAndGoToStep(3)">Next</button>
                 </div>
             </div>
 
@@ -1240,8 +1683,8 @@
                 <div class="step-title">Select Time Slot</div>
                 <div class="time-slots" id="timeSlots"></div>
                 <div class="booking-buttons">
-                    <button class="btn-secondary" onclick="goToStep(2)">Back</button>
-                    <button class="btn-primary" onclick="validateAndGoToStep(4)">Next</button>
+                    <button type="button" class="btn-secondary" onclick="goToStep(2)">Back</button>
+                    <button type="button" class="btn-primary" onclick="validateAndGoToStep(4)">Next</button>
                 </div>
             </div>
 
@@ -1263,8 +1706,8 @@
                     </div>
                 </div>
                 <div class="booking-buttons">
-                    <button class="btn-secondary" onclick="goToStep(3)">Back</button>
-                    <button class="btn-primary" onclick="validateAndGoToStep(5)">Review</button>
+                    <button type="button" class="btn-secondary" onclick="goToStep(3)">Back</button>
+                    <button type="button" class="btn-primary" onclick="validateAndGoToStep(5)">Review</button>
                 </div>
             </div>
 
@@ -1273,8 +1716,8 @@
                 <div class="step-title">Confirm Your Booking</div>
                 <div class="booking-summary" id="bookingSummary"></div>
                 <div class="booking-buttons">
-                    <button class="btn-secondary" onclick="goToStep(4)">Back</button>
-                    <button class="btn-primary" onclick="confirmBooking()">Confirm Booking</button>
+                    <button type="button" class="btn-secondary" onclick="goToStep(4)">Back</button>
+                    <button type="button" class="btn-primary" onclick="confirmBooking()">Confirm Booking</button>
                 </div>
             </div>
         </div>
@@ -1293,7 +1736,7 @@
             <div class="success-note">
                 <strong>Please Note:</strong> This booking is <strong>PENDING</strong> until we confirm via WhatsApp. We'll get back to you shortly to confirm your appointment.
             </div>
-            <button class="success-button" onclick="closeSuccessModal()">Got It!</button>
+            <button type="button" class="success-button" onclick="closeSuccessModal()">Got It!</button>
         </div>
     </div>
 
@@ -1309,11 +1752,17 @@
             </div>
             <h3 class="error-title">Oops!</h3>
             <p class="error-message" id="errorMessage"></p>
-            <button class="error-button" onclick="closeErrorModal()">OK</button>
+            <button type="button" class="error-button" onclick="closeErrorModal()">OK</button>
         </div>
     </div>
 
     <script>
+        // ── Google Sheets integration ──────────────────────────────────────
+        // Paste your deployed Apps Script URL here after setup
+        const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwXeemDjmzTjqUFvT2LllpyCGTZtA1HSfyAsbvtIW8M2ORUZt5WFloPDdm4jmue74oL/exec';
+        let blockedSlots = {}; // { "2026-05-20": ["3:30 PM", "5:30 PM"] }
+        let slotsLoading = false;
+
         // Booking system data
         const bookingData = {
             selectedService: null,
@@ -1334,14 +1783,19 @@
             { name: 'Wet Set', price: 230, category: 'Signature' },
             { name: 'Bratz Doll Set', price: 270, category: 'Signature' },
             { name: 'Manga/Anime Set', price: 330, category: 'Signature' },
-            { name: 'Viper Luxe (Medusa)', price: 330, category: 'Signature' },
-            { name: 'Chic Curl Signature', price: 340, category: 'Signature' }
+            { name: 'Colored Lash', price: 40, category: 'Extras' },
+            { name: 'Button Lash', price: 70, category: 'Extras' },
+            { name: 'Removal', price: 50, category: 'Extras' },
+            { name: 'Lamination', price: 100, category: 'Extras' },
+            { name: 'Tinting', price: 70, category: 'Extras' },
+            { name: 'Classic / Hybrid Refill', price: 70, category: 'Refill' },
+            { name: 'Volume / Wet / Bratz Refill', price: 120, category: 'Refill' }
         ];
 
         // Available time slots based on working hours
         const timeSlots = {
-            weekday: ['3:30 PM', '4:30 PM', '5:30 PM', '6:30 PM', '7:30 PM'],
-            weekend: ['8:00 AM', '9:30 AM', '11:00 AM', '12:30 PM', '2:00 PM', '3:30 PM', '5:00 PM', '6:30 PM']
+            weekday: ['8:00 AM', '9:30 AM', '11:00 AM', '12:30 PM', '2:00 PM', '3:30 PM', '5:00 PM', '6:30 PM'],
+            sunday: ['11:30 AM', '1:00 PM', '2:30 PM', '4:00 PM', '5:30 PM']
         };
 
         function openBooking() {
@@ -1349,6 +1803,45 @@
             document.body.style.overflow = 'hidden';
             initializeServices();
             generateCalendar();
+            document.getElementById('customerName').addEventListener('input', () => clearFieldError('customerName'), { once: false });
+            document.getElementById('customerPhone').addEventListener('input', () => clearFieldError('customerPhone'), { once: false });
+            loadBlockedSlots();
+        }
+
+        async function loadBlockedSlots() {
+            if (!SHEET_URL || SHEET_URL === 'YOUR_APPS_SCRIPT_URL_HERE') return;
+            blockedSlots = {};
+            slotsLoading = true;
+            try {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                const start = today.toISOString().split('T')[0];
+                const end   = new Date(today.getTime() + 13 * 86400000).toISOString().split('T')[0];
+                const res  = await fetch(`${SHEET_URL}?action=getBlocked&start=${start}&end=${end}`);
+                const data = await res.json();
+                blockedSlots = data.blocked || {};
+            } catch {
+                blockedSlots = {};
+            } finally {
+                slotsLoading = false;
+                const step3 = document.getElementById('step3');
+                if (step3 && step3.classList.contains('active')) generateTimeSlots();
+            }
+        }
+
+        function saveToSheet(name, phone, notes) {
+            if (!SHEET_URL || SHEET_URL === 'YOUR_APPS_SCRIPT_URL_HERE') return;
+            const params = new URLSearchParams({
+                action:  'save',
+                date:    bookingData.selectedDate,
+                time:    bookingData.selectedTime,
+                service: bookingData.selectedService.name,
+                price:   bookingData.selectedService.price,
+                name,
+                phone,
+                notes:   notes || ''
+            });
+            fetch(`${SHEET_URL}?${params}`).catch(() => {});
         }
 
         function closeBooking() {
@@ -1375,49 +1868,89 @@
             if (stepNum === 5) showSummary();
         }
 
+        function setFieldError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const group = field.closest('.form-group');
+            group.classList.add('has-error');
+            let msg = group.querySelector('.field-error-msg');
+            if (!msg) {
+                msg = document.createElement('span');
+                msg.className = 'field-error-msg';
+                field.insertAdjacentElement('afterend', msg);
+            }
+            msg.textContent = message;
+        }
+
+        function clearFieldError(fieldId) {
+            const field = document.getElementById(fieldId);
+            const group = field.closest('.form-group');
+            group.classList.remove('has-error');
+            const msg = group.querySelector('.field-error-msg');
+            if (msg) msg.remove();
+        }
+
+        function isValidGhanaPhone(phone) {
+            return /^(\+233|0)[2-9]\d{8}$/.test(phone.replace(/[\s\-]/g, ''));
+        }
+
+        function validateContactForm() {
+            const name = document.getElementById('customerName').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            let valid = true;
+
+            clearFieldError('customerName');
+            clearFieldError('customerPhone');
+
+            if (!name) {
+                setFieldError('customerName', 'Full name is required.');
+                valid = false;
+            } else if (name.length < 2) {
+                setFieldError('customerName', 'Please enter your full name.');
+                valid = false;
+            }
+
+            if (!phone) {
+                setFieldError('customerPhone', 'Phone number is required.');
+                valid = false;
+            } else if (!isValidGhanaPhone(phone)) {
+                setFieldError('customerPhone', 'Enter a valid number (e.g. 0501234567 or +233501234567).');
+                valid = false;
+            }
+
+            return valid;
+        }
+
         function validateAndGoToStep(stepNum) {
             let isValid = false;
             let errorMessage = '';
 
-            // Validate based on current step
             if (stepNum === 2) {
-                // Going to step 2, validate service selection
                 if (!bookingData.selectedService) {
                     errorMessage = 'Please select a service before continuing.';
                 } else {
                     isValid = true;
                 }
             } else if (stepNum === 3) {
-                // Going to step 3, validate date selection
                 if (!bookingData.selectedDate) {
                     errorMessage = 'Please select a date before continuing.';
                 } else {
                     isValid = true;
                 }
             } else if (stepNum === 4) {
-                // Going to step 4, validate time selection
                 if (!bookingData.selectedTime) {
                     errorMessage = 'Please select a time slot before continuing.';
                 } else {
                     isValid = true;
                 }
             } else if (stepNum === 5) {
-                // Going to step 5, validate customer details
-                const name = document.getElementById('customerName').value.trim();
-                const phone = document.getElementById('customerPhone').value.trim();
-                
-                if (!name) {
-                    errorMessage = 'Please enter your name.';
-                } else if (!phone) {
-                    errorMessage = 'Please enter your phone number.';
-                } else {
+                if (validateContactForm()) {
                     isValid = true;
                 }
             }
 
             if (isValid) {
                 goToStep(stepNum);
-            } else {
+            } else if (errorMessage) {
                 showError(errorMessage);
             }
         }
@@ -1427,7 +1960,7 @@
             container.innerHTML = services.map((service, index) => `
                 <div class="service-option" onclick="selectService(${index})">
                     <span class="service-name">${service.name}</span>
-                    <span class="service-price">GHS ${service.price}</span>
+                    <span class="service-price">₵${service.price}</span>
                 </div>
             `).join('');
         }
@@ -1461,14 +1994,7 @@
                 date.setDate(today.getDate() + i);
                 const dateStr = date.toISOString().split('T')[0];
                 const dayNum = date.getDate();
-                const dayOfWeek = date.getDay();
-                
-                // Check if it's Sunday (day 0)
-                if (dayOfWeek === 0) {
-                    html += `<div class="calendar-day disabled" data-date="${dateStr}">${dayNum}</div>`;
-                } else {
-                    html += `<div class="calendar-day available" onclick="selectDate('${dateStr}')" data-date="${dateStr}">${dayNum}</div>`;
-                }
+                html += `<div class="calendar-day available" onclick="selectDate('${dateStr}')" data-date="${dateStr}">${dayNum}</div>`;
             }
             
             calendar.innerHTML = html;
@@ -1481,16 +2007,30 @@
             });
         }
 
+        function showSlotsLoading(container) {
+            container.textContent = '';
+            const wrap = document.createElement('div');
+            wrap.className = 'slots-loading';
+            const spinner = document.createElement('div');
+            spinner.className = 'slots-spinner';
+            wrap.appendChild(spinner);
+            wrap.appendChild(document.createTextNode('Checking availability…'));
+            container.appendChild(wrap);
+        }
+
         function generateTimeSlots() {
             const container = document.getElementById('timeSlots');
             if (!bookingData.selectedDate) return;
-            
+
+            if (slotsLoading) { showSlotsLoading(container); return; }
+
+            const booked = blockedSlots[bookingData.selectedDate] || [];
             const selectedDate = new Date(bookingData.selectedDate + 'T00:00:00');
             const dayOfWeek = selectedDate.getDay(); // 0=Sunday, 6=Saturday
             
-            // Saturday only has weekend hours (Sunday is closed)
-            const isSaturday = dayOfWeek === 6;
-            const slots = isSaturday ? timeSlots.weekend : timeSlots.weekday;
+            // Sunday has shorter hours (11:30 AM - 7:00 PM)
+            const isSunday = dayOfWeek === 0;
+            const slots = isSunday ? timeSlots.sunday : timeSlots.weekday;
             
             // Check if selected date is today
             const today = new Date();
@@ -1526,6 +2066,8 @@
                 
                 if (isPast) {
                     return `<div class="time-slot booked">Past</div>`;
+                } else if (booked.includes(time)) {
+                    return `<div class="time-slot booked">Booked</div>`;
                 } else {
                     return `<div class="time-slot" onclick="selectTime('${time}')">${time}</div>`;
                 }
@@ -1570,7 +2112,7 @@
                 </div>
                 <div class="summary-item">
                     <span>Total:</span>
-                    <strong>GHS ${bookingData.selectedService?.price || 0}</strong>
+                    <strong>₵${bookingData.selectedService?.price || 0}</strong>
                 </div>
             `;
         }
@@ -1597,7 +2139,7 @@
                 `*Name:* ${name}%0A` +
                 `*Phone:* ${phone}%0A%0A` +
                 `*Service:* ${bookingData.selectedService.name}%0A` +
-                `*Price:* GHS ${bookingData.selectedService.price}%0A%0A` +
+                `*Price:* ₵${bookingData.selectedService.price}%0A%0A` +
                 `*Date:* ${formattedDate}%0A` +
                 `*Time:* ${bookingData.selectedTime}%0A%0A` +
                 `${bookingData.customerNotes ? `*Notes:* ${bookingData.customerNotes}%0A%0A` : ''}` +
@@ -1605,6 +2147,7 @@
             
             // Send booking request via WhatsApp
             window.open(`https://wa.me/233501707556?text=${message}`, '_blank');
+            saveToSheet(name, phone, document.getElementById('customerNotes').value.trim());
             
             // Close booking modal and show success modal
             setTimeout(() => {
@@ -1636,6 +2179,34 @@
                 closeBooking();
             }
         });
+
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+
+        function updateOpenStatus() {
+            const now = new Date();
+            const day = now.getUTCDay(); // Ghana is UTC+0, so UTC = local time
+            const totalMins = now.getUTCHours() * 60 + now.getUTCMinutes();
+            let open = false;
+            if (day >= 1 && day <= 6) open = totalMins >= 8 * 60 && totalMins < 20 * 60;
+            else if (day === 0)       open = totalMins >= 11 * 60 + 30 && totalMins < 19 * 60;
+            const badge = document.getElementById('openStatusBadge');
+            if (badge) {
+                badge.textContent = open ? 'Open Now' : 'Closed';
+                badge.className = 'open-status-badge ' + (open ? 'open' : 'closed');
+            }
+        }
+
+        updateOpenStatus();
+        setInterval(updateOpenStatus, 60000);
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js').catch(() => {});
+        }
     </script>
 </body>
 </html>
