@@ -144,29 +144,48 @@
         }
 
         .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 0.8rem;
             animation: fadeIn 1s ease-out 0.6s both;
         }
 
         .social-link {
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 1rem;
-            padding: 1.2rem 1.5rem;
+            text-align: center;
+            gap: 0.45rem;
+            padding: 1rem 0.5rem;
             background: white;
-            border-radius: 20px;
+            border-radius: 18px;
             text-decoration: none;
             color: var(--charcoal);
             box-shadow: 0 6px 20px rgba(182, 165, 147, 0.15);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 2px solid rgba(182, 165, 147, 0.2);
         }
 
+        .whatsapp-line {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            animation: fadeIn 1s ease-out 0.7s both;
+        }
+
+        .whatsapp-line a {
+            color: var(--burgundy);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .whatsapp-line a:hover { text-decoration: underline; }
+
         .social-link:hover {
-            transform: translateX(10px);
+            transform: translateY(-3px);
             box-shadow: 0 8px 30px rgba(182, 165, 147, 0.3);
             background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
             color: white;
@@ -181,7 +200,7 @@
 
         .social-link span {
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.85rem;
         }
 
         .contact-button {
@@ -1102,14 +1121,263 @@
 
         /* Reviews */
         .reviews-section { margin-bottom: 2rem; }
-        .reviews-grid { display: flex; flex-direction: column; gap: 1rem; }
+        .reviews-track {
+            display: flex;
+            gap: 0.9rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0.3rem 0.2rem 1rem;
+            margin: 0 -0.2rem;
+            scrollbar-width: none;
+        }
+
+        .reviews-track::-webkit-scrollbar { display: none; }
 
         .review-card {
+            flex: 0 0 86%;
+            scroll-snap-align: center;
             background: white;
+            border-radius: 20px;
+            padding: 1.3rem 1.4rem;
+            border: 1.5px solid rgba(182, 165, 147, 0.25);
+            box-shadow: 0 6px 20px rgba(182, 165, 147, 0.15);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-card .review-text { flex: 1; }
+
+        .reviews-hint {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin: -0.3rem 0 1rem;
+        }
+
+        .review-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.95rem;
+            background: white;
+            color: var(--burgundy);
+            border: 2px solid var(--pink-main);
             border-radius: 16px;
-            padding: 1.2rem 1.5rem;
-            border: 2px solid rgba(182, 165, 147, 0.2);
-            box-shadow: 0 4px 15px rgba(182, 165, 147, 0.12);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .review-cta:hover {
+            background: rgba(249, 232, 191, 0.35);
+            transform: translateY(-2px);
+        }
+
+        /* Review form */
+        .star-picker {
+            display: flex;
+            gap: 0.3rem;
+        }
+
+        .star-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            line-height: 1;
+            padding: 0.2rem;
+            color: #d9d2c6;
+            cursor: pointer;
+            transition: color 0.15s ease, transform 0.15s ease;
+        }
+
+        .star-btn.on { color: #f0a500; }
+        .star-btn:hover { transform: scale(1.12); }
+
+        .review-note {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 1.2rem;
+        }
+
+        .review-thanks { text-align: center; padding: 0.5rem 0 0; }
+        .review-thanks p { font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        .review-thanks .thanks-emoji { font-size: 2.6rem; margin-bottom: 0.6rem; }
+
+        /* Section navigation */
+        .section-nav {
+            position: sticky;
+            top: 0.6rem;
+            z-index: 50;
+            display: flex;
+            gap: 0.4rem;
+            overflow-x: auto;
+            padding: 0.45rem;
+            margin: 0 -0.4rem 2rem;
+            background: rgba(255, 255, 255, 0.92);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-radius: 999px;
+            border: 1.5px solid rgba(182, 165, 147, 0.3);
+            box-shadow: 0 8px 24px rgba(80, 60, 45, 0.12);
+            scrollbar-width: none;
+        }
+
+        .section-nav::-webkit-scrollbar { display: none; }
+
+        .section-nav a {
+            flex-shrink: 0;
+            padding: 0.5rem 0.95rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--burgundy);
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .section-nav a:hover { background: rgba(249, 232, 191, 0.5); }
+
+        .section-nav a.active {
+            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            color: white;
+        }
+
+        .section-nav a.nav-book {
+            background: var(--burgundy);
+            color: white;
+        }
+
+        [id] { scroll-margin-top: 5rem; }
+
+        /* Loyalty card */
+        .loyalty-section { margin-bottom: 2rem; }
+
+        .loyalty-section h2 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.6rem;
+            color: var(--pink-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .loyalty-card {
+            position: relative;
+            overflow: hidden;
+            padding: 1.5rem 1.4rem 1.3rem;
+            border-radius: 22px;
+            color: white;
+            background: linear-gradient(135deg, #9a8070 0%, #7a6858 100%);
+            box-shadow: 0 14px 34px rgba(122, 104, 88, 0.4);
+        }
+
+        .loyalty-card::after {
+            content: '';
+            position: absolute;
+            right: -50px;
+            top: -50px;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.09);
+        }
+
+        .loyalty-top {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.1rem;
+        }
+
+        .loyalty-brand {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+
+        .loyalty-tag {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.25rem 0.65rem;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 999px;
+        }
+
+        .stamp-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stamp {
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 2px dashed rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .stamp.filled {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid white;
+            color: var(--burgundy);
+        }
+
+        .stamp.reward {
+            border-style: solid;
+            background: rgba(249, 232, 191, 0.22);
+            font-size: 1.05rem;
+        }
+
+        .loyalty-foot {
+            position: relative;
+            z-index: 1;
+            font-size: 0.82rem;
+            line-height: 1.55;
+            opacity: 0.95;
+        }
+
+        .loyalty-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+            margin-top: 0.9rem;
+        }
+
+        .loyalty-steps div {
+            text-align: center;
+            padding: 0.8rem 0.4rem;
+            border-radius: 14px;
+            background: rgba(249, 232, 191, 0.3);
+            font-size: 0.78rem;
+            line-height: 1.4;
+            color: var(--charcoal);
+        }
+
+        .loyalty-steps strong {
+            display: block;
+            color: var(--burgundy);
+            font-size: 0.82rem;
+            margin-bottom: 0.15rem;
         }
 
         .review-stars {
@@ -1201,72 +1469,70 @@
             font-style: italic;
         }
 
-        .policy-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .policy-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.85rem;
-            padding: 1rem 1.1rem;
-            background: white;
-            border-radius: 14px;
-            border: 1.5px solid rgba(182, 165, 147, 0.25);
-            box-shadow: 0 3px 12px rgba(182, 165, 147, 0.1);
-        }
-
-        .policy-icon {
-            font-size: 1.15rem;
-            flex-shrink: 0;
-            margin-top: 0.05rem;
-        }
-
-        .policy-text {
-            font-size: 0.88rem;
-            color: var(--charcoal);
-            line-height: 1.6;
-        }
-
-        .policy-item.policy-highlight {
-            background: linear-gradient(135deg, rgba(249, 232, 191, 0.35), rgba(182, 165, 147, 0.18));
-            border-color: var(--pink-main);
-        }
-
-        .policy-item.policy-highlight .policy-text {
-            font-weight: 500;
-        }
-
-        /* Aftercare */
-        .aftercare-section { margin-bottom: 2rem; }
-
+        .policy-list,
         .aftercare-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0.8rem;
         }
 
-        .aftercare-tip {
+        /* Shared info card (aftercare + policy) */
+        .info-card {
             display: flex;
-            align-items: flex-start;
-            gap: 0.7rem;
-            padding: 0.9rem;
-            background: rgba(222, 214, 195, 0.25);
-            border-radius: 12px;
-            border: 1px solid rgba(182, 165, 147, 0.2);
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1.1rem 1rem 1.15rem;
+            background: white;
+            border-radius: 20px;
+            border: 1.5px solid rgba(182, 165, 147, 0.25);
+            box-shadow: 0 6px 18px rgba(182, 165, 147, 0.14);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .tip-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+        .info-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 26px rgba(182, 165, 147, 0.25);
+        }
 
-        .tip-text { font-size: 0.82rem; color: var(--charcoal); line-height: 1.5; }
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            background: linear-gradient(135deg, rgba(249, 232, 191, 0.6), rgba(182, 165, 147, 0.3));
+        }
 
-        .tip-text strong {
-            display: block;
+        .card-title {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.98rem;
+            font-weight: 700;
             color: var(--burgundy);
-            font-size: 0.84rem;
-            margin-bottom: 0.15rem;
+            line-height: 1.3;
+        }
+
+        .card-text {
+            font-size: 0.82rem;
+            color: var(--charcoal);
+            line-height: 1.55;
+        }
+
+        .info-card.policy-highlight {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(249, 232, 191, 0.4), rgba(182, 165, 147, 0.2));
+            border-color: var(--pink-main);
+        }
+
+        /* Aftercare */
+        .aftercare-section { margin-bottom: 2rem; }
+
+        .aftercare-intro {
+            text-align: center;
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin: -0.6rem 0 1.3rem;
         }
 
         .time-closed { color: var(--text-muted); font-weight: 600; }
@@ -1282,10 +1548,6 @@
 
             .tagline {
                 font-size: 0.85rem;
-            }
-
-            .social-link span {
-                font-size: 0.9rem;
             }
 
             .category-title {
@@ -1406,17 +1668,40 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .aftercare-grid {
+            .aftercare-grid,
+            .policy-list {
                 grid-template-columns: 1fr;
             }
+
+            .info-card {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 0.9rem;
+            }
+
+            .card-icon { flex-shrink: 0; }
+
+            .review-card { flex-basis: 90%; }
+
+            .stamp-grid { gap: 0.35rem; }
 
             .gallery-section h2,
             .reviews-section h2,
             .faq-section h2,
             .aftercare-section h2,
-            .policy-section h2 {
+            .policy-section h2,
+            .loyalty-section h2 {
                 font-size: 1.5rem;
             }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-delay: 0s !important;
+                transition-duration: 0.01ms !important;
+            }
+            html { scroll-behavior: auto; }
         }
     </style>
 </head>
@@ -1444,21 +1729,22 @@
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
-                <span>Instagram: gyameraesthetics</span>
+                <span>Instagram</span>
             </a>
             <a href="https://www.tiktok.com/@ms.gyameraaa" class="social-link" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.12a8.16 8.16 0 0 0 4.77 1.52V7.18a4.85 4.85 0 0 1-1-.49z"/>
                 </svg>
-                <span>TikTok: ms.gyameraaa</span>
+                <span>TikTok</span>
             </a>
-            <a href="https://wa.me/+233501707556" class="social-link" target="_blank" rel="noopener">
+            <a href="https://wa.me/233558177643" class="social-link" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                 </svg>
-                <span>WhatsApp: +233501707556</span>
+                <span>WhatsApp</span>
             </a>
         </div>
+        <p class="whatsapp-line">Chat with us: <a href="https://wa.me/233558177643" target="_blank" rel="noopener">+233 55 817 7643</a></p>
 
         <button type="button" class="contact-button" onclick="openBooking()">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1484,7 +1770,16 @@
             </div>
         </div>
 
-        <div class="divider"></div>
+        <nav class="section-nav" id="sectionNav" aria-label="Page sections">
+            <a href="#" class="nav-book" onclick="openBooking(); return false;">Book</a>
+            <a href="#services">Prices</a>
+            <a href="#results">Results</a>
+            <a href="#aftercare">Aftercare</a>
+            <a href="#clientPolicy">Policy</a>
+            <a href="#rewards">Rewards</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#faq">FAQ</a>
+        </nav>
 
         <div class="hours-section">
             <h2>Working Hours</h2>
@@ -1522,7 +1817,7 @@
 
         <div class="divider"></div>
 
-        <div class="price-list">
+        <div class="price-list" id="services">
             <h2>Services & Pricing</h2>
 
             <div class="price-category">
@@ -1613,7 +1908,7 @@
         <div class="divider"></div>
 
         <!-- Before & After Videos -->
-        <div class="gallery-section">
+        <div class="gallery-section" id="results">
             <h2>Before &amp; After</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
@@ -1631,40 +1926,173 @@
         <div class="divider"></div>
 
         <!-- Aftercare Tips -->
-        <div class="aftercare-section">
+        <div class="aftercare-section" id="aftercare">
             <h2>Aftercare Tips</h2>
+            <p class="aftercare-intro">Follow these to keep your set full for longer.</p>
             <div class="aftercare-grid">
-                <div class="aftercare-tip">
-                    <span class="tip-icon">💧</span>
-                    <div class="tip-text"><strong>Avoid water for 24–48hrs</strong>Keep lashes dry after your appointment so the adhesive fully cures.</div>
+                <div class="info-card">
+                    <span class="card-icon" aria-hidden="true">💧</span>
+                    <div>
+                        <div class="card-title">Avoid water for 24–48hrs</div>
+                        <p class="card-text">Keep lashes dry after your appointment so the adhesive fully cures.</p>
+                    </div>
                 </div>
-                <div class="aftercare-tip">
-                    <span class="tip-icon">🚿</span>
-                    <div class="tip-text"><strong>No steam or saunas</strong>High heat and steam loosen the bond and shorten lash retention.</div>
+                <div class="info-card">
+                    <span class="card-icon" aria-hidden="true">🚿</span>
+                    <div>
+                        <div class="card-title">No steam or saunas</div>
+                        <p class="card-text">High heat and steam loosen the bond and shorten lash retention.</p>
+                    </div>
                 </div>
-                <div class="aftercare-tip">
-                    <span class="tip-icon">🚫</span>
-                    <div class="tip-text"><strong>Don't rub your eyes</strong>Rubbing or pulling causes damage and premature shedding.</div>
+                <div class="info-card">
+                    <span class="card-icon" aria-hidden="true">🚫</span>
+                    <div>
+                        <div class="card-title">Don't rub your eyes</div>
+                        <p class="card-text">Rubbing or pulling causes damage and premature shedding.</p>
+                    </div>
                 </div>
-                <div class="aftercare-tip">
-                    <span class="tip-icon">🪮</span>
-                    <div class="tip-text"><strong>Brush daily</strong>Use a clean spoolie each morning to keep lashes fluffy and aligned.</div>
+                <div class="info-card">
+                    <span class="card-icon" aria-hidden="true">🪮</span>
+                    <div>
+                        <div class="card-title">Brush daily</div>
+                        <p class="card-text">Use a clean spoolie each morning to keep lashes fluffy and aligned.</p>
+                    </div>
                 </div>
-                <div class="aftercare-tip">
-                    <span class="tip-icon">🧴</span>
-                    <div class="tip-text"><strong>Avoid oil-based products</strong>Oils break down the adhesive — check cleansers and makeup removers.</div>
+                <div class="info-card">
+                    <span class="card-icon" aria-hidden="true">🧴</span>
+                    <div>
+                        <div class="card-title">Avoid oil-based products</div>
+                        <p class="card-text">Oils break down the adhesive — check cleansers and makeup removers.</p>
+                    </div>
                 </div>
-                <div class="aftercare-tip">
-                    <span class="tip-icon">😴</span>
-                    <div class="tip-text"><strong>Sleep on your back</strong>Side sleeping flattens and bends lashes. A silk pillowcase helps too.</div>
+                <div class="info-card">
+                    <span class="card-icon" aria-hidden="true">😴</span>
+                    <div>
+                        <div class="card-title">Sleep on your back</div>
+                        <p class="card-text">Side sleeping flattens and bends lashes. A silk pillowcase helps too.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="divider"></div>
 
+        <!-- Client Policy -->
+        <div class="policy-section" id="clientPolicy">
+            <h2>Client Policy</h2>
+            <p class="policy-intro">Please read before booking your appointment.</p>
+            <div class="policy-list">
+                <div class="info-card policy-highlight">
+                    <span class="card-icon" aria-hidden="true">💳</span>
+                    <div>
+                        <div class="card-title">Deposit</div>
+                        <p class="card-text">A <strong>non-refundable deposit of GH¢50</strong> is required to secure your appointment.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <span class="card-icon" aria-hidden="true">⏰</span>
+                    <div>
+                        <div class="card-title">Be on time</div>
+                        <p class="card-text">Please arrive on time. Your punctuality helps us serve every client well.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <span class="card-icon" aria-hidden="true">✨</span>
+                    <div>
+                        <div class="card-title">Clean lashes</div>
+                        <p class="card-text">We don't work over another technician's work. Please come with <strong>clean, product-free lashes</strong>.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <span class="card-icon" aria-hidden="true">🏡</span>
+                    <div>
+                        <div class="card-title">Home studio</div>
+                        <p class="card-text">Gyamera Aesthetics is a <strong>home-based studio</strong>. Please be respectful of the space.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <span class="card-icon" aria-hidden="true">🚫</span>
+                    <div>
+                        <div class="card-title">No extra guests</div>
+                        <p class="card-text">Extra guests are not allowed unless approved in advance.</p>
+                    </div>
+                </div>
+                <div class="info-card policy-highlight">
+                    <span class="card-icon" aria-hidden="true">📅</span>
+                    <div>
+                        <div class="card-title">Cancel or reschedule</div>
+                        <p class="card-text">Please let us know as early as possible so we can accommodate other clients.</p>
+                    </div>
+                </div>
+                <div class="info-card policy-highlight">
+                    <span class="card-icon" aria-hidden="true">🤍</span>
+                    <div>
+                        <div class="card-title">Silent appointment</div>
+                        <p class="card-text">You're always welcome to request a <strong>silent appointment</strong> if you're anxious, tired, or mentally drained and prefer no conversation. No judgement, ever. Feel free to request a music genre, playlist, podcast, or video for the background. Your comfort and peace matter here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Loyalty Card -->
+        <div class="loyalty-section" id="rewards">
+            <h2>Loyalty Card</h2>
+            <p class="policy-intro">Every visit counts. Ask for your card at your next appointment.</p>
+            <div class="loyalty-card" role="img" aria-label="Sample Gyamera Aesthetics loyalty card with stamp spaces and a reward at the end">
+                <div class="loyalty-top">
+                    <span class="loyalty-brand">Gyamera Aesthetics</span>
+                    <span class="loyalty-tag">Loyalty</span>
+                </div>
+                <div class="stamp-grid" aria-hidden="true">
+                    <div class="stamp filled">✓</div>
+                    <div class="stamp filled">✓</div>
+                    <div class="stamp">3</div>
+                    <div class="stamp">4</div>
+                    <div class="stamp">5</div>
+                    <div class="stamp reward">🎁</div>
+                </div>
+                <p class="loyalty-foot">Sample card. Yours is stamped after every visit, and the last space is your reward.</p>
+            </div>
+            <div class="loyalty-steps">
+                <div><strong>1. Ask</strong>Request your card at your next visit</div>
+                <div><strong>2. Collect</strong>Get a stamp each appointment</div>
+                <div><strong>3. Enjoy</strong>Redeem your reward</div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Client Reviews -->
+        <div class="reviews-section" id="reviews">
+            <h2>Client Reviews</h2>
+            <div class="reviews-track" tabindex="0" aria-label="Client reviews, swipe to see more">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"She's professional, efficient, and knows exactly what she's doing. My lashes look full, natural, and flawless. Hands down the best lash tech everrrr! 100% recommend her for a 10/10 result! Perfect for anyone in Sakumono and Spintex."</p>
+                    <span class="reviewer-name">— Olive</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Landge, I’ve been meaning to send you a review of your service but I honestly don’t even know where to start lol 🤍
+                    <br>    <br>
+                    Your service is truly 100/10. From the atmosphere to the actual lash appointment itself, everything is top tier. You pay so much attention to detail, you listen to exactly what I want, and you always deliver perfectly every single time. You never disappoint, even with my last-minute bookings 😭
+                    <br>    <br>
+                    Your lash retention is honestly amazing, and I’ll continue recommending all my friends to book with you because you really know what you’re doing. Thank you for always making me leave feeling so pretty 🤍✨"</p>
+                    <span class="reviewer-name">— Marilyn</span>
+                </div>
+            </div>
+            <p class="reviews-hint">Swipe for more →</p>
+            <button type="button" class="review-cta" onclick="openReview()">
+                <span aria-hidden="true">★</span> Leave a Review
+            </button>
+        </div>
+
+        <div class="divider"></div>
+
         <!-- FAQ -->
-        <div class="faq-section">
+        <div class="faq-section" id="faq">
             <h2>FAQ</h2>
             <div class="faq-list">
                 <div class="faq-item">
@@ -1712,66 +2140,6 @@
             </div>
         </div>
 
-        <div class="divider"></div>
-
-        <!-- Client Policy -->
-        <div class="policy-section" id="clientPolicy">
-            <h2>Client Policy</h2>
-            <p class="policy-intro">Please read before booking your appointment.</p>
-            <div class="policy-list">
-                <div class="policy-item policy-highlight">
-                    <span class="policy-icon">💳</span>
-                    <span class="policy-text">A <strong>non-refundable deposit of GH¢50</strong> is required to secure your appointment.</span>
-                </div>
-                <div class="policy-item">
-                    <span class="policy-icon">⏰</span>
-                    <span class="policy-text">Please arrive on time for your appointment. We appreciate your punctuality as it helps us serve every client well.</span>
-                </div>
-                <div class="policy-item">
-                    <span class="policy-icon">✨</span>
-                    <span class="policy-text">We do not work over another technician's work. Please come with <strong>clean, product-free lashes</strong>.</span>
-                </div>
-                <div class="policy-item">
-                    <span class="policy-icon">🏡</span>
-                    <span class="policy-text">Gyamera Aesthetics is a <strong>home-based studio</strong> — please be respectful of the space.</span>
-                </div>
-                <div class="policy-item">
-                    <span class="policy-icon">🚫</span>
-                    <span class="policy-text">No extra guests are allowed unless approved in advance.</span>
-                </div>
-                <div class="policy-item">
-                    <span class="policy-icon">📅</span>
-                    <span class="policy-text">If you need to cancel or reschedule, please notify us as early as possible so we can accommodate other clients.</span>
-                </div>
-                <div class="policy-item policy-highlight">
-                    <span class="policy-icon">🤍</span>
-                    <span class="policy-text">You are always welcome to request a <strong>silent appointment</strong> if you're feeling anxious, tired, or mentally drained and prefer to skip conversation. No judgement — ever. Feel free to request a music genre, playlist, podcast, or video to play in the background. Your comfort and peace matter here.</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- Client Reviews — replace placeholder names and text with real client reviews -->
-        <div class="reviews-section">
-            <h2>Client Reviews</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"She's professional, efficient, and knows exactly what she's doing. My lashes look full, natural, and flawless. Hands down the best lash tech everrrr! 100% recommend her for a 10/10 result! Perfect for anyone in Sakumono and Spintex."</p>
-                    <span class="reviewer-name">— Olive</span>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Landge, I’ve been meaning to send you a review of your service but I honestly don’t even know where to start lol 🤍
-                    <br>    <br>
-                    Your service is truly 100/10. From the atmosphere to the actual lash appointment itself, everything is top tier. You pay so much attention to detail, you listen to exactly what I want, and you always deliver perfectly every single time. You never disappoint, even with my last-minute bookings 😭
-                    <br>    <br>
-                    Your lash retention is honestly amazing, and I’ll continue recommending all my friends to book with you because you really know what you’re doing. Thank you for always making me leave feeling so pretty 🤍✨"</p>
-                    <span class="reviewer-name">— Marilyn</span>
-                </div>
-            </div>
-        </div>
 
         <div class="footer">
             <p>© 2026 Gyamera Aesthetics • All Rights Reserved</p>
@@ -1849,6 +2217,50 @@
         </div>
     </div>
 
+    <!-- Review Modal -->
+    <div class="booking-modal" id="reviewModal" role="dialog" aria-modal="true" aria-labelledby="reviewTitle">
+        <div class="booking-content">
+            <div class="booking-header">
+                <h3 id="reviewTitle">Leave a Review</h3>
+                <button type="button" class="close-btn" onclick="closeReview()" aria-label="Close">×</button>
+            </div>
+
+            <div id="reviewFormView">
+                <div class="booking-form">
+                    <div class="form-group">
+                        <label id="ratingLabel">Your rating *</label>
+                        <div class="star-picker" role="radiogroup" aria-labelledby="ratingLabel" id="starPicker">
+                            <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="1 star" data-value="1">★</button>
+                            <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="2 stars" data-value="2">★</button>
+                            <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="3 stars" data-value="3">★</button>
+                            <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="4 stars" data-value="4">★</button>
+                            <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="5 stars" data-value="5">★</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewName">Your name *</label>
+                        <input type="text" id="reviewName" placeholder="First name is fine" maxlength="60" autocomplete="given-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewText">Your review *</label>
+                        <textarea id="reviewText" rows="4" maxlength="800" placeholder="Tell us about your lash experience..."></textarea>
+                    </div>
+                </div>
+                <p class="review-note">Your review is sent to us on WhatsApp. By sending it you allow us to show it on this page after we've read it.</p>
+                <div class="booking-buttons">
+                    <button type="button" class="btn-secondary" onclick="closeReview()">Cancel</button>
+                    <button type="button" class="btn-primary" onclick="submitReview()">Send Review</button>
+                </div>
+            </div>
+
+            <div class="review-thanks" id="reviewThanksView" hidden>
+                <div class="thanks-emoji">🤍</div>
+                <p><strong>Thank you!</strong><br>Tap send in WhatsApp to finish. We read every review and will add yours to this page soon.</p>
+                <button type="button" class="success-button" onclick="closeReview()">Done</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Success Confirmation Modal -->
     <div class="success-modal" id="successModal">
         <div class="success-content">
@@ -1893,6 +2305,7 @@
         // ── Google Sheets integration ──────────────────────────────────────
         // Paste your deployed Apps Script URL here after setup
         const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwXeemDjmzTjqUFvT2LllpyCGTZtA1HSfyAsbvtIW8M2ORUZt5WFloPDdm4jmue74oL/exec';
+        const WHATSAPP_NUMBER = '233558177643';
         let blockedSlots = {}; // { "2026-05-20": ["3:30 PM", "5:30 PM"] }
         let slotsLoading = false;
 
@@ -2280,7 +2693,7 @@
                 `Please confirm this booking.`;
             
             // Send booking request via WhatsApp
-            window.open(`https://wa.me/233501707556?text=${message}`, '_blank');
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
             saveToSheet(name, phone, document.getElementById('customerNotes').value.trim());
             
             // Close booking modal and show success modal
@@ -2313,6 +2726,111 @@
                 closeBooking();
             }
         });
+
+        // ── Reviews ────────────────────────────────────────────────────────
+        let reviewRating = 0;
+
+        function setRating(value) {
+            reviewRating = value;
+            document.querySelectorAll('#starPicker .star-btn').forEach(btn => {
+                const v = Number(btn.dataset.value);
+                btn.classList.toggle('on', v <= value);
+                btn.setAttribute('aria-checked', v === value ? 'true' : 'false');
+            });
+            clearReviewError('starPicker');
+        }
+
+        document.querySelectorAll('#starPicker .star-btn').forEach(btn => {
+            btn.addEventListener('click', () => setRating(Number(btn.dataset.value)));
+        });
+
+        function openReview() {
+            document.getElementById('reviewFormView').hidden = false;
+            document.getElementById('reviewThanksView').hidden = true;
+            document.getElementById('reviewModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeReview() {
+            document.getElementById('reviewModal').classList.remove('active');
+            document.body.style.overflow = '';
+            setRating(0);
+            document.getElementById('reviewName').value = '';
+            document.getElementById('reviewText').value = '';
+            ['starPicker', 'reviewName', 'reviewText'].forEach(clearReviewError);
+        }
+
+        function clearReviewError(id) {
+            const group = document.getElementById(id).closest('.form-group');
+            group.classList.remove('has-error');
+            const msg = group.querySelector('.field-error-msg');
+            if (msg) msg.remove();
+        }
+
+        function setReviewError(id, message) {
+            clearReviewError(id);
+            const group = document.getElementById(id).closest('.form-group');
+            group.classList.add('has-error');
+            const msg = document.createElement('span');
+            msg.className = 'field-error-msg';
+            msg.textContent = message;
+            group.appendChild(msg);
+        }
+
+        function submitReview() {
+            const name = document.getElementById('reviewName').value.trim();
+            const text = document.getElementById('reviewText').value.trim();
+            let valid = true;
+
+            if (!reviewRating) { setReviewError('starPicker', 'Please choose a star rating.'); valid = false; }
+            if (name.length < 2) { setReviewError('reviewName', 'Please enter your name.'); valid = false; }
+            if (text.length < 10) { setReviewError('reviewText', 'Please write a little more (at least 10 characters).'); valid = false; }
+            if (!valid) return;
+
+            const message = `*NEW REVIEW*\n\n` +
+                `*Rating:* ${'★'.repeat(reviewRating)}${'☆'.repeat(5 - reviewRating)} (${reviewRating}/5)\n` +
+                `*Name:* ${name}\n\n` +
+                `"${text}"\n\n` +
+                `I'm happy for this to be shown on the Gyamera Aesthetics page.`;
+
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+            document.getElementById('reviewFormView').hidden = true;
+            document.getElementById('reviewThanksView').hidden = false;
+        }
+
+        ['reviewName', 'reviewText'].forEach(id => {
+            document.getElementById(id).addEventListener('input', () => clearReviewError(id));
+        });
+
+        document.getElementById('reviewModal').addEventListener('click', function(e) {
+            if (e.target === this) closeReview();
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key !== 'Escape') return;
+            if (document.getElementById('reviewModal').classList.contains('active')) closeReview();
+        });
+
+        // ── Section nav: highlight the section in view ────────────────────
+        (function () {
+            const links = [...document.querySelectorAll('#sectionNav a[href^="#"]')].filter(a => a.getAttribute('href').length > 1);
+            const byId = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+            if (!('IntersectionObserver' in window)) return;
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    links.forEach(a => a.classList.remove('active'));
+                    const link = byId.get(entry.target.id);
+                    if (link) {
+                        link.classList.add('active');
+                        const nav = document.getElementById('sectionNav');
+                        nav.scrollTo({ left: link.offsetLeft - nav.clientWidth / 2 + link.offsetWidth / 2, behavior: 'smooth' });
+                    }
+                });
+            }, { rootMargin: '-20% 0px -65% 0px' });
+            byId.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+            document.documentElement.style.scrollBehavior = 'smooth';
+        })();
 
         function toggleFaq(btn) {
             const item = btn.closest('.faq-item');
