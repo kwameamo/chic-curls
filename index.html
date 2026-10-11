@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chic Curls</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/png" href="gyameraaesthetics-favicon.png">
+    <link rel="apple-touch-icon" href="gyameraaesthetics-favicon.png">
+    <meta name="theme-color" content="#b6a593">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Gyamera">
+    <meta name="msapplication-TileColor" content="#b6a593">
+    <meta name="description" content="Gyamera Aesthetics — Luxury lash extensions in Sakumono / Spintex, Accra. Classic, hybrid, volume & signature sets from ₵150.">
+    <meta property="og:title" content="Gyamera Aesthetics">
+    <meta property="og:description" content="Luxury lash extensions in Sakumono / Spintex, Accra. Book your appointment today.">
+    <meta property="og:image" content="gyameraaesthetics-logo.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Gyamera Aesthetics">
+    <meta name="twitter:description" content="Luxury lash extensions in Sakumono / Spintex, Accra.">
+    <title>Gyamera Aesthetics</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --pink-light: #FFB6C8;
-            --pink-main: #FF6B9D;
-            --pink-dark: #E94B7A;
-            --burgundy: #8B1538;
-            --cream: #FFF5F7;
+            --pink-light: #f9e8bf;
+            --pink-main: #b6a593;
+            --pink-dark: #9a8070;
+            --burgundy: #7a6858;
+            --cream: #ded6c3;
             --charcoal: #2C2C2C;
             --text-muted: #6B6B6B;
         }
@@ -26,7 +43,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #FFE5EC 0%, #FFB6C8 50%, #FF6B9D 100%);
+            background: #b6a593;
             color: var(--charcoal);
             min-height: 100vh;
             display: flex;
@@ -37,34 +54,14 @@
             overflow-x: hidden;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(255, 107, 157, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(255, 182, 200, 0.3) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
         .container {
             max-width: 600px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-radius: 35px;
+            background: #ffffff;
+            border-radius: 14px;
             padding: 3rem 2.5rem;
-            box-shadow: 
-                0 25px 70px rgba(255, 107, 157, 0.25),
-                0 0 2px rgba(139, 21, 56, 0.1);
             position: relative;
             z-index: 1;
-            animation: fadeInUp 0.8s ease-out;
-            border: 3px solid rgba(255, 107, 157, 0.2);
         }
 
         @keyframes fadeInUp {
@@ -81,7 +78,6 @@
         .header {
             text-align: center;
             margin-bottom: 2.5rem;
-            animation: fadeIn 1s ease-out 0.2s both;
         }
 
         @keyframes fadeIn {
@@ -98,7 +94,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.4);
             position: relative;
             border: 4px solid var(--pink-main);
             overflow: hidden;
@@ -117,57 +112,64 @@
 
         h1 {
             font-family: 'Quicksand', sans-serif;
-            font-size: 3rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            letter-spacing: 1px;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--pink-dark), var(--burgundy));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--burgundy);
         }
 
         .tagline {
             font-size: 1rem;
             color: var(--pink-dark);
             font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
         }
 
         .divider {
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--pink-main), transparent);
+            height: 1px;
+            background: rgba(182, 165, 147, 0.35);
             margin: 2rem 0;
-            animation: fadeIn 1s ease-out 0.4s both;
         }
 
         .social-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            animation: fadeIn 1s ease-out 0.6s both;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 0.8rem;
         }
 
         .social-link {
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 1rem;
-            padding: 1.2rem 1.5rem;
+            text-align: center;
+            gap: 0.45rem;
+            padding: 1rem 0.5rem;
             background: white;
-            border-radius: 20px;
+            border-radius: 18px;
             text-decoration: none;
             color: var(--charcoal);
-            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.15);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 2px solid rgba(182, 165, 147, 0.2);
         }
 
+        .whatsapp-line {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .whatsapp-line a {
+            color: var(--burgundy);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .whatsapp-line a:hover { text-decoration: underline; }
+
         .social-link:hover {
-            transform: translateX(10px);
-            box-shadow: 0 8px 30px rgba(255, 107, 157, 0.3);
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border-color: white;
         }
@@ -180,7 +182,7 @@
 
         .social-link span {
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.85rem;
         }
 
         .contact-button {
@@ -190,26 +192,20 @@
             gap: 0.7rem;
             width: 100%;
             padding: 1.3rem;
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             text-decoration: none;
             text-align: center;
-            border-radius: 20px;
+            border-radius: 14px;
             font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
             font-size: 1rem;
-            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
             transition: all 0.3s ease;
             margin-bottom: 2rem;
-            animation: fadeIn 1s ease-out 0.8s both;
             border: 3px solid white;
             cursor: pointer;
         }
 
         .contact-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.5);
         }
 
         /* Booking Modal Styles */
@@ -225,7 +221,6 @@
             align-items: center;
             justify-content: center;
             padding: 1rem;
-            backdrop-filter: blur(5px);
         }
 
         .booking-modal.active {
@@ -234,7 +229,7 @@
 
         .booking-content {
             background: white;
-            border-radius: 30px;
+            border-radius: 18px;
             padding: 2.5rem 2rem;
             max-width: 500px;
             width: 100%;
@@ -285,7 +280,7 @@
         }
 
         .close-btn:hover {
-            background: rgba(255, 107, 157, 0.1);
+            background: rgba(182, 165, 147, 0.1);
             color: var(--pink-dark);
         }
 
@@ -315,7 +310,7 @@
         .service-option {
             padding: 1rem 1.2rem;
             background: white;
-            border: 2px solid rgba(255, 107, 157, 0.3);
+            border: 2px solid rgba(182, 165, 147, 0.3);
             border-radius: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -326,11 +321,11 @@
 
         .service-option:hover {
             border-color: var(--pink-main);
-            background: rgba(255, 182, 200, 0.1);
+            background: rgba(249, 232, 191, 0.1);
         }
 
         .service-option.selected {
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border-color: var(--pink-dark);
         }
@@ -381,16 +376,16 @@
 
         .calendar-day.available {
             background: white;
-            border-color: rgba(255, 107, 157, 0.3);
+            border-color: rgba(182, 165, 147, 0.3);
         }
 
         .calendar-day.available:hover {
-            background: rgba(255, 182, 200, 0.2);
+            background: rgba(249, 232, 191, 0.2);
             border-color: var(--pink-main);
         }
 
         .calendar-day.selected {
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border-color: var(--pink-dark);
         }
@@ -405,7 +400,7 @@
         .time-slot {
             padding: 0.8rem;
             background: white;
-            border: 2px solid rgba(255, 107, 157, 0.3);
+            border: 2px solid rgba(182, 165, 147, 0.3);
             border-radius: 12px;
             text-align: center;
             cursor: pointer;
@@ -415,11 +410,11 @@
 
         .time-slot:hover {
             border-color: var(--pink-main);
-            background: rgba(255, 182, 200, 0.1);
+            background: rgba(249, 232, 191, 0.1);
         }
 
         .time-slot.selected {
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border-color: var(--pink-dark);
         }
@@ -430,6 +425,28 @@
             cursor: not-allowed;
             border-color: #ddd;
         }
+
+        .slots-loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            grid-column: 1 / -1;
+        }
+
+        .slots-spinner {
+            width: 28px;
+            height: 28px;
+            border: 3px solid rgba(182, 165, 147, 0.3);
+            border-top-color: var(--pink-main);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         .booking-form {
             display: grid;
@@ -452,7 +469,7 @@
         .form-group input,
         .form-group textarea {
             padding: 0.9rem;
-            border: 2px solid rgba(255, 107, 157, 0.3);
+            border: 2px solid rgba(182, 165, 147, 0.3);
             border-radius: 12px;
             font-family: 'Poppins', sans-serif;
             font-size: 0.95rem;
@@ -463,11 +480,29 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--pink-main);
-            background: rgba(255, 182, 200, 0.05);
+            background: rgba(249, 232, 191, 0.05);
+        }
+
+        .form-group.has-error input,
+        .form-group.has-error textarea {
+            border-color: #c0392b;
+            background: rgba(192, 57, 43, 0.04);
+        }
+
+        .form-group.has-error input:focus,
+        .form-group.has-error textarea:focus {
+            border-color: #c0392b;
+        }
+
+        .field-error-msg {
+            color: #c0392b;
+            font-size: 0.78rem;
+            font-weight: 500;
+            margin-top: 0.3rem;
         }
 
         .booking-summary {
-            background: linear-gradient(135deg, rgba(255, 182, 200, 0.3), rgba(255, 107, 157, 0.2));
+            background: rgba(249, 232, 191, 0.3);
             padding: 1.2rem;
             border-radius: 15px;
             margin-bottom: 1.5rem;
@@ -486,7 +521,7 @@
             font-size: 1.1rem;
             color: var(--burgundy);
             padding-top: 0.5rem;
-            border-top: 2px solid rgba(255, 107, 157, 0.3);
+            border-top: 2px solid rgba(182, 165, 147, 0.3);
         }
 
         .booking-buttons {
@@ -500,7 +535,6 @@
             padding: 1rem;
             border-radius: 15px;
             font-weight: 600;
-            text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
             border: none;
@@ -514,18 +548,16 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 182, 200, 0.2);
+            background: rgba(249, 232, 191, 0.2);
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border: 2px solid transparent;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
         }
 
         .btn-primary:disabled {
@@ -546,7 +578,6 @@
             align-items: center;
             justify-content: center;
             padding: 1rem;
-            backdrop-filter: blur(8px);
         }
 
         .success-modal.active {
@@ -555,13 +586,12 @@
 
         .success-content {
             background: white;
-            border-radius: 25px;
+            border-radius: 16px;
             padding: 2.5rem 2rem;
             max-width: 400px;
             width: 100%;
             text-align: center;
             animation: successSlideUp 0.5s ease-out;
-            box-shadow: 0 20px 60px rgba(255, 107, 157, 0.3);
         }
 
         @keyframes successSlideUp {
@@ -578,7 +608,7 @@
         .success-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -617,7 +647,7 @@
         .success-note {
             font-size: 0.85rem;
             color: var(--text-muted);
-            background: rgba(255, 182, 200, 0.2);
+            background: rgba(249, 232, 191, 0.2);
             padding: 1rem;
             border-radius: 12px;
             margin: 1.5rem 0;
@@ -632,20 +662,17 @@
         .success-button {
             width: 100%;
             padding: 1rem;
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border: none;
             border-radius: 15px;
             font-weight: 600;
-            text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 0.9rem;
         }
 
         .success-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
         }
 
         /* Error/Warning Modal */
@@ -661,7 +688,6 @@
             align-items: center;
             justify-content: center;
             padding: 1rem;
-            backdrop-filter: blur(8px);
         }
 
         .error-modal.active {
@@ -670,13 +696,12 @@
 
         .error-content {
             background: white;
-            border-radius: 25px;
+            border-radius: 16px;
             padding: 2rem;
             max-width: 350px;
             width: 100%;
             text-align: center;
             animation: errorShake 0.5s ease-out;
-            box-shadow: 0 20px 60px rgba(255, 107, 157, 0.3);
         }
 
         @keyframes errorShake {
@@ -688,7 +713,7 @@
         .error-icon {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, #FF6B9D, #E94B7A);
+            background: var(--pink-dark);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -721,30 +746,26 @@
         .error-button {
             width: 100%;
             padding: 1rem;
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border: none;
             border-radius: 15px;
             font-weight: 600;
-            text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 0.9rem;
         }
 
         .error-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
         }
 
         .location {
             text-align: center;
             margin-bottom: 2rem;
             padding: 1.3rem;
-            background: linear-gradient(135deg, rgba(255, 182, 200, 0.3), rgba(255, 107, 157, 0.2));
-            border-radius: 20px;
-            animation: fadeIn 1s ease-out 0.9s both;
-            border: 2px solid rgba(255, 107, 157, 0.3);
+            background: rgba(249, 232, 191, 0.3);
+            border-radius: 14px;
+            border: 2px solid rgba(182, 165, 147, 0.3);
         }
 
         .location-icon {
@@ -761,7 +782,6 @@
 
         .hours-section {
             margin-bottom: 2rem;
-            animation: fadeIn 1s ease-out 1s both;
         }
 
         .hours-section h2 {
@@ -771,23 +791,20 @@
             text-align: center;
             margin-bottom: 1.2rem;
             color: var(--pink-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .hours-grid {
             background: white;
-            border-radius: 20px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.15);
-            border: 2px solid rgba(255, 107, 157, 0.2);
+            border: 2px solid rgba(182, 165, 147, 0.2);
         }
 
         .hours-item {
             display: flex;
             justify-content: space-between;
             padding: 1rem 1.5rem;
-            border-bottom: 2px solid rgba(255, 107, 157, 0.1);
+            border-bottom: 2px solid rgba(182, 165, 147, 0.1);
         }
 
         .hours-item:last-child {
@@ -795,13 +812,12 @@
         }
 
         .hours-item:hover {
-            background: linear-gradient(90deg, rgba(255, 182, 200, 0.2), rgba(255, 107, 157, 0.1));
+            background: rgba(249, 232, 191, 0.3);
         }
 
         .day {
             font-weight: 600;
             color: var(--burgundy);
-            text-transform: uppercase;
             font-size: 0.95rem;
         }
 
@@ -812,7 +828,6 @@
         }
 
         .price-list {
-            animation: fadeIn 1s ease-out 1.1s both;
         }
 
         .price-list h2 {
@@ -822,8 +837,6 @@
             text-align: center;
             margin-bottom: 1.5rem;
             color: var(--pink-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .price-category {
@@ -837,11 +850,8 @@
             color: var(--burgundy);
             margin-bottom: 1rem;
             padding: 0.8rem 1.2rem;
-            background: linear-gradient(135deg, rgba(255, 182, 200, 0.4), rgba(255, 107, 157, 0.3));
+            background: rgba(249, 232, 191, 0.3);
             border-radius: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-left: 5px solid var(--pink-main);
         }
 
         .price-item {
@@ -849,7 +859,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 1.2rem;
-            border-bottom: 1px solid rgba(255, 107, 157, 0.15);
+            border-bottom: 1px solid rgba(182, 165, 147, 0.15);
             transition: all 0.3s ease;
         }
 
@@ -858,8 +868,7 @@
         }
 
         .price-item:hover {
-            background: rgba(255, 182, 200, 0.2);
-            padding-left: 1.5rem;
+            background: rgba(249, 232, 191, 0.2);
             border-radius: 12px;
         }
 
@@ -882,13 +891,507 @@
             color: var(--pink-main);
         }
 
+        .social-link-hidden {
+            display: none;
+        }
+
+        .policy-nudge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(249, 232, 191, 0.4);
+            border: 1.5px solid rgba(182, 165, 147, 0.5);
+            border-radius: 14px;
+            color: var(--burgundy);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: -0.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .policy-nudge:hover {
+            background: rgba(249, 232, 191, 0.7);
+            border-style: solid;
+        }
+
+        .policy-nudge svg {
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+        }
+
         .footer {
             text-align: center;
             margin-top: 2.5rem;
             font-size: 0.9rem;
             color: var(--text-muted);
-            animation: fadeIn 1s ease-out 1.3s both;
         }
+
+        .footer-sub { margin-top: 0.5rem; font-size: 0.8rem; }
+        .footer-brand { color: var(--pink-dark); font-weight: 600; }
+        .btn-full { width: 100%; }
+
+        /* Open / Closed badge */
+        .open-status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.3rem 1rem;
+            border-radius: 14px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-top: 0.6rem;
+        }
+
+        .open-status-badge::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .open-status-badge.open {
+            background: rgba(39, 174, 96, 0.12);
+            color: #27ae60;
+            border: 1.5px solid rgba(39, 174, 96, 0.3);
+        }
+
+        .open-status-badge.open::before {
+            background: #27ae60;
+            animation: statusPulse 2s infinite;
+        }
+
+        .open-status-badge.closed {
+            background: rgba(192, 57, 43, 0.08);
+            color: #c0392b;
+            border: 1.5px solid rgba(192, 57, 43, 0.2);
+        }
+
+        .open-status-badge.closed::before {
+            background: #c0392b;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Shared section heading for new sections */
+        .gallery-section h2,
+        .reviews-section h2,
+        .faq-section h2,
+        .aftercare-section h2 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--pink-dark);
+        }
+
+        /* Gallery / Before & After Videos */
+        .gallery-section { margin-bottom: 2rem; }
+
+        .gallery-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .gallery-item video {
+            width: 100%;
+            display: block;
+            aspect-ratio: 9/16;
+            object-fit: cover;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--pink-dark);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 999;
+            pointer-events: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .scroll-top:hover {
+        }
+
+        .scroll-top svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Reviews */
+        .reviews-section { margin-bottom: 2rem; }
+        .reviews-track {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 14px;
+            padding: 1.3rem 1.4rem;
+            border: 1.5px solid rgba(182, 165, 147, 0.25);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-text.clamped {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .review-more {
+            align-self: flex-start;
+            background: none;
+            border: none;
+            padding: 0.2rem 0;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--burgundy);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .swipe-hint {
+            display: none;
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin: 0.2rem 0 1rem;
+        }
+
+        .review-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.95rem;
+            background: white;
+            color: var(--burgundy);
+            border: 2px solid var(--pink-main);
+            border-radius: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .review-cta:hover {
+            background: rgba(249, 232, 191, 0.35);
+        }
+
+        /* Review form */
+        .star-picker {
+            display: flex;
+            gap: 0.3rem;
+        }
+
+        .star-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            line-height: 1;
+            padding: 0.2rem;
+            color: #d9d2c6;
+            cursor: pointer;
+            transition: color 0.15s ease, transform 0.15s ease;
+        }
+
+        .star-btn.on { color: #f0a500; }
+        .star-btn:hover { transform: scale(1.12); }
+
+        .review-note {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 1.2rem;
+        }
+
+        .review-thanks { text-align: center; padding: 0.5rem 0 0; }
+        .review-thanks p { font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.5rem; }
+        .review-thanks .thanks-emoji { font-size: 2.6rem; margin-bottom: 0.6rem; }
+
+        /* Section navigation */
+        .section-nav {
+            position: sticky;
+            top: 0.6rem;
+            z-index: 50;
+            display: flex;
+            gap: 0.4rem;
+            overflow-x: auto;
+            padding: 0.45rem;
+            margin: 0 -0.4rem 2rem;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 12px;
+            border: 1.5px solid rgba(182, 165, 147, 0.3);
+            scrollbar-width: none;
+        }
+
+        .section-nav::-webkit-scrollbar { display: none; }
+
+        .section-nav a {
+            flex-shrink: 0;
+            padding: 0.5rem 0.95rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--burgundy);
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .section-nav a:hover { background: rgba(249, 232, 191, 0.5); }
+
+        .section-nav a.active {
+            background: var(--pink-dark);
+            color: white;
+        }
+
+        .section-nav a.nav-book {
+            background: var(--burgundy);
+            color: white;
+        }
+
+        [id] { scroll-margin-top: 5rem; }
+
+        /* Loyalty card */
+        .loyalty-section { margin-bottom: 2rem; }
+
+        .loyalty-section h2 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.6rem;
+            color: var(--pink-dark);
+        }
+
+        .loyalty-cards {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .loyalty-cards img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+        }
+
+        .loyalty-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+            margin-top: 0.9rem;
+        }
+
+        .loyalty-steps div {
+            text-align: center;
+            padding: 0.8rem 0.4rem;
+            border-radius: 14px;
+            background: rgba(249, 232, 191, 0.3);
+            font-size: 0.78rem;
+            line-height: 1.4;
+            color: var(--charcoal);
+        }
+
+        .loyalty-steps strong {
+            display: block;
+            color: var(--burgundy);
+            font-size: 0.82rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .review-stars {
+            color: #f0a500;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-text {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            line-height: 1.65;
+            font-style: italic;
+            margin-bottom: 0.6rem;
+        }
+
+        .reviewer-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--burgundy);
+        }
+
+        /* FAQ */
+        .faq-section { margin-bottom: 2rem; }
+        .faq-list { display: flex; flex-direction: column; }
+        .faq-item { border-bottom: 1px solid rgba(182, 165, 147, 0.25); }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 1rem 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--burgundy);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .faq-icon {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding-bottom 0.35s ease;
+            font-size: 0.88rem;
+            color: var(--charcoal);
+            line-height: 1.7;
+            padding-bottom: 0;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding-bottom: 1rem;
+        }
+
+        /* Client Policy */
+        .policy-section { margin-bottom: 2rem; }
+
+        .policy-section h2 {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.6rem;
+            color: var(--pink-dark);
+        }
+
+        .policy-intro {
+            text-align: center;
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin-bottom: 1.3rem;
+            font-style: italic;
+        }
+
+        .policy-list,
+        .aftercare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+        }
+
+        /* Shared info card (aftercare + policy) */
+        .info-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1.1rem 1rem 1.15rem;
+            background: white;
+            border-radius: 14px;
+            border: 1.5px solid rgba(182, 165, 147, 0.25);
+        }
+
+        .card-icon {
+            display: block;
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: var(--burgundy);
+            stroke-width: 1.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .card-title {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: var(--burgundy);
+            line-height: 1.3;
+        }
+
+        .card-text {
+            font-size: 0.82rem;
+            color: var(--charcoal);
+            line-height: 1.55;
+        }
+
+        .info-card.policy-highlight {
+            grid-column: 1 / -1;
+            background: rgba(249, 232, 191, 0.3);
+            border-color: var(--pink-main);
+        }
+
+        /* Aftercare */
+        .aftercare-section { margin-bottom: 2rem; }
+
+        .aftercare-intro {
+            text-align: center;
+            font-size: 0.83rem;
+            color: var(--text-muted);
+            margin: -0.6rem 0 1.3rem;
+        }
+
+        .time-closed { color: var(--text-muted); font-weight: 600; }
 
         @media (max-width: 480px) {
             .container {
@@ -896,15 +1399,11 @@
             }
 
             h1 {
-                font-size: 2.3rem;
+                font-size: 1.8rem;
             }
 
             .tagline {
                 font-size: 0.85rem;
-            }
-
-            .social-link span {
-                font-size: 0.9rem;
             }
 
             .category-title {
@@ -919,7 +1418,7 @@
             .booking-content {
                 padding: 1.5rem 1rem;
                 max-height: 85vh;
-                border-radius: 25px;
+                border-radius: 16px;
             }
 
             .booking-header h3 {
@@ -1020,6 +1519,62 @@
                 padding: 0.9rem;
                 font-size: 0.85rem;
             }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .aftercare-grid,
+            .policy-list {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-section h2,
+            .reviews-section h2,
+            .faq-section h2,
+            .aftercare-section h2,
+            .policy-section h2,
+            .loyalty-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Swipe carousels: mobile only */
+        @media (max-width: 640px) {
+            .reviews-track,
+            .aftercare-grid {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                margin: 0 -0.2rem;
+                padding: 0.2rem 0.2rem 0.4rem;
+            }
+
+            .reviews-track::-webkit-scrollbar,
+            .aftercare-grid::-webkit-scrollbar { display: none; }
+
+            .reviews-track .review-card,
+            .aftercare-grid .info-card {
+                flex: 0 0 82%;
+                scroll-snap-align: center;
+            }
+
+            .aftercare-grid .info-card { align-self: stretch; }
+
+            .swipe-hint { display: block; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-delay: 0s !important;
+                transition-duration: 0.01ms !important;
+            }
+            html { scroll-behavior: auto; }
         }
     </style>
 </head>
@@ -1027,36 +1582,44 @@
     <div class="container">
         <div class="header">
             <div class="logo-circle">
-                <img src="logo.jpg" alt="Chic Curls Logo">
+                <img src="gyameraaesthetics-logo.jpg" alt="Gyamera Aesthetics Logo">
             </div>
-            <h1>Chic Curls</h1>
+            <h1>Gyamera Aesthetics</h1>
             <p class="tagline">Luxury Lash Extensions</p>
+            <p id="openStatusBadge" class="open-status-badge closed">Closed</p>
         </div>
 
         <div class="social-links">
-            <a href="https://www.snapchat.com/add/chicc_curls" class="social-link" target="_blank" rel="noopener">
+            <a href="https://www.snapchat.com/add/chicc_curls" class="social-link social-link-hidden" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-snapchat" viewBox="0 0 16 16">
                     <path d="M15.943 11.526c-.111-.303-.323-.465-.564-.599a1 1 0 0 0-.123-.064l-.219-.111c-.752-.399-1.339-.902-1.746-1.498a3.4 3.4 0 0 1-.3-.531c-.034-.1-.032-.156-.008-.207a.3.3 0 0 1 .097-.1c.129-.086.262-.173.352-.231.162-.104.289-.187.371-.245.309-.216.525-.446.66-.702a1.4 1.4 0 0 0 .069-1.16c-.205-.538-.713-.872-1.329-.872a1.8 1.8 0 0 0-.487.065c.006-.368-.002-.757-.035-1.139-.116-1.344-.587-2.048-1.077-2.61a4.3 4.3 0 0 0-1.095-.881C9.764.216 8.92 0 7.999 0s-1.76.216-2.505.641c-.412.232-.782.53-1.097.883-.49.562-.96 1.267-1.077 2.61-.033.382-.04.772-.036 1.138a1.8 1.8 0 0 0-.487-.065c-.615 0-1.124.335-1.328.873a1.4 1.4 0 0 0 .067 1.161c.136.256.352.486.66.701.082.058.21.14.371.246l.339.221a.4.4 0 0 1 .109.11c.026.053.027.11-.012.217a3.4 3.4 0 0 1-.295.52c-.398.583-.968 1.077-1.696 1.472-.385.204-.786.34-.955.8-.128.348-.044.743.28 1.075q.18.189.409.31a4.4 4.4 0 0 0 1 .4.7.7 0 0 1 .202.09c.118.104.102.26.259.488q.12.178.296.3c.33.229.701.243 1.095.258.355.014.758.03 1.217.18.19.064.389.186.618.328.55.338 1.305.802 2.566.802 1.262 0 2.02-.466 2.576-.806.227-.14.424-.26.609-.321.46-.152.863-.168 1.218-.181.393-.015.764-.03 1.095-.258a1.14 1.14 0 0 0 .336-.368c.114-.192.11-.327.217-.42a.6.6 0 0 1 .19-.087 4.5 4.5 0 0 0 1.014-.404c.16-.087.306-.2.429-.336l.004-.005c.304-.325.38-.709.256-1.047m-1.121.602c-.684.378-1.139.337-1.493.565-.3.193-.122.61-.34.76-.269.186-1.061-.012-2.085.326-.845.279-1.384 1.082-2.903 1.082s-2.045-.801-2.904-1.084c-1.022-.338-1.816-.14-2.084-.325-.218-.15-.041-.568-.341-.761-.354-.228-.809-.187-1.492-.563-.436-.24-.189-.39-.044-.46 2.478-1.199 2.873-3.05 2.89-3.188.022-.166.045-.297-.138-.466-.177-.164-.962-.65-1.18-.802-.36-.252-.52-.503-.402-.812.082-.214.281-.295.49-.295a1 1 0 0 1 .197.022c.396.086.78.285 1.002.338q.04.01.082.011c.118 0 .16-.06.152-.195-.026-.433-.087-1.277-.019-2.066.094-1.084.444-1.622.859-2.097.2-.229 1.137-1.22 2.93-1.22 1.792 0 2.732.987 2.931 1.215.416.475.766 1.013.859 2.098.068.788.009 1.632-.019 2.065-.01.142.034.195.152.195a.4.4 0 0 0 .082-.01c.222-.054.607-.253 1.002-.338a1 1 0 0 1 .197-.023c.21 0 .409.082.49.295.117.309-.04.56-.401.812-.218.152-1.003.638-1.18.802-.184.169-.16.3-.139.466.018.14.413 1.991 2.89 3.189.147.073.394.222-.041.464"/>
                 </svg>
                 <span>Snapchat: Chicc Curls</span>
             </a>
-            <a href="https://www.instagram.com/chicc_curls" class="social-link" target="_blank" rel="noopener">
+            <a href="https://www.instagram.com/gyameraesthetics" class="social-link" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
-                <span>Instagram: Chicc_curls</span>
+                <span>Instagram</span>
             </a>
-            <a href="https://wa.me/+233501707556" class="social-link" target="_blank" rel="noopener">
+            <a href="https://www.tiktok.com/@gyameraesthetics" class="social-link" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.12a8.16 8.16 0 0 0 4.77 1.52V7.18a4.85 4.85 0 0 1-1-.49z"/>
+                </svg>
+                <span>TikTok</span>
+            </a>
+            <a href="https://wa.me/233558177643" class="social-link" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                 </svg>
-                <span>WhatsApp: +233501707556</span>
+                <span>WhatsApp</span>
             </a>
         </div>
+        <p class="whatsapp-line">Chat with us: <a href="https://wa.me/233558177643" target="_blank" rel="noopener">+233 55 817 7643</a></p>
 
-        <button class="contact-button" onclick="openBooking()">
+        <button type="button" class="contact-button" onclick="openBooking()">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                 <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -1066,38 +1629,53 @@
             Tap to Book Appointment
         </button>
 
+        <button type="button" class="policy-nudge" onclick="document.getElementById('clientPolicy').scrollIntoView({behavior:'smooth', block:'start'})">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+            Please read our Client Policy before booking
+        </button>
+
         <div class="location">
-            <div class="location-icon">📍</div>
+            <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" style="margin:0 auto 0.4rem"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             <div class="location-text">
-                Sakumono Estate,<br>
-                Behind Fridays Restaurant
+                Sakumono / Spintex
             </div>
         </div>
 
-        <div class="divider"></div>
+        <nav class="section-nav" id="sectionNav" aria-label="Page sections">
+            <a href="#" class="nav-book" onclick="openBooking(); return false;">Book</a>
+            <a href="#services">Prices</a>
+            <a href="#results">Results</a>
+            <a href="#aftercare">Aftercare</a>
+            <a href="#clientPolicy">Policy</a>
+            <a href="#rewards">Rewards</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#faq">FAQ</a>
+        </nav>
 
         <div class="hours-section">
             <h2>Working Hours</h2>
             <div class="hours-grid">
                 <div class="hours-item">
                     <span class="day">Monday</span>
-                    <span class="time">3:30 PM - 8:00 PM</span>
+                    <span class="time">8:00 AM - 8:00 PM</span>
                 </div>
                 <div class="hours-item">
                     <span class="day">Tuesday</span>
-                    <span class="time">3:30 PM - 8:00 PM</span>
+                    <span class="time">8:00 AM - 8:00 PM</span>
                 </div>
                 <div class="hours-item">
                     <span class="day">Wednesday</span>
-                    <span class="time">3:30 PM - 8:00 PM</span>
+                    <span class="time">8:00 AM - 8:00 PM</span>
                 </div>
                 <div class="hours-item">
                     <span class="day">Thursday</span>
-                    <span class="time">3:30 PM - 8:00 PM</span>
+                    <span class="time">8:00 AM - 8:00 PM</span>
                 </div>
                 <div class="hours-item">
                     <span class="day">Friday</span>
-                    <span class="time">3:30 PM - 8:00 PM</span>
+                    <span class="time">8:00 AM - 8:00 PM</span>
                 </div>
                 <div class="hours-item">
                     <span class="day">Saturday</span>
@@ -1105,21 +1683,21 @@
                 </div>
                 <div class="hours-item">
                     <span class="day">Sunday</span>
-                    <span class="time" style="color: var(--text-muted); font-weight: 600;">CLOSED</span>
+                    <span class="time">11:30 AM - 7:00 PM</span>
                 </div>
             </div>
         </div>
 
         <div class="divider"></div>
 
-        <div class="price-list">
+        <div class="price-list" id="services">
             <h2>Services & Pricing</h2>
 
             <div class="price-category">
                 <div class="category-title">Classic Set</div>
                 <div class="price-item">
                     <span class="service-name">Cat Eye</span>
-                    <span class="service-price"><span class="currency">GHS</span> 150</span>
+                    <span class="service-price"><span class="currency">₵</span>150</span>
                 </div>
             </div>
 
@@ -1127,11 +1705,11 @@
                 <div class="category-title">Hybrid Set</div>
                 <div class="price-item">
                     <span class="service-name">Cat Eye</span>
-                    <span class="service-price"><span class="currency">GHS</span> 180</span>
+                    <span class="service-price"><span class="currency">₵</span>180</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Wispy</span>
-                    <span class="service-price"><span class="currency">GHS</span> 200</span>
+                    <span class="service-price"><span class="currency">₵</span>200</span>
                 </div>
             </div>
 
@@ -1139,11 +1717,11 @@
                 <div class="category-title">Volume Sets</div>
                 <div class="price-item">
                     <span class="service-name">Cat Eye</span>
-                    <span class="service-price"><span class="currency">GHS</span> 220</span>
+                    <span class="service-price"><span class="currency">₵</span>220</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Wispy</span>
-                    <span class="service-price"><span class="currency">GHS</span> 250</span>
+                    <span class="service-price"><span class="currency">₵</span>250</span>
                 </div>
             </div>
 
@@ -1151,23 +1729,15 @@
                 <div class="category-title">Signature Sets</div>
                 <div class="price-item">
                     <span class="service-name">Wet Set</span>
-                    <span class="service-price"><span class="currency">GHS</span> 230</span>
+                    <span class="service-price"><span class="currency">₵</span>230</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Bratz Doll Set</span>
-                    <span class="service-price"><span class="currency">GHS</span> 270</span>
+                    <span class="service-price"><span class="currency">₵</span>270</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Manga/Anime Set</span>
-                    <span class="service-price"><span class="currency">GHS</span> 330</span>
-                </div>
-                <div class="price-item">
-                    <span class="service-name">Viper Luxe Set (Medusa)</span>
-                    <span class="service-price"><span class="currency">GHS</span> 330</span>
-                </div>
-                <div class="price-item">
-                    <span class="service-name">Chic Curl Signature</span>
-                    <span class="service-price"><span class="currency">GHS</span> 340</span>
+                    <span class="service-price"><span class="currency">₵</span>330</span>
                 </div>
             </div>
 
@@ -1175,15 +1745,23 @@
                 <div class="category-title">Extras</div>
                 <div class="price-item">
                     <span class="service-name">Colored Lash</span>
-                    <span class="service-price"><span class="currency">GHS</span> 40</span>
+                    <span class="service-price"><span class="currency">₵</span>40</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Button Lash</span>
-                    <span class="service-price"><span class="currency">GHS</span> 50</span>
+                    <span class="service-price"><span class="currency">₵</span>70</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Removal</span>
-                    <span class="service-price"><span class="currency">GHS</span> 50</span>
+                    <span class="service-price"><span class="currency">₵</span>50</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Lamination</span>
+                    <span class="service-price"><span class="currency">₵</span>100</span>
+                </div>
+                <div class="price-item">
+                    <span class="service-name">Tinting</span>
+                    <span class="service-price"><span class="currency">₵</span>70</span>
                 </div>
             </div>
 
@@ -1191,22 +1769,220 @@
                 <div class="category-title">Refills (within 2 weeks)</div>
                 <div class="price-item">
                     <span class="service-name">Classic / Hybrid</span>
-                    <span class="service-price"><span class="currency">GHS</span> 70</span>
+                    <span class="service-price"><span class="currency">₵</span>70</span>
                 </div>
                 <div class="price-item">
                     <span class="service-name">Volume / Wet / Bratz Sets</span>
-                    <span class="service-price"><span class="currency">GHS</span> 120</span>
-                </div>
-                <div class="price-item">
-                    <span class="service-name">Medusa / Anime / Chic Curl Signature</span>
-                    <span class="service-price"><span class="currency">GHS</span> 150</span>
+                    <span class="service-price"><span class="currency">₵</span>120</span>
                 </div>
             </div>
         </div>
 
+        <div class="divider"></div>
+
+        <!-- Before & After Videos -->
+        <div class="gallery-section" id="results">
+            <h2>Before &amp; After</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <video src="beforenafter/1.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <div class="gallery-item">
+                    <video src="beforenafter/2.mp4" autoplay muted loop playsinline></video>
+                </div>
+                <div class="gallery-item">
+                    <video src="beforenafter/3.mp4" autoplay muted loop playsinline></video>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Aftercare Tips -->
+        <div class="aftercare-section" id="aftercare">
+            <h2>Aftercare Tips</h2>
+            <p class="aftercare-intro">Follow these to keep your set full for longer.</p>
+            <div class="aftercare-grid">
+                <div class="info-card">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.7c3.5 4.2 6 7.3 6 10.6a6 6 0 0 1-12 0c0-3.3 2.5-6.4 6-10.6z"/></svg>
+                    <div class="card-title">Avoid water for 24–48hrs</div>
+                    <p class="card-text">Keep lashes dry after your appointment so the adhesive fully cures.</p>
+                </div>
+                <div class="info-card">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                    <div class="card-title">No steam or saunas</div>
+                    <p class="card-text">High heat and steam loosen the bond and shorten lash retention.</p>
+                </div>
+                <div class="info-card">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.53 13.53 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/></svg>
+                    <div class="card-title">Don't rub your eyes</div>
+                    <p class="card-text">Rubbing or pulling causes damage and premature shedding.</p>
+                </div>
+                <div class="info-card">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08"/><path d="M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z"/></svg>
+                    <div class="card-title">Brush daily</div>
+                    <p class="card-text">Use a clean spoolie each morning to keep lashes fluffy and aligned.</p>
+                </div>
+                <div class="info-card">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.07-10.13a2 2 0 0 1-.21-.9V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
+                    <div class="card-title">Avoid oil-based products</div>
+                    <p class="card-text">Oils break down the adhesive — check cleansers and makeup removers.</p>
+                </div>
+                <div class="info-card">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+                    <div class="card-title">Sleep on your back</div>
+                    <p class="card-text">Side sleeping flattens and bends lashes. A silk pillowcase helps too.</p>
+                </div>
+            </div>
+            <p class="swipe-hint">Swipe for more →</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Client Policy -->
+        <div class="policy-section" id="clientPolicy">
+            <h2>Client Policy</h2>
+            <p class="policy-intro">Please read before booking your appointment.</p>
+            <div class="policy-list">
+                <div class="info-card policy-highlight">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                    <div class="card-title">Deposit</div>
+                    <p class="card-text">A <strong>non-refundable deposit of GH¢50</strong> is required to secure your appointment.</p>
+                </div>
+                <div class="info-card">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <div class="card-title">Be on time</div>
+                    <p class="card-text">Please arrive on time. Your punctuality helps us serve every client well.</p>
+                </div>
+                <div class="info-card">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <div class="card-title">Clean lashes</div>
+                    <p class="card-text">We don't work over another technician's work. Please come with <strong>clean, product-free lashes</strong>.</p>
+                </div>
+                <div class="info-card">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <div class="card-title">Home studio</div>
+                    <p class="card-text">Gyamera Aesthetics is a <strong>home-based studio</strong>. Please be respectful of the space.</p>
+                </div>
+                <div class="info-card">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <div class="card-title">No extra guests</div>
+                    <p class="card-text">Extra guests are not allowed unless approved in advance.</p>
+                </div>
+                <div class="info-card policy-highlight">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <div class="card-title">Cancel or reschedule</div>
+                    <p class="card-text">Please let us know as early as possible so we can accommodate other clients.</p>
+                </div>
+                <div class="info-card policy-highlight">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>
+                    <div class="card-title">Silent appointment</div>
+                    <p class="card-text">You're always welcome to request a <strong>silent appointment</strong> if you're anxious, tired, or mentally drained and prefer no conversation. No judgement, ever. Feel free to request a music genre, playlist, podcast, or video for the background. Your comfort and peace matter here.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Loyalty Card -->
+        <div class="loyalty-section" id="rewards">
+            <h2>Loyalty Card</h2>
+            <p class="policy-intro">One stamp for every visit. A gift from us, for your loyalty.</p>
+            <div class="loyalty-cards">
+                <img src="loyalty-card.jpg" alt="Gyamera Aesthetics loyalty card" loading="lazy">
+                <img src="loyalty-stamps.jpg" alt="Loyalty stamp card with 10 stamps: 15% off on the 4th, 20% off on the 7th and a free set on the 10th" loading="lazy">
+            </div>
+            <div class="loyalty-steps">
+                <div><strong>4th visit</strong>15% off</div>
+                <div><strong>7th visit</strong>20% off</div>
+                <div><strong>10th visit</strong>Free set</div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Client Reviews -->
+        <div class="reviews-section" id="reviews">
+            <h2>Client Reviews</h2>
+            <div class="reviews-track" tabindex="0" aria-label="Client reviews, swipe to see more">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"She's professional, efficient, and knows exactly what she's doing. My lashes look full, natural, and flawless. Hands down the best lash tech everrrr! 100% recommend her for a 10/10 result! Perfect for anyone in Sakumono and Spintex."</p>
+                    <button type="button" class="review-more" hidden>View more</button>
+                    <span class="reviewer-name">— Olive</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Landge, I’ve been meaning to send you a review of your service but I honestly don’t even know where to start lol 🤍
+                    <br>    <br>
+                    Your service is truly 100/10. From the atmosphere to the actual lash appointment itself, everything is top tier. You pay so much attention to detail, you listen to exactly what I want, and you always deliver perfectly every single time. You never disappoint, even with my last-minute bookings 😭
+                    <br>    <br>
+                    Your lash retention is honestly amazing, and I’ll continue recommending all my friends to book with you because you really know what you’re doing. Thank you for always making me leave feeling so pretty 🤍✨"</p>
+                    <button type="button" class="review-more" hidden>View more</button>
+                    <span class="reviewer-name">— Marilyn</span>
+                </div>
+            </div>
+            <p class="swipe-hint">Swipe for more →</p>
+            <button type="button" class="review-cta" onclick="openReview()">
+                <span aria-hidden="true">★</span> Leave a Review
+            </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- FAQ -->
+        <div class="faq-section" id="faq">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
+                        How long does a full set take?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">A full set takes 1.5 – 2.5 hours depending on the style. Signature sets like the Manga/Anime Set may take longer due to the precision involved. Plan ahead and arrive relaxed.</div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
+                        How long do lash extensions last?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">With proper aftercare, extensions last 3 – 5 weeks. Natural lashes shed in cycles so your extensions shed with them. We recommend a refill every 2 weeks to keep them looking full.</div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
+                        Do lash extensions hurt?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">Not at all — most clients fall asleep! Your eyes stay closed throughout. There may be a very mild sensitivity to adhesive fumes for some people, but no pain is involved.</div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
+                        How should I prepare for my appointment?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">Come with clean, makeup-free eyes — no mascara, eyeliner, or eye cream. Avoid curling your lashes beforehand. If you wear contacts, bring your glasses as you'll need to remove them.</div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
+                        Can I wear mascara with extensions?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">It's best to skip mascara — your extensions already give you that bold look. If you must, use only water-based mascara on the tips. Waterproof mascara breaks down the adhesive bond.</div>
+                </div>
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="toggleFaq(this)">
+                        What's the difference between Classic, Hybrid and Volume?
+                        <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq-answer">Classic is one extension per natural lash — natural and defined. Hybrid blends classic and volume for a textured, lush look. Volume uses a fan of ultra-fine lashes per natural lash for maximum fullness and drama.</div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="footer">
-            <p>© 2026 Chic Curls • All Rights Reserved</p>
-            <p style="margin-top: 0.5rem; font-size: 0.8rem;">Engineered by <span style="color: var(--pink-dark); font-weight: 600;">CurioLabs</span></p>
+            <p>© 2026 Gyamera Aesthetics • All Rights Reserved</p>
+            <p class="footer-sub">Engineered by <span class="footer-brand">CurioLabs</span></p>
         </div>
     </div>
 
@@ -1215,14 +1991,14 @@
         <div class="booking-content">
             <div class="booking-header">
                 <h3>Book Appointment</h3>
-                <button class="close-btn" onclick="closeBooking()">×</button>
+                <button type="button" class="close-btn" onclick="closeBooking()">×</button>
             </div>
 
             <!-- Step 1: Select Service -->
             <div class="booking-step active" id="step1">
                 <div class="step-title">Select Your Service</div>
                 <div class="service-select" id="serviceSelect"></div>
-                <button class="btn-primary" onclick="validateAndGoToStep(2)" style="width: 100%">Next</button>
+                <button type="button" class="btn-primary btn-full" onclick="validateAndGoToStep(2)">Next</button>
             </div>
 
             <!-- Step 2: Select Date -->
@@ -1230,8 +2006,8 @@
                 <div class="step-title">Choose a Date</div>
                 <div class="calendar-grid" id="calendar"></div>
                 <div class="booking-buttons">
-                    <button class="btn-secondary" onclick="goToStep(1)">Back</button>
-                    <button class="btn-primary" onclick="validateAndGoToStep(3)">Next</button>
+                    <button type="button" class="btn-secondary" onclick="goToStep(1)">Back</button>
+                    <button type="button" class="btn-primary" onclick="validateAndGoToStep(3)">Next</button>
                 </div>
             </div>
 
@@ -1240,8 +2016,8 @@
                 <div class="step-title">Select Time Slot</div>
                 <div class="time-slots" id="timeSlots"></div>
                 <div class="booking-buttons">
-                    <button class="btn-secondary" onclick="goToStep(2)">Back</button>
-                    <button class="btn-primary" onclick="validateAndGoToStep(4)">Next</button>
+                    <button type="button" class="btn-secondary" onclick="goToStep(2)">Back</button>
+                    <button type="button" class="btn-primary" onclick="validateAndGoToStep(4)">Next</button>
                 </div>
             </div>
 
@@ -1263,8 +2039,8 @@
                     </div>
                 </div>
                 <div class="booking-buttons">
-                    <button class="btn-secondary" onclick="goToStep(3)">Back</button>
-                    <button class="btn-primary" onclick="validateAndGoToStep(5)">Review</button>
+                    <button type="button" class="btn-secondary" onclick="goToStep(3)">Back</button>
+                    <button type="button" class="btn-primary" onclick="validateAndGoToStep(5)">Review</button>
                 </div>
             </div>
 
@@ -1273,9 +2049,53 @@
                 <div class="step-title">Confirm Your Booking</div>
                 <div class="booking-summary" id="bookingSummary"></div>
                 <div class="booking-buttons">
-                    <button class="btn-secondary" onclick="goToStep(4)">Back</button>
-                    <button class="btn-primary" onclick="confirmBooking()">Confirm Booking</button>
+                    <button type="button" class="btn-secondary" onclick="goToStep(4)">Back</button>
+                    <button type="button" class="btn-primary" onclick="confirmBooking()">Confirm Booking</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Modal -->
+    <div class="booking-modal" id="reviewModal" role="dialog" aria-modal="true" aria-labelledby="reviewTitle">
+        <div class="booking-content">
+            <div class="booking-header">
+                <h3 id="reviewTitle">Leave a Review</h3>
+                <button type="button" class="close-btn" onclick="closeReview()" aria-label="Close">×</button>
+            </div>
+
+            <div id="reviewFormView">
+                <div class="booking-form">
+                    <div class="form-group">
+                        <label id="ratingLabel">Your rating *</label>
+                        <div class="star-picker" role="radiogroup" aria-labelledby="ratingLabel" id="starPicker">
+                            <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="1 star" data-value="1">★</button>
+                            <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="2 stars" data-value="2">★</button>
+                            <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="3 stars" data-value="3">★</button>
+                            <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="4 stars" data-value="4">★</button>
+                            <button type="button" class="star-btn" role="radio" aria-checked="false" aria-label="5 stars" data-value="5">★</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewName">Your name *</label>
+                        <input type="text" id="reviewName" placeholder="First name is fine" maxlength="60" autocomplete="given-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewText">Your review *</label>
+                        <textarea id="reviewText" rows="4" maxlength="800" placeholder="Tell us about your lash experience..."></textarea>
+                    </div>
+                </div>
+                <p class="review-note">Your review is sent to us on WhatsApp. By sending it you allow us to show it on this page after we've read it.</p>
+                <div class="booking-buttons">
+                    <button type="button" class="btn-secondary" onclick="closeReview()">Cancel</button>
+                    <button type="button" class="btn-primary" onclick="submitReview()">Send Review</button>
+                </div>
+            </div>
+
+            <div class="review-thanks" id="reviewThanksView" hidden>
+                <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" style="width:36px;height:36px;margin:0 auto 0.8rem"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <p><strong>Thank you!</strong><br>Tap send in WhatsApp to finish. We read every review and will add yours to this page soon.</p>
+                <button type="button" class="success-button" onclick="closeReview()">Done</button>
             </div>
         </div>
     </div>
@@ -1293,7 +2113,7 @@
             <div class="success-note">
                 <strong>Please Note:</strong> This booking is <strong>PENDING</strong> until we confirm via WhatsApp. We'll get back to you shortly to confirm your appointment.
             </div>
-            <button class="success-button" onclick="closeSuccessModal()">Got It!</button>
+            <button type="button" class="success-button" onclick="closeSuccessModal()">Got It!</button>
         </div>
     </div>
 
@@ -1309,11 +2129,25 @@
             </div>
             <h3 class="error-title">Oops!</h3>
             <p class="error-message" id="errorMessage"></p>
-            <button class="error-button" onclick="closeErrorModal()">OK</button>
+            <button type="button" class="error-button" onclick="closeErrorModal()">OK</button>
         </div>
     </div>
 
+    <!-- Scroll to top -->
+    <button type="button" class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
     <script>
+        // ── Google Sheets integration ──────────────────────────────────────
+        // Paste your deployed Apps Script URL here after setup
+        const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwXeemDjmzTjqUFvT2LllpyCGTZtA1HSfyAsbvtIW8M2ORUZt5WFloPDdm4jmue74oL/exec';
+        const WHATSAPP_NUMBER = '233558177643';
+        let blockedSlots = {}; // { "2026-05-20": ["3:30 PM", "5:30 PM"] }
+        let slotsLoading = false;
+
         // Booking system data
         const bookingData = {
             selectedService: null,
@@ -1334,14 +2168,19 @@
             { name: 'Wet Set', price: 230, category: 'Signature' },
             { name: 'Bratz Doll Set', price: 270, category: 'Signature' },
             { name: 'Manga/Anime Set', price: 330, category: 'Signature' },
-            { name: 'Viper Luxe (Medusa)', price: 330, category: 'Signature' },
-            { name: 'Chic Curl Signature', price: 340, category: 'Signature' }
+            { name: 'Colored Lash', price: 40, category: 'Extras' },
+            { name: 'Button Lash', price: 70, category: 'Extras' },
+            { name: 'Removal', price: 50, category: 'Extras' },
+            { name: 'Lamination', price: 100, category: 'Extras' },
+            { name: 'Tinting', price: 70, category: 'Extras' },
+            { name: 'Classic / Hybrid Refill', price: 70, category: 'Refill' },
+            { name: 'Volume / Wet / Bratz Refill', price: 120, category: 'Refill' }
         ];
 
         // Available time slots based on working hours
         const timeSlots = {
-            weekday: ['3:30 PM', '4:30 PM', '5:30 PM', '6:30 PM', '7:30 PM'],
-            weekend: ['8:00 AM', '9:30 AM', '11:00 AM', '12:30 PM', '2:00 PM', '3:30 PM', '5:00 PM', '6:30 PM']
+            weekday: ['8:00 AM', '9:30 AM', '11:00 AM', '12:30 PM', '2:00 PM', '3:30 PM', '5:00 PM', '6:30 PM'],
+            sunday: ['11:30 AM', '1:00 PM', '2:30 PM', '4:00 PM', '5:30 PM']
         };
 
         function openBooking() {
@@ -1349,6 +2188,46 @@
             document.body.style.overflow = 'hidden';
             initializeServices();
             generateCalendar();
+            document.getElementById('customerName').addEventListener('input', () => clearFieldError('customerName'), { once: false });
+            document.getElementById('customerPhone').addEventListener('input', () => clearFieldError('customerPhone'), { once: false });
+            loadBlockedSlots();
+        }
+
+        async function loadBlockedSlots() {
+            if (!SHEET_URL || SHEET_URL === 'YOUR_APPS_SCRIPT_URL_HERE') return;
+            blockedSlots = {};
+            slotsLoading = true;
+            try {
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                const start = today.toISOString().split('T')[0];
+                const end   = new Date(today.getTime() + 13 * 86400000).toISOString().split('T')[0];
+                const res  = await fetch(`${SHEET_URL}?action=getBlocked&start=${start}&end=${end}`);
+                const data = await res.json();
+                blockedSlots = data.blocked || {};
+            } catch {
+                blockedSlots = {};
+            } finally {
+                slotsLoading = false;
+                // Refresh time slots if the user is already on step 3
+                const step3 = document.getElementById('step3');
+                if (step3 && step3.classList.contains('active')) generateTimeSlots();
+            }
+        }
+
+        function saveToSheet(name, phone, notes) {
+            if (!SHEET_URL || SHEET_URL === 'YOUR_APPS_SCRIPT_URL_HERE') return;
+            const params = new URLSearchParams({
+                action:  'save',
+                date:    bookingData.selectedDate,
+                time:    bookingData.selectedTime,
+                service: bookingData.selectedService.name,
+                price:   bookingData.selectedService.price,
+                name,
+                phone,
+                notes:   notes || ''
+            });
+            fetch(`${SHEET_URL}?${params}`).catch(() => {});
         }
 
         function closeBooking() {
@@ -1375,49 +2254,89 @@
             if (stepNum === 5) showSummary();
         }
 
+        function setFieldError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const group = field.closest('.form-group');
+            group.classList.add('has-error');
+            let msg = group.querySelector('.field-error-msg');
+            if (!msg) {
+                msg = document.createElement('span');
+                msg.className = 'field-error-msg';
+                field.insertAdjacentElement('afterend', msg);
+            }
+            msg.textContent = message;
+        }
+
+        function clearFieldError(fieldId) {
+            const field = document.getElementById(fieldId);
+            const group = field.closest('.form-group');
+            group.classList.remove('has-error');
+            const msg = group.querySelector('.field-error-msg');
+            if (msg) msg.remove();
+        }
+
+        function isValidGhanaPhone(phone) {
+            return /^(\+233|0)[2-9]\d{8}$/.test(phone.replace(/[\s\-]/g, ''));
+        }
+
+        function validateContactForm() {
+            const name = document.getElementById('customerName').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            let valid = true;
+
+            clearFieldError('customerName');
+            clearFieldError('customerPhone');
+
+            if (!name) {
+                setFieldError('customerName', 'Full name is required.');
+                valid = false;
+            } else if (name.length < 2) {
+                setFieldError('customerName', 'Please enter your full name.');
+                valid = false;
+            }
+
+            if (!phone) {
+                setFieldError('customerPhone', 'Phone number is required.');
+                valid = false;
+            } else if (!isValidGhanaPhone(phone)) {
+                setFieldError('customerPhone', 'Enter a valid number (e.g. 0501234567 or +233501234567).');
+                valid = false;
+            }
+
+            return valid;
+        }
+
         function validateAndGoToStep(stepNum) {
             let isValid = false;
             let errorMessage = '';
 
-            // Validate based on current step
             if (stepNum === 2) {
-                // Going to step 2, validate service selection
                 if (!bookingData.selectedService) {
                     errorMessage = 'Please select a service before continuing.';
                 } else {
                     isValid = true;
                 }
             } else if (stepNum === 3) {
-                // Going to step 3, validate date selection
                 if (!bookingData.selectedDate) {
                     errorMessage = 'Please select a date before continuing.';
                 } else {
                     isValid = true;
                 }
             } else if (stepNum === 4) {
-                // Going to step 4, validate time selection
                 if (!bookingData.selectedTime) {
                     errorMessage = 'Please select a time slot before continuing.';
                 } else {
                     isValid = true;
                 }
             } else if (stepNum === 5) {
-                // Going to step 5, validate customer details
-                const name = document.getElementById('customerName').value.trim();
-                const phone = document.getElementById('customerPhone').value.trim();
-                
-                if (!name) {
-                    errorMessage = 'Please enter your name.';
-                } else if (!phone) {
-                    errorMessage = 'Please enter your phone number.';
-                } else {
+                if (validateContactForm()) {
                     isValid = true;
                 }
             }
 
             if (isValid) {
                 goToStep(stepNum);
-            } else {
+            } else if (errorMessage) {
                 showError(errorMessage);
             }
         }
@@ -1427,7 +2346,7 @@
             container.innerHTML = services.map((service, index) => `
                 <div class="service-option" onclick="selectService(${index})">
                     <span class="service-name">${service.name}</span>
-                    <span class="service-price">GHS ${service.price}</span>
+                    <span class="service-price">₵${service.price}</span>
                 </div>
             `).join('');
         }
@@ -1461,14 +2380,7 @@
                 date.setDate(today.getDate() + i);
                 const dateStr = date.toISOString().split('T')[0];
                 const dayNum = date.getDate();
-                const dayOfWeek = date.getDay();
-                
-                // Check if it's Sunday (day 0)
-                if (dayOfWeek === 0) {
-                    html += `<div class="calendar-day disabled" data-date="${dateStr}">${dayNum}</div>`;
-                } else {
-                    html += `<div class="calendar-day available" onclick="selectDate('${dateStr}')" data-date="${dateStr}">${dayNum}</div>`;
-                }
+                html += `<div class="calendar-day available" onclick="selectDate('${dateStr}')" data-date="${dateStr}">${dayNum}</div>`;
             }
             
             calendar.innerHTML = html;
@@ -1481,16 +2393,30 @@
             });
         }
 
+        function showSlotsLoading(container) {
+            container.textContent = '';
+            const wrap = document.createElement('div');
+            wrap.className = 'slots-loading';
+            const spinner = document.createElement('div');
+            spinner.className = 'slots-spinner';
+            wrap.appendChild(spinner);
+            wrap.appendChild(document.createTextNode('Checking availability…'));
+            container.appendChild(wrap);
+        }
+
         function generateTimeSlots() {
             const container = document.getElementById('timeSlots');
             if (!bookingData.selectedDate) return;
-            
+
+            if (slotsLoading) { showSlotsLoading(container); return; }
+
+            const booked = blockedSlots[bookingData.selectedDate] || [];
             const selectedDate = new Date(bookingData.selectedDate + 'T00:00:00');
             const dayOfWeek = selectedDate.getDay(); // 0=Sunday, 6=Saturday
-            
-            // Saturday only has weekend hours (Sunday is closed)
-            const isSaturday = dayOfWeek === 6;
-            const slots = isSaturday ? timeSlots.weekend : timeSlots.weekday;
+
+            // Sunday has shorter hours (11:30 AM - 7:00 PM)
+            const isSunday = dayOfWeek === 0;
+            const slots = isSunday ? timeSlots.sunday : timeSlots.weekday;
             
             // Check if selected date is today
             const today = new Date();
@@ -1526,6 +2452,8 @@
                 
                 if (isPast) {
                     return `<div class="time-slot booked">Past</div>`;
+                } else if (booked.includes(time)) {
+                    return `<div class="time-slot booked">Booked</div>`;
                 } else {
                     return `<div class="time-slot" onclick="selectTime('${time}')">${time}</div>`;
                 }
@@ -1570,7 +2498,7 @@
                 </div>
                 <div class="summary-item">
                     <span>Total:</span>
-                    <strong>GHS ${bookingData.selectedService?.price || 0}</strong>
+                    <strong>₵${bookingData.selectedService?.price || 0}</strong>
                 </div>
             `;
         }
@@ -1597,14 +2525,15 @@
                 `*Name:* ${name}%0A` +
                 `*Phone:* ${phone}%0A%0A` +
                 `*Service:* ${bookingData.selectedService.name}%0A` +
-                `*Price:* GHS ${bookingData.selectedService.price}%0A%0A` +
+                `*Price:* ₵${bookingData.selectedService.price}%0A%0A` +
                 `*Date:* ${formattedDate}%0A` +
                 `*Time:* ${bookingData.selectedTime}%0A%0A` +
                 `${bookingData.customerNotes ? `*Notes:* ${bookingData.customerNotes}%0A%0A` : ''}` +
                 `Please confirm this booking.`;
             
             // Send booking request via WhatsApp
-            window.open(`https://wa.me/233501707556?text=${message}`, '_blank');
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+            saveToSheet(name, phone, document.getElementById('customerNotes').value.trim());
             
             // Close booking modal and show success modal
             setTimeout(() => {
@@ -1635,6 +2564,174 @@
             if (e.target === this) {
                 closeBooking();
             }
+        });
+
+        // ── Reviews ────────────────────────────────────────────────────────
+        let reviewRating = 0;
+
+        function setRating(value) {
+            reviewRating = value;
+            document.querySelectorAll('#starPicker .star-btn').forEach(btn => {
+                const v = Number(btn.dataset.value);
+                btn.classList.toggle('on', v <= value);
+                btn.setAttribute('aria-checked', v === value ? 'true' : 'false');
+            });
+            clearReviewError('starPicker');
+        }
+
+        document.querySelectorAll('#starPicker .star-btn').forEach(btn => {
+            btn.addEventListener('click', () => setRating(Number(btn.dataset.value)));
+        });
+
+        function openReview() {
+            document.getElementById('reviewFormView').hidden = false;
+            document.getElementById('reviewThanksView').hidden = true;
+            document.getElementById('reviewModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeReview() {
+            document.getElementById('reviewModal').classList.remove('active');
+            document.body.style.overflow = '';
+            setRating(0);
+            document.getElementById('reviewName').value = '';
+            document.getElementById('reviewText').value = '';
+            ['starPicker', 'reviewName', 'reviewText'].forEach(clearReviewError);
+        }
+
+        function clearReviewError(id) {
+            const group = document.getElementById(id).closest('.form-group');
+            group.classList.remove('has-error');
+            const msg = group.querySelector('.field-error-msg');
+            if (msg) msg.remove();
+        }
+
+        function setReviewError(id, message) {
+            clearReviewError(id);
+            const group = document.getElementById(id).closest('.form-group');
+            group.classList.add('has-error');
+            const msg = document.createElement('span');
+            msg.className = 'field-error-msg';
+            msg.textContent = message;
+            group.appendChild(msg);
+        }
+
+        function submitReview() {
+            const name = document.getElementById('reviewName').value.trim();
+            const text = document.getElementById('reviewText').value.trim();
+            let valid = true;
+
+            if (!reviewRating) { setReviewError('starPicker', 'Please choose a star rating.'); valid = false; }
+            if (name.length < 2) { setReviewError('reviewName', 'Please enter your name.'); valid = false; }
+            if (text.length < 10) { setReviewError('reviewText', 'Please write a little more (at least 10 characters).'); valid = false; }
+            if (!valid) return;
+
+            const message = `*NEW REVIEW*\n\n` +
+                `*Rating:* ${'★'.repeat(reviewRating)}${'☆'.repeat(5 - reviewRating)} (${reviewRating}/5)\n` +
+                `*Name:* ${name}\n\n` +
+                `"${text}"\n\n` +
+                `I'm happy for this to be shown on the Gyamera Aesthetics page.`;
+
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+            document.getElementById('reviewFormView').hidden = true;
+            document.getElementById('reviewThanksView').hidden = false;
+        }
+
+        ['reviewName', 'reviewText'].forEach(id => {
+            document.getElementById(id).addEventListener('input', () => clearReviewError(id));
+        });
+
+        document.getElementById('reviewModal').addEventListener('click', function(e) {
+            if (e.target === this) closeReview();
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key !== 'Escape') return;
+            if (document.getElementById('reviewModal').classList.contains('active')) closeReview();
+        });
+
+        // ── Review cards: clamp long text, "View more" toggle ──────────────
+        function setupReviewClamp() {
+            document.querySelectorAll('.review-card').forEach(card => {
+                const text = card.querySelector('.review-text');
+                const btn = card.querySelector('.review-more');
+                if (btn.dataset.open === '1') return;
+                text.classList.add('clamped');
+                btn.hidden = text.scrollHeight <= text.clientHeight + 1;
+            });
+        }
+
+        document.querySelectorAll('.review-more').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const text = btn.closest('.review-card').querySelector('.review-text');
+                const open = btn.dataset.open === '1';
+                text.classList.toggle('clamped', open);
+                btn.dataset.open = open ? '' : '1';
+                btn.textContent = open ? 'View more' : 'View less';
+            });
+        });
+
+        setupReviewClamp();
+        window.addEventListener('load', setupReviewClamp);
+        let clampTimer;
+        window.addEventListener('resize', () => { clearTimeout(clampTimer); clampTimer = setTimeout(setupReviewClamp, 150); });
+
+        // ── Section nav: highlight the section in view ────────────────────
+        (function () {
+            const links = [...document.querySelectorAll('#sectionNav a[href^="#"]')].filter(a => a.getAttribute('href').length > 1);
+            const byId = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+            if (!('IntersectionObserver' in window)) return;
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    links.forEach(a => a.classList.remove('active'));
+                    const link = byId.get(entry.target.id);
+                    if (link) {
+                        link.classList.add('active');
+                        const nav = document.getElementById('sectionNav');
+                        nav.scrollTo({ left: link.offsetLeft - nav.clientWidth / 2 + link.offsetWidth / 2, behavior: 'smooth' });
+                    }
+                });
+            }, { rootMargin: '-20% 0px -65% 0px' });
+            byId.forEach((_, id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+            document.documentElement.style.scrollBehavior = 'smooth';
+        })();
+
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+
+        function updateOpenStatus() {
+            const now = new Date();
+            const day = now.getUTCDay(); // Ghana is UTC+0, so UTC = local time
+            const totalMins = now.getUTCHours() * 60 + now.getUTCMinutes();
+            let open = false;
+            if (day >= 1 && day <= 6) open = totalMins >= 8 * 60 && totalMins < 20 * 60;
+            else if (day === 0)       open = totalMins >= 11 * 60 + 30 && totalMins < 19 * 60;
+            const badge = document.getElementById('openStatusBadge');
+            if (badge) {
+                badge.textContent = open ? 'Open Now' : 'Closed';
+                badge.className = 'open-status-badge ' + (open ? 'open' : 'closed');
+            }
+        }
+
+        updateOpenStatus();
+        setInterval(updateOpenStatus, 60000);
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js').catch(() => {});
+        }
+
+        // Scroll to top
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            scrollBtn.classList.toggle('visible', window.scrollY > 300);
+        }, { passive: true });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
