@@ -58,14 +58,10 @@
             max-width: 600px;
             width: 100%;
             background: #ffffff;
-            border-radius: 35px;
+            border-radius: 14px;
             padding: 3rem 2.5rem;
-            box-shadow:
-                0 25px 70px rgba(80, 60, 45, 0.35),
-                0 0 2px rgba(80, 60, 45, 0.15);
             position: relative;
             z-index: 1;
-            animation: fadeInUp 0.8s ease-out;
         }
 
         @keyframes fadeInUp {
@@ -82,7 +78,6 @@
         .header {
             text-align: center;
             margin-bottom: 2.5rem;
-            animation: fadeIn 1s ease-out 0.2s both;
         }
 
         @keyframes fadeIn {
@@ -99,7 +94,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 15px 40px rgba(182, 165, 147, 0.4);
             position: relative;
             border: 4px solid var(--pink-main);
             overflow: hidden;
@@ -120,27 +114,20 @@
             font-family: 'Quicksand', sans-serif;
             font-size: 2.2rem;
             font-weight: 700;
-            letter-spacing: 1px;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--pink-dark), var(--burgundy));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--burgundy);
         }
 
         .tagline {
             font-size: 1rem;
             color: var(--pink-dark);
             font-weight: 600;
-            letter-spacing: 3px;
-            text-transform: uppercase;
         }
 
         .divider {
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--pink-main), transparent);
+            height: 1px;
+            background: rgba(182, 165, 147, 0.35);
             margin: 2rem 0;
-            animation: fadeIn 1s ease-out 0.4s both;
         }
 
         .social-links {
@@ -148,7 +135,6 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 0.75rem;
             margin-bottom: 0.8rem;
-            animation: fadeIn 1s ease-out 0.6s both;
         }
 
         .social-link {
@@ -163,7 +149,6 @@
             border-radius: 18px;
             text-decoration: none;
             color: var(--charcoal);
-            box-shadow: 0 6px 20px rgba(182, 165, 147, 0.15);
             transition: all 0.3s ease;
             border: 2px solid rgba(182, 165, 147, 0.2);
         }
@@ -173,7 +158,6 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 1.5rem;
-            animation: fadeIn 1s ease-out 0.7s both;
         }
 
         .whatsapp-line a {
@@ -185,9 +169,7 @@
         .whatsapp-line a:hover { text-decoration: underline; }
 
         .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(182, 165, 147, 0.3);
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border-color: white;
         }
@@ -210,26 +192,20 @@
             gap: 0.7rem;
             width: 100%;
             padding: 1.3rem;
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             text-decoration: none;
             text-align: center;
-            border-radius: 20px;
+            border-radius: 14px;
             font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
             font-size: 1rem;
-            box-shadow: 0 10px 30px rgba(182, 165, 147, 0.4);
             transition: all 0.3s ease;
             margin-bottom: 2rem;
-            animation: fadeIn 1s ease-out 0.8s both;
             border: 3px solid white;
             cursor: pointer;
         }
 
         .contact-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(182, 165, 147, 0.5);
         }
 
         /* Booking Modal Styles */
@@ -245,8 +221,6 @@
             align-items: center;
             justify-content: center;
             padding: 1rem;
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
         }
 
         .booking-modal.active {
@@ -255,7 +229,7 @@
 
         .booking-content {
             background: white;
-            border-radius: 30px;
+            border-radius: 18px;
             padding: 2.5rem 2rem;
             max-width: 500px;
             width: 100%;
@@ -351,7 +325,7 @@
         }
 
         .service-option.selected {
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border-color: var(--pink-dark);
         }
@@ -411,7 +385,7 @@
         }
 
         .calendar-day.selected {
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border-color: var(--pink-dark);
         }
@@ -440,7 +414,7 @@
         }
 
         .time-slot.selected {
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border-color: var(--pink-dark);
         }
@@ -528,7 +502,7 @@
         }
 
         .booking-summary {
-            background: linear-gradient(135deg, rgba(249, 232, 191, 0.3), rgba(182, 165, 147, 0.2));
+            background: rgba(249, 232, 191, 0.3);
             padding: 1.2rem;
             border-radius: 15px;
             margin-bottom: 1.5rem;
@@ -561,7 +535,6 @@
             padding: 1rem;
             border-radius: 15px;
             font-weight: 600;
-            text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
             border: none;
@@ -579,14 +552,12 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border: 2px solid transparent;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(182, 165, 147, 0.4);
         }
 
         .btn-primary:disabled {
@@ -607,8 +578,6 @@
             align-items: center;
             justify-content: center;
             padding: 1rem;
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
         }
 
         .success-modal.active {
@@ -617,13 +586,12 @@
 
         .success-content {
             background: white;
-            border-radius: 25px;
+            border-radius: 16px;
             padding: 2.5rem 2rem;
             max-width: 400px;
             width: 100%;
             text-align: center;
             animation: successSlideUp 0.5s ease-out;
-            box-shadow: 0 20px 60px rgba(182, 165, 147, 0.3);
         }
 
         @keyframes successSlideUp {
@@ -640,7 +608,7 @@
         .success-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -694,20 +662,17 @@
         .success-button {
             width: 100%;
             padding: 1rem;
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border: none;
             border-radius: 15px;
             font-weight: 600;
-            text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 0.9rem;
         }
 
         .success-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(182, 165, 147, 0.4);
         }
 
         /* Error/Warning Modal */
@@ -723,8 +688,6 @@
             align-items: center;
             justify-content: center;
             padding: 1rem;
-            -webkit-backdrop-filter: blur(8px);
-            backdrop-filter: blur(8px);
         }
 
         .error-modal.active {
@@ -733,13 +696,12 @@
 
         .error-content {
             background: white;
-            border-radius: 25px;
+            border-radius: 16px;
             padding: 2rem;
             max-width: 350px;
             width: 100%;
             text-align: center;
             animation: errorShake 0.5s ease-out;
-            box-shadow: 0 20px 60px rgba(182, 165, 147, 0.3);
         }
 
         @keyframes errorShake {
@@ -751,7 +713,7 @@
         .error-icon {
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, #b6a593, #9a8070);
+            background: var(--pink-dark);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -784,29 +746,25 @@
         .error-button {
             width: 100%;
             padding: 1rem;
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border: none;
             border-radius: 15px;
             font-weight: 600;
-            text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 0.9rem;
         }
 
         .error-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(182, 165, 147, 0.4);
         }
 
         .location {
             text-align: center;
             margin-bottom: 2rem;
             padding: 1.3rem;
-            background: linear-gradient(135deg, rgba(249, 232, 191, 0.3), rgba(182, 165, 147, 0.2));
-            border-radius: 20px;
-            animation: fadeIn 1s ease-out 0.9s both;
+            background: rgba(249, 232, 191, 0.3);
+            border-radius: 14px;
             border: 2px solid rgba(182, 165, 147, 0.3);
         }
 
@@ -824,7 +782,6 @@
 
         .hours-section {
             margin-bottom: 2rem;
-            animation: fadeIn 1s ease-out 1s both;
         }
 
         .hours-section h2 {
@@ -834,15 +791,12 @@
             text-align: center;
             margin-bottom: 1.2rem;
             color: var(--pink-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .hours-grid {
             background: white;
-            border-radius: 20px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(182, 165, 147, 0.15);
             border: 2px solid rgba(182, 165, 147, 0.2);
         }
 
@@ -858,13 +812,12 @@
         }
 
         .hours-item:hover {
-            background: linear-gradient(90deg, rgba(249, 232, 191, 0.2), rgba(182, 165, 147, 0.1));
+            background: rgba(249, 232, 191, 0.3);
         }
 
         .day {
             font-weight: 600;
             color: var(--burgundy);
-            text-transform: uppercase;
             font-size: 0.95rem;
         }
 
@@ -875,7 +828,6 @@
         }
 
         .price-list {
-            animation: fadeIn 1s ease-out 1.1s both;
         }
 
         .price-list h2 {
@@ -885,8 +837,6 @@
             text-align: center;
             margin-bottom: 1.5rem;
             color: var(--pink-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .price-category {
@@ -900,11 +850,8 @@
             color: var(--burgundy);
             margin-bottom: 1rem;
             padding: 0.8rem 1.2rem;
-            background: linear-gradient(135deg, rgba(249, 232, 191, 0.4), rgba(182, 165, 147, 0.3));
+            background: rgba(249, 232, 191, 0.3);
             border-radius: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-left: 5px solid var(--pink-main);
         }
 
         .price-item {
@@ -922,7 +869,6 @@
 
         .price-item:hover {
             background: rgba(249, 232, 191, 0.2);
-            padding-left: 1.5rem;
             border-radius: 12px;
         }
 
@@ -957,7 +903,7 @@
             width: 100%;
             padding: 0.75rem 1rem;
             background: rgba(249, 232, 191, 0.4);
-            border: 1.5px dashed var(--pink-main);
+            border: 1.5px solid rgba(182, 165, 147, 0.5);
             border-radius: 14px;
             color: var(--burgundy);
             font-family: 'Poppins', sans-serif;
@@ -968,13 +914,11 @@
             margin-top: -0.5rem;
             margin-bottom: 2rem;
             text-align: center;
-            animation: fadeIn 1s ease-out 0.9s both;
         }
 
         .policy-nudge:hover {
             background: rgba(249, 232, 191, 0.7);
             border-style: solid;
-            transform: translateY(-2px);
         }
 
         .policy-nudge svg {
@@ -988,7 +932,6 @@
             margin-top: 2.5rem;
             font-size: 0.9rem;
             color: var(--text-muted);
-            animation: fadeIn 1s ease-out 1.3s both;
         }
 
         .footer-sub { margin-top: 0.5rem; font-size: 0.8rem; }
@@ -1001,10 +944,9 @@
             align-items: center;
             gap: 0.4rem;
             padding: 0.3rem 1rem;
-            border-radius: 20px;
+            border-radius: 14px;
             font-size: 0.78rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
             margin-top: 0.6rem;
         }
 
@@ -1053,8 +995,6 @@
             text-align: center;
             margin-bottom: 1.5rem;
             color: var(--pink-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         /* Gallery / Before & After Videos */
@@ -1070,7 +1010,6 @@
             border-radius: 16px;
             overflow: hidden;
             background: #000;
-            box-shadow: 0 6px 20px rgba(182, 165, 147, 0.2);
         }
 
         .gallery-item video {
@@ -1088,14 +1027,13 @@
             width: 46px;
             height: 46px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
             border: none;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 20px rgba(182, 165, 147, 0.5);
             opacity: 0;
             transform: translateY(10px);
             transition: opacity 0.3s ease, transform 0.3s ease;
@@ -1110,8 +1048,6 @@
         }
 
         .scroll-top:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 28px rgba(182, 165, 147, 0.6);
         }
 
         .scroll-top svg {
@@ -1123,36 +1059,47 @@
         .reviews-section { margin-bottom: 2rem; }
         .reviews-track {
             display: flex;
+            flex-direction: column;
             gap: 0.9rem;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            padding: 0.3rem 0.2rem 1rem;
-            margin: 0 -0.2rem;
-            scrollbar-width: none;
+            margin-bottom: 1rem;
         }
 
-        .reviews-track::-webkit-scrollbar { display: none; }
-
         .review-card {
-            flex: 0 0 86%;
-            scroll-snap-align: center;
             background: white;
-            border-radius: 20px;
+            border-radius: 14px;
             padding: 1.3rem 1.4rem;
             border: 1.5px solid rgba(182, 165, 147, 0.25);
-            box-shadow: 0 6px 20px rgba(182, 165, 147, 0.15);
             display: flex;
             flex-direction: column;
         }
 
-        .review-card .review-text { flex: 1; }
+        .review-text.clamped {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
-        .reviews-hint {
+        .review-more {
+            align-self: flex-start;
+            background: none;
+            border: none;
+            padding: 0.2rem 0;
+            margin-bottom: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--burgundy);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .swipe-hint {
+            display: none;
             text-align: center;
             font-size: 0.78rem;
             color: var(--text-muted);
-            margin: -0.3rem 0 1rem;
+            margin: 0.2rem 0 1rem;
         }
 
         .review-cta {
@@ -1175,7 +1122,6 @@
 
         .review-cta:hover {
             background: rgba(249, 232, 191, 0.35);
-            transform: translateY(-2px);
         }
 
         /* Review form */
@@ -1220,11 +1166,8 @@
             padding: 0.45rem;
             margin: 0 -0.4rem 2rem;
             background: rgba(255, 255, 255, 0.92);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border-radius: 999px;
+            border-radius: 12px;
             border: 1.5px solid rgba(182, 165, 147, 0.3);
-            box-shadow: 0 8px 24px rgba(80, 60, 45, 0.12);
             scrollbar-width: none;
         }
 
@@ -1233,7 +1176,7 @@
         .section-nav a {
             flex-shrink: 0;
             padding: 0.5rem 0.95rem;
-            border-radius: 999px;
+            border-radius: 12px;
             font-size: 0.8rem;
             font-weight: 600;
             color: var(--burgundy);
@@ -1244,7 +1187,7 @@
         .section-nav a:hover { background: rgba(249, 232, 191, 0.5); }
 
         .section-nav a.active {
-            background: linear-gradient(135deg, var(--pink-main), var(--pink-dark));
+            background: var(--pink-dark);
             color: white;
         }
 
@@ -1265,8 +1208,6 @@
             text-align: center;
             margin-bottom: 0.6rem;
             color: var(--pink-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .loyalty-cards {
@@ -1279,7 +1220,6 @@
             width: 100%;
             height: auto;
             border-radius: 18px;
-            box-shadow: 0 10px 28px rgba(122, 104, 88, 0.28);
         }
 
         .loyalty-steps {
@@ -1309,7 +1249,6 @@
         .review-stars {
             color: #f0a500;
             font-size: 1rem;
-            letter-spacing: 2px;
             margin-bottom: 0.5rem;
         }
 
@@ -1383,8 +1322,6 @@
             text-align: center;
             margin-bottom: 0.6rem;
             color: var(--pink-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .policy-intro {
@@ -1409,26 +1346,8 @@
             gap: 0.5rem;
             padding: 1.1rem 1rem 1.15rem;
             background: white;
-            border-radius: 20px;
-            border: 1.5px solid rgba(182, 165, 147, 0.25);
-            box-shadow: 0 6px 18px rgba(182, 165, 147, 0.14);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 26px rgba(182, 165, 147, 0.25);
-        }
-
-        .card-icon {
-            width: 44px;
-            height: 44px;
             border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.35rem;
-            background: linear-gradient(135deg, rgba(249, 232, 191, 0.6), rgba(182, 165, 147, 0.3));
+            border: 1.5px solid rgba(182, 165, 147, 0.25);
         }
 
         .card-title {
@@ -1447,7 +1366,7 @@
 
         .info-card.policy-highlight {
             grid-column: 1 / -1;
-            background: linear-gradient(135deg, rgba(249, 232, 191, 0.4), rgba(182, 165, 147, 0.2));
+            background: rgba(249, 232, 191, 0.3);
             border-color: var(--pink-main);
         }
 
@@ -1488,7 +1407,7 @@
             .booking-content {
                 padding: 1.5rem 1rem;
                 max-height: 85vh;
-                border-radius: 25px;
+                border-radius: 16px;
             }
 
             .booking-header h3 {
@@ -1599,16 +1518,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .info-card {
-                flex-direction: row;
-                align-items: flex-start;
-                gap: 0.9rem;
-            }
-
-            .card-icon { flex-shrink: 0; }
-
-            .review-card { flex-basis: 90%; }
-
             .gallery-section h2,
             .reviews-section h2,
             .faq-section h2,
@@ -1617,6 +1526,35 @@
             .loyalty-section h2 {
                 font-size: 1.5rem;
             }
+        }
+
+        /* Swipe carousels: mobile only */
+        @media (max-width: 640px) {
+            .reviews-track,
+            .aftercare-grid {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                margin: 0 -0.2rem;
+                padding: 0.2rem 0.2rem 0.4rem;
+            }
+
+            .reviews-track::-webkit-scrollbar,
+            .aftercare-grid::-webkit-scrollbar { display: none; }
+
+            .reviews-track .review-card,
+            .aftercare-grid .info-card {
+                flex: 0 0 82%;
+                scroll-snap-align: center;
+            }
+
+            .aftercare-grid .info-card { align-self: stretch; }
+
+            .swipe-hint { display: block; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -1655,7 +1593,7 @@
                 </svg>
                 <span>Instagram</span>
             </a>
-            <a href="https://www.tiktok.com/@ms.gyameraaa" class="social-link" target="_blank" rel="noopener">
+            <a href="https://www.tiktok.com/@gyameraesthetics" class="social-link" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.12a8.16 8.16 0 0 0 4.77 1.52V7.18a4.85 4.85 0 0 1-1-.49z"/>
                 </svg>
@@ -1688,7 +1626,6 @@
         </button>
 
         <div class="location">
-            <div class="location-icon">📍</div>
             <div class="location-text">
                 Sakumono / Spintex
             </div>
@@ -1855,48 +1792,31 @@
             <p class="aftercare-intro">Follow these to keep your set full for longer.</p>
             <div class="aftercare-grid">
                 <div class="info-card">
-                    <span class="card-icon" aria-hidden="true">💧</span>
-                    <div>
-                        <div class="card-title">Avoid water for 24–48hrs</div>
-                        <p class="card-text">Keep lashes dry after your appointment so the adhesive fully cures.</p>
-                    </div>
+                    <div class="card-title">Avoid water for 24–48hrs</div>
+                    <p class="card-text">Keep lashes dry after your appointment so the adhesive fully cures.</p>
                 </div>
                 <div class="info-card">
-                    <span class="card-icon" aria-hidden="true">🚿</span>
-                    <div>
-                        <div class="card-title">No steam or saunas</div>
-                        <p class="card-text">High heat and steam loosen the bond and shorten lash retention.</p>
-                    </div>
+                    <div class="card-title">No steam or saunas</div>
+                    <p class="card-text">High heat and steam loosen the bond and shorten lash retention.</p>
                 </div>
                 <div class="info-card">
-                    <span class="card-icon" aria-hidden="true">🚫</span>
-                    <div>
-                        <div class="card-title">Don't rub your eyes</div>
-                        <p class="card-text">Rubbing or pulling causes damage and premature shedding.</p>
-                    </div>
+                    <div class="card-title">Don't rub your eyes</div>
+                    <p class="card-text">Rubbing or pulling causes damage and premature shedding.</p>
                 </div>
                 <div class="info-card">
-                    <span class="card-icon" aria-hidden="true">🪮</span>
-                    <div>
-                        <div class="card-title">Brush daily</div>
-                        <p class="card-text">Use a clean spoolie each morning to keep lashes fluffy and aligned.</p>
-                    </div>
+                    <div class="card-title">Brush daily</div>
+                    <p class="card-text">Use a clean spoolie each morning to keep lashes fluffy and aligned.</p>
                 </div>
                 <div class="info-card">
-                    <span class="card-icon" aria-hidden="true">🧴</span>
-                    <div>
-                        <div class="card-title">Avoid oil-based products</div>
-                        <p class="card-text">Oils break down the adhesive — check cleansers and makeup removers.</p>
-                    </div>
+                    <div class="card-title">Avoid oil-based products</div>
+                    <p class="card-text">Oils break down the adhesive — check cleansers and makeup removers.</p>
                 </div>
                 <div class="info-card">
-                    <span class="card-icon" aria-hidden="true">😴</span>
-                    <div>
-                        <div class="card-title">Sleep on your back</div>
-                        <p class="card-text">Side sleeping flattens and bends lashes. A silk pillowcase helps too.</p>
-                    </div>
+                    <div class="card-title">Sleep on your back</div>
+                    <p class="card-text">Side sleeping flattens and bends lashes. A silk pillowcase helps too.</p>
                 </div>
             </div>
+            <p class="swipe-hint">Swipe for more →</p>
         </div>
 
         <div class="divider"></div>
@@ -1907,53 +1827,32 @@
             <p class="policy-intro">Please read before booking your appointment.</p>
             <div class="policy-list">
                 <div class="info-card policy-highlight">
-                    <span class="card-icon" aria-hidden="true">💳</span>
-                    <div>
-                        <div class="card-title">Deposit</div>
-                        <p class="card-text">A <strong>non-refundable deposit of GH¢50</strong> is required to secure your appointment.</p>
-                    </div>
+                    <div class="card-title">Deposit</div>
+                    <p class="card-text">A <strong>non-refundable deposit of GH¢50</strong> is required to secure your appointment.</p>
                 </div>
                 <div class="info-card">
-                    <span class="card-icon" aria-hidden="true">⏰</span>
-                    <div>
-                        <div class="card-title">Be on time</div>
-                        <p class="card-text">Please arrive on time. Your punctuality helps us serve every client well.</p>
-                    </div>
+                    <div class="card-title">Be on time</div>
+                    <p class="card-text">Please arrive on time. Your punctuality helps us serve every client well.</p>
                 </div>
                 <div class="info-card">
-                    <span class="card-icon" aria-hidden="true">✨</span>
-                    <div>
-                        <div class="card-title">Clean lashes</div>
-                        <p class="card-text">We don't work over another technician's work. Please come with <strong>clean, product-free lashes</strong>.</p>
-                    </div>
+                    <div class="card-title">Clean lashes</div>
+                    <p class="card-text">We don't work over another technician's work. Please come with <strong>clean, product-free lashes</strong>.</p>
                 </div>
                 <div class="info-card">
-                    <span class="card-icon" aria-hidden="true">🏡</span>
-                    <div>
-                        <div class="card-title">Home studio</div>
-                        <p class="card-text">Gyamera Aesthetics is a <strong>home-based studio</strong>. Please be respectful of the space.</p>
-                    </div>
+                    <div class="card-title">Home studio</div>
+                    <p class="card-text">Gyamera Aesthetics is a <strong>home-based studio</strong>. Please be respectful of the space.</p>
                 </div>
                 <div class="info-card">
-                    <span class="card-icon" aria-hidden="true">🚫</span>
-                    <div>
-                        <div class="card-title">No extra guests</div>
-                        <p class="card-text">Extra guests are not allowed unless approved in advance.</p>
-                    </div>
+                    <div class="card-title">No extra guests</div>
+                    <p class="card-text">Extra guests are not allowed unless approved in advance.</p>
                 </div>
                 <div class="info-card policy-highlight">
-                    <span class="card-icon" aria-hidden="true">📅</span>
-                    <div>
-                        <div class="card-title">Cancel or reschedule</div>
-                        <p class="card-text">Please let us know as early as possible so we can accommodate other clients.</p>
-                    </div>
+                    <div class="card-title">Cancel or reschedule</div>
+                    <p class="card-text">Please let us know as early as possible so we can accommodate other clients.</p>
                 </div>
                 <div class="info-card policy-highlight">
-                    <span class="card-icon" aria-hidden="true">🤍</span>
-                    <div>
-                        <div class="card-title">Silent appointment</div>
-                        <p class="card-text">You're always welcome to request a <strong>silent appointment</strong> if you're anxious, tired, or mentally drained and prefer no conversation. No judgement, ever. Feel free to request a music genre, playlist, podcast, or video for the background. Your comfort and peace matter here.</p>
-                    </div>
+                    <div class="card-title">Silent appointment</div>
+                    <p class="card-text">You're always welcome to request a <strong>silent appointment</strong> if you're anxious, tired, or mentally drained and prefer no conversation. No judgement, ever. Feel free to request a music genre, playlist, podcast, or video for the background. Your comfort and peace matter here.</p>
                 </div>
             </div>
         </div>
@@ -1984,6 +1883,7 @@
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
                     <p class="review-text">"She's professional, efficient, and knows exactly what she's doing. My lashes look full, natural, and flawless. Hands down the best lash tech everrrr! 100% recommend her for a 10/10 result! Perfect for anyone in Sakumono and Spintex."</p>
+                    <button type="button" class="review-more" hidden>View more</button>
                     <span class="reviewer-name">— Olive</span>
                 </div>
                 <div class="review-card">
@@ -1993,10 +1893,11 @@
                     Your service is truly 100/10. From the atmosphere to the actual lash appointment itself, everything is top tier. You pay so much attention to detail, you listen to exactly what I want, and you always deliver perfectly every single time. You never disappoint, even with my last-minute bookings 😭
                     <br>    <br>
                     Your lash retention is honestly amazing, and I’ll continue recommending all my friends to book with you because you really know what you’re doing. Thank you for always making me leave feeling so pretty 🤍✨"</p>
+                    <button type="button" class="review-more" hidden>View more</button>
                     <span class="reviewer-name">— Marilyn</span>
                 </div>
             </div>
-            <p class="reviews-hint">Swipe for more →</p>
+            <p class="swipe-hint">Swipe for more →</p>
             <button type="button" class="review-cta" onclick="openReview()">
                 <span aria-hidden="true">★</span> Leave a Review
             </button>
@@ -2167,7 +2068,6 @@
             </div>
 
             <div class="review-thanks" id="reviewThanksView" hidden>
-                <div class="thanks-emoji">🤍</div>
                 <p><strong>Thank you!</strong><br>Tap send in WhatsApp to finish. We read every review and will add yours to this page soon.</p>
                 <button type="button" class="success-button" onclick="closeReview()">Done</button>
             </div>
@@ -2723,6 +2623,32 @@
             if (e.key !== 'Escape') return;
             if (document.getElementById('reviewModal').classList.contains('active')) closeReview();
         });
+
+        // ── Review cards: clamp long text, "View more" toggle ──────────────
+        function setupReviewClamp() {
+            document.querySelectorAll('.review-card').forEach(card => {
+                const text = card.querySelector('.review-text');
+                const btn = card.querySelector('.review-more');
+                if (btn.dataset.open === '1') return;
+                text.classList.add('clamped');
+                btn.hidden = text.scrollHeight <= text.clientHeight + 1;
+            });
+        }
+
+        document.querySelectorAll('.review-more').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const text = btn.closest('.review-card').querySelector('.review-text');
+                const open = btn.dataset.open === '1';
+                text.classList.toggle('clamped', open);
+                btn.dataset.open = open ? '' : '1';
+                btn.textContent = open ? 'View more' : 'View less';
+            });
+        });
+
+        setupReviewClamp();
+        window.addEventListener('load', setupReviewClamp);
+        let clampTimer;
+        window.addEventListener('resize', () => { clearTimeout(clampTimer); clampTimer = setTimeout(setupReviewClamp, 150); });
 
         // ── Section nav: highlight the section in view ────────────────────
         (function () {
