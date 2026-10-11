@@ -1269,91 +1269,17 @@
             letter-spacing: 1px;
         }
 
-        .loyalty-card {
-            position: relative;
-            overflow: hidden;
-            padding: 1.5rem 1.4rem 1.3rem;
-            border-radius: 22px;
-            color: white;
-            background: linear-gradient(135deg, #9a8070 0%, #7a6858 100%);
-            box-shadow: 0 14px 34px rgba(122, 104, 88, 0.4);
-        }
-
-        .loyalty-card::after {
-            content: '';
-            position: absolute;
-            right: -50px;
-            top: -50px;
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.09);
-        }
-
-        .loyalty-top {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.1rem;
-        }
-
-        .loyalty-brand {
-            font-family: 'Quicksand', sans-serif;
-            font-weight: 700;
-            font-size: 1.05rem;
-            letter-spacing: 0.5px;
-        }
-
-        .loyalty-tag {
-            font-size: 0.65rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 0.25rem 0.65rem;
-            border: 1px solid rgba(255, 255, 255, 0.55);
-            border-radius: 999px;
-        }
-
-        .stamp-grid {
-            position: relative;
-            z-index: 1;
+        .loyalty-cards {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            gap: 0.9rem;
         }
 
-        .stamp {
-            aspect-ratio: 1;
-            border-radius: 50%;
-            border: 2px dashed rgba(255, 255, 255, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .stamp.filled {
-            background: rgba(255, 255, 255, 0.95);
-            border: 2px solid white;
-            color: var(--burgundy);
-        }
-
-        .stamp.reward {
-            border-style: solid;
-            background: rgba(249, 232, 191, 0.22);
-            font-size: 1.05rem;
-        }
-
-        .loyalty-foot {
-            position: relative;
-            z-index: 1;
-            font-size: 0.82rem;
-            line-height: 1.55;
-            opacity: 0.95;
+        .loyalty-cards img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+            box-shadow: 0 10px 28px rgba(122, 104, 88, 0.28);
         }
 
         .loyalty-steps {
@@ -1682,8 +1608,6 @@
             .card-icon { flex-shrink: 0; }
 
             .review-card { flex-basis: 90%; }
-
-            .stamp-grid { gap: 0.35rem; }
 
             .gallery-section h2,
             .reviews-section h2,
@@ -2039,26 +1963,15 @@
         <!-- Loyalty Card -->
         <div class="loyalty-section" id="rewards">
             <h2>Loyalty Card</h2>
-            <p class="policy-intro">Every visit counts. Ask for your card at your next appointment.</p>
-            <div class="loyalty-card" role="img" aria-label="Sample Gyamera Aesthetics loyalty card with stamp spaces and a reward at the end">
-                <div class="loyalty-top">
-                    <span class="loyalty-brand">Gyamera Aesthetics</span>
-                    <span class="loyalty-tag">Loyalty</span>
-                </div>
-                <div class="stamp-grid" aria-hidden="true">
-                    <div class="stamp filled">✓</div>
-                    <div class="stamp filled">✓</div>
-                    <div class="stamp">3</div>
-                    <div class="stamp">4</div>
-                    <div class="stamp">5</div>
-                    <div class="stamp reward">🎁</div>
-                </div>
-                <p class="loyalty-foot">Sample card. Yours is stamped after every visit, and the last space is your reward.</p>
+            <p class="policy-intro">One stamp for every visit. A gift from us, for your loyalty.</p>
+            <div class="loyalty-cards">
+                <img src="loyalty-card.jpg" alt="Gyamera Aesthetics loyalty card" loading="lazy">
+                <img src="loyalty-stamps.jpg" alt="Loyalty stamp card with 10 stamps: 15% off on the 4th, 20% off on the 7th and a free set on the 10th" loading="lazy">
             </div>
             <div class="loyalty-steps">
-                <div><strong>1. Ask</strong>Request your card at your next visit</div>
-                <div><strong>2. Collect</strong>Get a stamp each appointment</div>
-                <div><strong>3. Enjoy</strong>Redeem your reward</div>
+                <div><strong>4th visit</strong>15% off</div>
+                <div><strong>7th visit</strong>20% off</div>
+                <div><strong>10th visit</strong>Free set</div>
             </div>
         </div>
 

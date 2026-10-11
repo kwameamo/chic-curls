@@ -1,4 +1,4 @@
-const CACHE = 'gyamera-v4';
+const CACHE = 'gyamera-v5';
 const PRECACHE = [
   './',
   './gyameraaesthetics-logo.jpg',
